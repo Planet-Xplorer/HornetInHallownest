@@ -1,0 +1,25 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <Name>Hollow Knight 1.5 Mod</Name>
+    <Description>A template for Hollow Knight 1.5 mods</Description>
+    <ProjectType>CSharp</ProjectType>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>Hollow Knight 1.5 Mod</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <CreateInPlace>true</CreateInPlace>
+    <Icon>__TemplateIcon.png</Icon>
+    <PreviewImage>__PreviewImage.png</PreviewImage>
+  </TemplateData>
+  <TemplateContent>
+    <Project File="ProjectFile.csproj" ReplaceParameters="true">
+      <Folder Name="Resources" TargetFolderName="Resources">
+        <ProjectItem>.gitignore</ProjectItem>
+      </Folder>
+      <ProjectItem>.gitignore</ProjectItem>
+      <ProjectItem ReplaceParameters="true">ReadMe.md</ProjectItem>
+      <ProjectItem ReplaceParameters="true">ModClass.cs</ProjectItem>
+    </Project>
+  </TemplateContent>
+</VSTemplate>
