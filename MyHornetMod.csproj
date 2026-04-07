@@ -1,11 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  <!-- Machine-specific path overrides: create Local.props (gitignored) with your own paths -->
-  <Import Project="Local.props" Condition="Exists('Local.props')" />
-
   <PropertyGroup>
-    <!-- Fallback paths (Linux dev machine) — override in Local.props on other machines -->
-    <HollowKnightRefs Condition="'$(HollowKnightRefs)' == ''">/home/fs/Documents/Hollow-Knight/Hollow Knight v1.5.78.11833/Hollow Knight_Data/Managed/</HollowKnightRefs>
-    <ExportDir Condition="'$(ExportDir)' == ''">/home/fs/HKMods/Exports/</ExportDir>
+    <!-- Set HK_REFS and HK_EXPORT as environment variables on each machine (see ReadMe) -->
+    <HollowKnightRefs Condition="'$(HK_REFS)' != ''">$(HK_REFS)</HollowKnightRefs>
+    <HollowKnightRefs Condition="'$(HK_REFS)' == ''">/home/fs/Documents/Hollow-Knight/Hollow Knight v1.5.78.11833/Hollow Knight_Data/Managed/</HollowKnightRefs>
+    <ExportDir Condition="'$(HK_EXPORT)' != ''">$(HK_EXPORT)</ExportDir>
+    <ExportDir Condition="'$(HK_EXPORT)' == ''">/home/fs/HKMods/Exports/</ExportDir>
     <!-- Uncomment this to generate a documentation file to be included with the mod -->
     <!--<DocumentationFile>$(OutputPath)/$(AssemblyTitle).xml</DocumentationFile>-->
   </PropertyGroup>
