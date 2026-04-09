@@ -329,5 +329,6 @@
     <None Include="README.md" />
     <None Include="Resources\.gitignore" />
     <EmbeddedResource Include="Resources/Hornet/**/*.png" />
+    <EmbeddedResource Include="Resources/Every_Hornet_Animation/Knight/**/*.png" />
   </ItemGroup>
 </Project>

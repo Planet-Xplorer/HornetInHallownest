@@ -14,93 +14,108 @@ namespace HornetInHallownest
         public static bool    IsEnabled  = true;
         public static KeyCode ToggleKey  = KeyCode.F5;
 
-        // Maps HK animation clip names (from Assembly-CSharp HeroAnimationController)
-        // to ordered Hornet sprite frame name arrays.
-        // Clip names were verified by decompiling HK's Assembly-CSharp.dll with dnSpy.
+        // Maps HK animation clip names → ordered arrays of Hornet sprite frame keys.
+        //
+        // Frame key format: "{anim_number}-{frame_index}-{sprite_id}"
+        // Source folder:    Resources/Every_Hornet_Animation/Knight/{anim_number}.{AnimName}/
+        // Each key is the filename minus ".png" and is unique across all animations.
+        //
+        // HK clip names were verified from Assembly-CSharp.dll (HeroAnimationController).
+        // Hornet animation folder names come from Silksong's exported sprite library.
+        // Where no direct Silksong equivalent exists, the closest motion is used as a fallback.
         internal static readonly Dictionary<string, string[]> AnimMap =
             new Dictionary<string, string[]>
         {
-            // --- Idle ---
-            { "Idle",              new[] { "idle0000","idle0001","idle0002","idle0003","idle0004","idle0005" } },
-            { "Idle Hurt",         new[] { "idle0000" } },
-            { "Lantern Idle",      new[] { "idle0000","idle0001","idle0002","idle0003","idle0004","idle0005" } },
+            // ── Idle (001.Idle) ───────────────────────────────────────────
+            { "Idle",              new[] { "001-00-873","001-01-875","001-02-869","001-03-874","001-04-877","001-05-879" } },
+            { "Idle Hurt",         new[] { "001-00-873","001-01-875","001-02-869","001-03-874","001-04-877","001-05-879" } },
+            { "Lantern Idle",      new[] { "001-00-873","001-01-875","001-02-869","001-03-874","001-04-877","001-05-879" } },
 
-            // --- Looking ---
-            { "LookUp",            new[] { "idle0000","idle0001","idle0002","idle0003","idle0004","idle0005" } },
-            { "Lookup",            new[] { "idle0000","idle0001","idle0002","idle0003","idle0004","idle0005" } }, // lowercase variant in HK
-            { "LookUpEnd",         new[] { "idle0000","idle0001","idle0002" } },
-            { "LookDown",          new[] { "look_down0000","look_down0001","look_down0002","look_down0003","look_down0004","look_down0005" } },
-            { "LookDownEnd",       new[] { "look_down0000","look_down0001","look_down0002" } },
+            // ── Look Up / Down (014.LookUp, 013.LookDown) ────────────────
+            { "LookUp",            new[] { "014-00-1118","014-01-1116","014-02-1120","014-03-1117","014-04-1119","014-05-1121","014-06-1123","014-07-1122" } },
+            { "Lookup",            new[] { "014-00-1118","014-01-1116","014-02-1120","014-03-1117","014-04-1119","014-05-1121","014-06-1123","014-07-1122" } },
+            { "LookUpEnd",         new[] { "014-07-1122","014-05-1121","014-02-1120","014-01-1116","014-00-1118" } },
+            { "LookDown",          new[] { "013-00-1108","013-01-1115","013-02-1113","013-03-1111","013-04-1112","013-05-1109","013-06-1110","013-07-1114" } },
+            { "LookDownEnd",       new[] { "013-07-1114","013-05-1109","013-02-1113","013-01-1115","013-00-1108" } },
 
-            // --- Movement ---
-            // run0002.png is a blank frame in the extracted assets — skip it by repeating run0001
-            { "Run",               new[] { "run0000","run0001","run0001","run0003","run0004","run0005","run0006","run0007" } },
-            { "Walk",              new[] { "run0000","run0001","run0001","run0003","run0004","run0005","run0006","run0007" } },
-            { "Sprint",            new[] { "run0000","run0001","run0001","run0003","run0004","run0005","run0006","run0007" } },
-            { "Lantern Run",       new[] { "run0000","run0001","run0001","run0003","run0004","run0005","run0006","run0007" } },
-            { "Turn",              new[] { "turn0000","turn0001","turn0002" } },
+            // ── Run / Walk / Sprint (005.Run, 132.Sprint) ─────────────────
+            { "Run",               new[] { "005-00-1162","005-01-1164","005-02-1171","005-03-1170","005-04-1166","005-05-1168","005-06-1167","005-07-1165","005-08-1163","005-09-1169" } },
+            { "Walk",              new[] { "005-00-1162","005-01-1164","005-02-1171","005-03-1170","005-04-1166","005-05-1168","005-06-1167","005-07-1165","005-08-1163","005-09-1169" } },
+            { "Sprint",            new[] { "132-00-1213","132-01-1214","132-02-1212","132-03-1215","132-04-1208","132-05-1211","132-06-1207","132-07-1210" } },
+            { "Lantern Run",       new[] { "005-00-1162","005-01-1164","005-02-1171","005-03-1170","005-04-1166","005-05-1168","005-06-1167","005-07-1165","005-08-1163","005-09-1169" } },
 
-            // --- Idle ↔ Run transitions ---
-            { "Run To Idle",       new[] { "to_idle0000","to_idle0001","to_idle0002" } },
-            { "Backdash To Idle",  new[] { "to_idle0000","to_idle0001","to_idle0002" } },
-            { "Dash To Idle",      new[] { "to_idle0000","to_idle0001","to_idle0002" } },
-            // Possible run-start clips (may appear in tk2d lib even if not in HeroAnimationController)
-            { "Idle To Run",       new[] { "to_run0000","to_run0001","to_run0002","to_run0003","to_run0004","to_run0005" } },
-            { "Land To Run",       new[] { "to_run0000","to_run0001","to_run0002","to_run0003","to_run0004","to_run0005" } },
+            // ── Turn (048.Turn) ───────────────────────────────────────────
+            { "Turn",              new[] { "048-00-815","048-01-814","048-02-817","048-03-705","048-04-820","048-05-816" } },
 
-            // --- Jumping / airborne ---
-            // HK's actual clip name is "Airborne" (not "AirBorne" — verified from DLL)
-            { "Airborne",          new[] { "jump0000","jump0001","jump0002","jump0003","jump0004","jump0005","jump0006","jump0007","jump0008","jump0009" } },
-            { "Double Jump",       new[] { "jump0000","jump0001","jump0002","jump0003" } },
-            { "Walljump",          new[] { "jump0000","jump0001","jump0002","jump0003" } },
+            // ── Idle ↔ Run transitions (049.Run To Idle, 237.Idle To Run, 062.TurnToIdle) ──
+            { "Run To Idle",       new[] { "049-00-096","049-01-095","049-02-099","049-03-100","049-04-097","049-05-098" } },
+            { "Backdash To Idle",  new[] { "062-00-1244","062-01-1245","062-02-1243","062-03-873","062-04-875","062-05-869","062-06-874","062-07-877","062-08-879" } },
+            { "Dash To Idle",      new[] { "062-00-1244","062-01-1245","062-02-1243","062-03-873","062-04-875","062-05-869","062-06-874","062-07-877","062-08-879" } },
+            { "Idle To Run",       new[] { "237-00-1063","237-01-1060","237-02-1062","237-03-340","237-04-341","237-05-342","237-06-344","237-07-1061","237-08-1064","237-09-094" } },
+            { "Land To Run",       new[] { "237-00-1063","237-01-1060","237-02-1062","237-03-340","237-04-341","237-05-342","237-06-344","237-07-1061","237-08-1064","237-09-094" } },
 
-            // --- Landing ---
-            { "Land",              new[] { "soft_land0000","soft_land0001","soft_land0002" } },
-            // HK's actual clip name is "HardLand" (not "Hard Land" — verified from DLL)
-            { "HardLand",          new[] { "hard_land0000","hard_land0001","hard_land0002","hard_land0003","hard_land0004","hard_land0005" } },
-            { "Backdash Land",     new[] { "soft_land0000","soft_land0001","soft_land0002" } },
-            { "Backdash Land 2",   new[] { "soft_land0000","soft_land0001","soft_land0002" } },
-            { "Dash Down Land",    new[] { "hard_land0000","hard_land0001","hard_land0002","hard_land0003","hard_land0004","hard_land0005" } },
+            // ── Airborne / Jump (003.Airborne) ────────────────────────────
+            { "Airborne",          new[] { "003-00-1099","003-01-1103","003-02-695","003-03-1105","003-04-1095","003-05-1094","003-06-1096","003-07-1106","003-08-1098","003-09-1100","003-10-1107","003-11-1101","003-12-1104","003-13-1097","003-14-694" } },
 
-            // --- Dashing ---
-            { "Dash",              new[] { "evade0000","evade0001","evade0002","evade0003","evade0004","evade0005" } },
-            // HK's actual clip name is "Back Dash" (not "Dash Back" — verified from DLL)
-            { "Back Dash",         new[] { "Tool_Backdash0000","Tool_Backdash0001","Tool_Backdash0002","Tool_Backdash0003","Tool_Backdash0004","Tool_Backdash0005" } },
-            { "Shadow Dash",       new[] { "evade0000","evade0001","evade0002","evade0003","evade0004","evade0005" } },
-            { "Shadow Dash Sharp", new[] { "evade0000","evade0001","evade0002","evade0003","evade0004","evade0005" } },
-            { "Dash Down",         new[] { "jump0004","jump0005","jump0006","jump0007","jump0008","jump0009" } },
-            { "Shadow Dash Down",  new[] { "jump0004","jump0005","jump0006","jump0007","jump0008","jump0009" } },
-            { "Shadow Dash Down Sharp", new[] { "jump0004","jump0005","jump0006","jump0007","jump0008","jump0009" } },
+            // ── Double Jump (098.Double Jump) ─────────────────────────────
+            // Hornet always has double jump (see MovementManager.CanDoubleJump)
+            { "Double Jump",       new[] { "098-00-1067","098-01-1077","098-02-506","098-03-1074","098-04-505","098-05-1065","098-06-1068","098-07-1078","098-08-345","098-09-005","098-10-002","098-11-003","098-12-004","098-13-002","098-14-003","098-15-004","098-16-006" } },
 
-            // --- Wall ---
-            { "Wall Slide",        new[] { "jump0004","jump0005","jump0006" } },
+            // ── Wall Jump / Cling (133.Walljump, 035.Mantle Cling) ────────
+            { "Walljump",          new[] { "133-00-1084","133-01-1092","133-02-1086","133-03-1079","133-04-1084","133-05-1092","133-06-1086","133-07-1079","133-08-1085","133-09-1090","133-10-1089","133-11-1093","133-12-1088","133-13-1083" } },
+            { "Wall Slide",        new[] { "084-00-1681","084-01-1687","084-02-386","084-03-388","084-04-390","084-05-507","084-06-387","084-07-389","084-08-391" } },
 
-            // --- Attacks ---
-            // HK's actual clip names: "Slash", "SlashAlt", "UpSlash", "DownSlash", "Wall Slash" — verified from DLL
-            { "Slash",             new[] { "throw_side0000","throw_side0001","throw_side0002","throw_side0003","throw_side0004","throw_side0005","throw_side0006","throw_side0007","throw_side0008" } },
-            { "SlashAlt",          new[] { "throw_side0000","throw_side0001","throw_side0002","throw_side0003","throw_side0004","throw_side0005","throw_side0006","throw_side0007","throw_side0008" } },
-            { "UpSlash",           new[] { "throw_up0000","throw_up0001","throw_up0002","throw_up0003","throw_up0004" } },
-            { "DownSlash",         new[] { "harpoon_up0000","harpoon_up0001" } },
-            { "Wall Slash",        new[] { "throw_side0000","throw_side0001","throw_side0002","throw_side0003","throw_side0004" } },
+            // ── Landing (011.Land, 012.HardLand) ─────────────────────────
+            { "Land",              new[] { "011-00-1046","011-01-1049","011-02-1204","011-03-1204","011-04-1203","011-05-1203","011-06-099","011-07-099","011-08-100","011-09-100","011-10-097","011-11-097","011-12-098","011-13-098" } },
+            { "HardLand",          new[] { "012-00-1046","012-01-1049","012-02-1047","012-03-1050","012-04-1050","012-05-1050","012-06-1048","012-07-1045","012-08-1045","012-09-1045","012-10-1045","012-11-1045" } },
+            { "Backdash Land",     new[] { "011-00-1046","011-01-1049","011-02-1204","011-03-1204","011-04-1203","011-05-1203","011-06-099","011-07-099","011-08-100","011-09-100","011-10-097","011-11-097","011-12-098","011-13-098" } },
+            { "Backdash Land 2",   new[] { "011-00-1046","011-01-1049","011-02-1204","011-03-1204","011-04-1203","011-05-1203","011-06-099","011-07-099","011-08-100","011-09-100","011-10-097","011-11-097","011-12-098","011-13-098" } },
+            { "Dash Down Land",    new[] { "012-00-1046","012-01-1049","012-02-1047","012-03-1050","012-04-1050","012-05-1050","012-06-1048","012-07-1045","012-08-1045","012-09-1045","012-10-1045","012-11-1045" } },
 
-            // --- Spells ---
-            // HK's forward spell clip is "Fireball" (not "Cast" — verified from DLL)
-            { "Fireball",          new[] { "harpoon_side0000","harpoon_side0001" } },
-            // These may be driven by PlayMaker, not HeroAnimationController — kept as fallbacks
-            { "Quake Antic",       new[] { "harpoon_up0000","harpoon_up0001" } },
-            { "Quake Fall",        new[] { "jump0004","jump0005","jump0006","jump0007","jump0008","jump0009" } },
-            { "Quake Fall 2",      new[] { "jump0004","jump0005","jump0006","jump0007","jump0008","jump0009" } },
-            { "Quake Land",        new[] { "hard_land0000","hard_land0001","hard_land0002","hard_land0003","hard_land0004","hard_land0005" } },
+            // ── Dash (002.Dash) ───────────────────────────────────────────
+            // Shadow Dash is locked out by MovementManager — HK falls back to Dash automatically.
+            { "Dash",              new[] { "002-00-953","002-01-955","002-02-952","002-03-954","002-04-954","002-05-954","002-06-954","002-07-954","002-08-954" } },
+            { "Back Dash",         new[] { "002-00-953","002-01-955","002-02-952","002-03-954","002-04-954","002-05-954","002-06-954","002-07-954","002-08-954" } },
+            { "Shadow Dash",       new[] { "002-00-953","002-01-955","002-02-952","002-03-954","002-04-954","002-05-954","002-06-954","002-07-954","002-08-954" } },
+            { "Shadow Dash Sharp", new[] { "002-00-953","002-01-955","002-02-952","002-03-954","002-04-954","002-05-954","002-06-954","002-07-954","002-08-954" } },
+            // Dash Down / Quake Fall → use Airborne (Hornet falls needle-first)
+            { "Dash Down",         new[] { "003-07-1106","003-08-1098","003-09-1100","003-10-1107","003-11-1101","003-12-1104","003-13-1097","003-14-694" } },
+            { "Shadow Dash Down",  new[] { "003-07-1106","003-08-1098","003-09-1100","003-10-1107","003-11-1101","003-12-1104","003-13-1097","003-14-694" } },
+            { "Shadow Dash Down Sharp", new[] { "003-07-1106","003-08-1098","003-09-1100","003-10-1107","003-11-1101","003-12-1104","003-13-1097","003-14-694" } },
 
-            // --- Taking damage ---
-            { "Recoil",            new[] { "idle0000" } },
-            { "Stun",              new[] { "idle0000" } },
+            // ── Attacks (006.Slash, 004.SlashAlt, 009.UpSlash, 010.DownSpike, 125.Wall Slash) ──
+            { "Slash",             new[] { "006-00-901","006-01-728","006-02-907","006-03-826","006-04-901" } },
+            { "SlashAlt",          new[] { "004-00-828","004-01-904","004-02-903","004-03-850","004-04-155" } },
+            { "UpSlash",           new[] { "009-00-718","009-01-718","009-02-720","009-03-649","009-04-714","009-05-714","009-06-715" } },
+            { "DownSlash",         new[] { "010-00-593","010-01-647","010-02-596","010-03-591" } },
+            { "Wall Slash",        new[] { "125-00-947","125-01-948","125-02-949","125-03-1227","125-04-1231","125-05-1226","125-06-1236" } },
 
-            // --- Misc game states ---
-            { "Swim",              new[] { "idle0000" } },
-            { "Wake Up Ground",    new[] { "idle0000","idle0001","idle0002" } },
-            { "Hazard Respawn",    new[] { "idle0000" } },
-            { "Exit Door To Idle", new[] { "idle0000","idle0001","idle0002","idle0003" } },
+            // ── Spells → mapped to closest Hornet equivalent (no true spell analogue) ──
+            // "Fireball" in HK = forward spell cast. Hornet has no spells; nearest motion is a side slash.
+            { "Fireball",          new[] { "006-00-901","006-01-728","006-02-907","006-03-826","006-04-901" } },
+            { "Quake Antic",       new[] { "009-00-718","009-01-718","009-02-720","009-03-649","009-04-714" } },
+            { "Quake Fall",        new[] { "003-07-1106","003-08-1098","003-09-1100","003-10-1107","003-11-1101","003-12-1104","003-13-1097","003-14-694" } },
+            { "Quake Fall 2",      new[] { "003-07-1106","003-08-1098","003-09-1100","003-10-1107","003-11-1101","003-12-1104","003-13-1097","003-14-694" } },
+            { "Quake Land",        new[] { "012-00-1046","012-01-1049","012-02-1047","012-03-1050","012-04-1050","012-05-1050","012-06-1048","012-07-1045","012-08-1045","012-09-1045","012-10-1045","012-11-1045" } },
+
+            // ── Taking damage / stun (021.Recoil) ─────────────────────────
+            { "Recoil",            new[] { "021-00-1284","021-01-1284","021-02-1285","021-03-1285","021-04-1283","021-05-1283","021-06-1287","021-07-1287","021-08-1286" } },
+            { "Stun",              new[] { "021-00-1284","021-01-1284","021-02-1285","021-03-1285","021-04-1283","021-05-1283","021-06-1287","021-07-1287","021-08-1286" } },
+
+            // ── Death (017.Death, 024.Acid Death, 025.Spike Death) ────────
+            { "Death",             new[] { "017-00-968","017-01-966","017-02-969","017-03-964","017-04-962","017-05-967","017-06-970","017-07-965","017-08-963","017-09-967","017-10-970","017-11-965","017-12-963","017-13-970","017-14-965","017-15-963" } },
+            { "Acid Death",        new[] { "024-00-1285","024-01-1286","024-02-1622","024-03-1351","024-04-1353","024-05-1350","024-06-1352" } },
+            { "Spike Death",       new[] { "025-00-1173","025-01-880","025-02-1174","025-03-885","025-04-883","025-05-882","025-06-881" } },
+
+            // ── Misc / game states ────────────────────────────────────────
+            // Swim: use Surface TurnToSwim as nearest motion
+            { "Swim",              new[] { "020-00-143","020-01-142","020-02-1315","020-03-1318","020-04-1311","020-05-1302","020-06-1306","020-07-1312","020-08-1317","020-09-1300","020-10-1313","020-11-1307" } },
+            // Bench sit
+            { "Wake Up Ground",    new[] { "039-00-1291","039-01-1177","039-02-1176","039-03-1178" } },
+            { "Sit",               new[] { "039-00-1291","039-01-1177","039-02-1176","039-03-1178" } },
+            // Hazard respawn / door transitions → hold first Idle frame
+            { "Hazard Respawn",    new[] { "001-00-873" } },
+            { "Exit Door To Idle", new[] { "001-00-873","001-01-875","001-02-869","001-03-874" } },
         };
 
         private tk2dSpriteAnimator _animator;
@@ -128,7 +143,8 @@ namespace HornetInHallownest
 
             ApplyToggleState();
 
-            if (FrameSprites != null && FrameSprites.TryGetValue("idle0000", out var first))
+            // Show first Idle frame immediately on spawn
+            if (FrameSprites != null && FrameSprites.TryGetValue("001-00-873", out var first))
                 _overlay.sprite = first;
         }
 

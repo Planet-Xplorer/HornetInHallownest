@@ -31,10 +31,11 @@ namespace HornetInHallownest
             {
                 if (!resourceName.EndsWith(".png")) continue;
 
-                // Resource name format: HornetInHallownest.Resources.Sprites.<frameName>.png
+                // Resource name format: HornetInHallownest.Resources.Every_Hornet_Animation.Knight.{NNN}.{AnimName}.{NNN-FF-ID}.png
+                // (dots in folder names become extra segments — frame key is always the second-to-last segment)
                 var parts = resourceName.Split('.');
                 if (parts.Length < 2) continue;
-                var frameName = parts[parts.Length - 2]; // e.g. "idle0000"
+                var frameName = parts[parts.Length - 2]; // e.g. "001-00-873"
 
                 using var stream = assembly.GetManifestResourceStream(resourceName);
                 if (stream == null) continue;
@@ -45,11 +46,6 @@ namespace HornetInHallownest
                 var tex = new Texture2D(2, 2, TextureFormat.RGBA32, false);
                 tex.filterMode = FilterMode.Bilinear;
                 tex.LoadImage(bytes);
-
-                // Silksong's atlas packs some sprites with FlipMode.Tk2d (stored 90° CW).
-                // The extractor doesn't un-rotate them, so landscape PNGs need a 90° CCW fix.
-                if (tex.width > tex.height * 1.08f)
-                    tex = Rotate90CCW(tex);
 
                 var spr = Sprite.Create(
                     tex,
@@ -62,24 +58,6 @@ namespace HornetInHallownest
 
             HornetSpriteDriver.FrameSprites = sprites;
             Log($"Loaded {sprites.Count} Hornet frames");
-        }
-
-        // Rotate a texture 90° counter-clockwise.
-        // Formula (bottom-left origin): new(nx, ny) = old(ny, H-1-nx)
-        // New dimensions: newW=H_old, newH=W_old
-        private static Texture2D Rotate90CCW(Texture2D src)
-        {
-            int w = src.width, h = src.height;
-            var pixels = src.GetPixels();
-            var rot    = new Color[w * h];
-            for (int nx = 0; nx < h; nx++)
-                for (int ny = 0; ny < w; ny++)
-                    rot[ny * h + nx] = pixels[(h - 1 - nx) * w + ny];
-            var dst = new Texture2D(h, w, TextureFormat.RGBA32, false);
-            dst.filterMode = FilterMode.Bilinear;
-            dst.SetPixels(rot);
-            dst.Apply();
-            return dst;
         }
 
         private void OnHeroStart(On.HeroController.orig_Start orig, HeroController self)
