@@ -12,7 +12,7 @@ namespace HornetInHallownest
         // Toggle: press ToggleKey to switch between Hornet and Knight skins.
         // Static so state persists across scene loads.
         public static bool    IsEnabled  = true;
-        public static KeyCode ToggleKey  = KeyCode.Slash;
+        public static KeyCode ToggleKey  = KeyCode.F5;
 
         // Maps HK animation clip names (from Assembly-CSharp HeroAnimationController)
         // to ordered Hornet sprite frame name arrays.

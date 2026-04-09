@@ -86,12 +86,20 @@ namespace HornetInHallownest
         {
             orig(self);
 
-            // Remove any stale driver from a previous scene
-            var old = self.GetComponent<HornetSpriteDriver>();
-            if (old != null) Object.Destroy(old);
+            // Remove any stale components from a previous scene
+            var oldDriver = self.GetComponent<HornetSpriteDriver>();
+            if (oldDriver != null) Object.Destroy(oldDriver);
+
+            var oldCrest = self.GetComponent<CrestManager>();
+            if (oldCrest != null) Object.Destroy(oldCrest);
+
+            var oldMovement = self.GetComponent<MovementManager>();
+            if (oldMovement != null) Object.Destroy(oldMovement);
 
             self.gameObject.AddComponent<HornetSpriteDriver>();
-            Log("HornetSpriteDriver attached");
+            self.gameObject.AddComponent<CrestManager>();
+            self.gameObject.AddComponent<MovementManager>();
+            Log("HornetSpriteDriver + CrestManager + MovementManager attached");
         }
     }
 }
