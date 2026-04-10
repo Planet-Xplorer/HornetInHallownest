@@ -50,7 +50,7 @@ namespace HornetInHallownest
                 var spr = Sprite.Create(
                     tex,
                     new Rect(0, 0, tex.width, tex.height),
-                    new Vector2(0.5f, 0.0f), // bottom-center pivot: anchors sprite at feet level
+                    new Vector2(0.5f, 0.5f), // center pivot: centers sprite on transform position
                     ppu
                 );
                 sprites[frameName] = spr;
