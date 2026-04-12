@@ -48,7 +48,7 @@ namespace HornetInHallownest
         private Vector2 _clawlineDirection;
         private bool _isClawlining;
         private const float ClawlineMaxDistance = 8f;
-        private const float ClawlineSpeed = 50f;
+    private bool _hasDoubleJumped;
 
         void Awake()
         {
@@ -92,11 +92,18 @@ namespace HornetInHallownest
                 ApplyShadowDashSuppression(isHornet);
                 ApplyHornetSpeeds(isHornet);
                 ApplyHornetVisualOverrides(isHornet);
+                _hasDoubleJumped = false;
             }
 
             if (!isHornet && _isClawlining)
             {
                 EndClawline();
+            }
+            // Reset double jump when grounded
+            var hc = GetComponent<HeroController>();
+            if (isHornet && hc != null && hc.cState != null && hc.cState.onGround)
+            {
+                _hasDoubleJumped = false;
             }
         }
 
@@ -188,7 +195,12 @@ namespace HornetInHallownest
         private bool OnCanDoubleJump(On.HeroController.orig_CanDoubleJump orig, HeroController self)
         {
             if (!HornetSpriteDriver.IsEnabled) return orig(self);
-            return true;
+            if (!_hasDoubleJumped)
+            {
+                _hasDoubleJumped = true;
+                return true;
+            }
+            return false;
         }
 
         private bool OnCanInfiniteAirJump(On.HeroController.orig_CanInfiniteAirJump orig, HeroController self)

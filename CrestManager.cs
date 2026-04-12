@@ -51,11 +51,13 @@ namespace HornetInHallownest
         void OnEnable()
         {
             On.HeroController.Attack += OnAttack;
+            On.HealthManager.Hit += OnHealthHit;
         }
 
         void OnDisable()
         {
             On.HeroController.Attack -= OnAttack;
+            On.HealthManager.Hit -= OnHealthHit;
         }
 
         // Intercept every attack. When Hornet is active, dispatch to the
@@ -184,6 +186,70 @@ namespace HornetInHallownest
             On.HeroController.Attack -= OnAttack;
             hc.Attack(dir);
             On.HeroController.Attack += OnAttack;
+        }
+
+        // ── Damage Modulation ──────────────────────────────────────────────
+        // Intercept every hit on enemies to apply crest-specific damage multipliers,
+        // knockback scaling, and special effects.
+        //
+        // Modify hitInstance fields BEFORE calling orig() to change:
+        //   - Multiplier:         1.0 = normal, 1.25 = +25% damage
+        //   - MagnitudeMultiplier: knockback force scaling (1.0 = normal)
+        //   - Direction:          0 = right, 90 = up, 180 = left, 270 = down
+        //   - DamageDealt:        base damage value (usually leaves this alone)
+        private void OnHealthHit(On.HealthManager.orig_Hit orig,
+                                 HealthManager self,
+                                 HitInstance hitInstance)
+        {
+            if (!HornetSpriteDriver.IsEnabled || hitInstance.AttackType != AttackTypes.Nail)
+            {
+                orig(self, hitInstance);
+                return;
+            }
+
+            // Apply crest-specific damage modifications
+            switch (CurrentCrest)
+            {
+                case CrestType.Hunter:
+                    // Hunter's Crest — balanced baseline damage
+                    hitInstance.Multiplier *= 1.0f;  // 100% of normal dagger damage
+                    hitInstance.MagnitudeMultiplier *= 1.0f;  // Normal knockback
+                    break;
+
+                case CrestType.Reaper:
+                    // TODO: Reaper Crest — higher damage, lower speed
+                    break;
+
+                case CrestType.Wanderer:
+                    // TODO: Wanderer's Crest — pierce through enemies
+                    break;
+
+                case CrestType.Warrior:
+                    // TODO: Beast Crest — massive damage, slow attacks
+                    break;
+
+                case CrestType.Witch:
+                    // TODO: Witch Crest — projectile spawning
+                    break;
+
+                case CrestType.Toolmaster:
+                    // TODO: Architect Crest — tool-based attacks
+                    break;
+
+                case CrestType.Spinner:
+                    // TODO: Shaman Crest — spinning attack
+                    break;
+
+                case CrestType.Cursed:
+                    // TODO: Cursed Crest — special tendril behavior
+                    break;
+
+                case CrestType.Cloakless:
+                    // Cloakless: Hornet's base attack (no crest passive)
+                    break;
+            }
+
+            orig(self, hitInstance);
         }
     }
 }

@@ -328,6 +328,8 @@
     <None Include=".gitignore" />
     <None Include="README.md" />
     <None Include="Resources\.gitignore" />
-    <EmbeddedResource Include="Resources/Every_Hornet_Animation/Knight/**/*.png" />
+    <EmbeddedResource Include="Resources/Audio/**/*" />
+    <EmbeddedResource Include="Resources/Every_Hornet_Animation/**/*" />
+    <EmbeddedResource Include="Resources/Gameplay_Menu_Sprites/**/*" />
   </ItemGroup>
 </Project>

@@ -35,3 +35,11 @@ https://www.reddit.com/r/Silksong/comments/1nmzg0p/all_silksong_sprites_sorted_a
 Thank you to Yuki.kaco on discord for making the main google drive where I got the actual sprites in a much more structured and labelled way.
 
 Most of all, thanks to Team Cherry for making two awesome games in a row, and inspiring me to make this mod in the first place.
+
+
+Location of Hollow Knight Game file Executable folder:
+/home/fs/Documents/Hollow-Knight/Hollow Knight v1.5.78.11833
+
+
+Location of Silksong Game File Executable Folder:
+/home/fs/snap/steam/common/.local/share/Steam/steamapps/common/Hollow Knight Silksong

@@ -8,7 +8,7 @@ namespace HornetInHallownest
     public class HornetInHallownest : Mod
     {
         internal static HornetInHallownest Instance;
-
+    private static bool _maxHpBoosted;
         public HornetInHallownest() : base("Hornet In Hallownest") { }
 
         public override string GetVersion() => "v1";
@@ -24,6 +24,7 @@ namespace HornetInHallownest
         {
             var assembly = Assembly.GetExecutingAssembly();
             var sprites  = new Dictionary<string, Sprite>();
+            HornetSpriteDriver.FrameAnimSprites = new Dictionary<string, List<Sprite>>();
             // Hornet sprites are ~180-215 px; at 64 PPU they match tk2d world-unit scale
             const float ppu = 64f;
 
@@ -31,11 +32,14 @@ namespace HornetInHallownest
             {
                 if (!resourceName.EndsWith(".png")) continue;
 
-                // Resource name format: HornetInHallownest.Resources.Every_Hornet_Animation.Knight.{NNN}.{AnimName}.{NNN-FF-ID}.png
+                // Resource name format: HornetInHallownest.Resources.Every_Hornet_Animation.<Folder>.<AnimName>.<NNN-FF-ID>.png
                 // (dots in folder names become extra segments — frame key is always the second-to-last segment)
                 var parts = resourceName.Split('.');
-                if (parts.Length < 2) continue;
+                if (parts.Length < 3) continue;
                 var frameName = parts[parts.Length - 2]; // e.g. "001-00-873"
+                var animFolder = parts[parts.Length - 3];
+                var animName = parts.Length >= 4 ? parts[parts.Length - 4] : string.Empty;
+                var fullAnimKey = string.IsNullOrEmpty(animName) ? animFolder : animFolder + "/" + animName;
 
                 using var stream = assembly.GetManifestResourceStream(resourceName);
                 if (stream == null) continue;
@@ -54,10 +58,17 @@ namespace HornetInHallownest
                     ppu
                 );
                 sprites[frameName] = spr;
+
+                if (!HornetSpriteDriver.FrameAnimSprites.TryGetValue(fullAnimKey, out var animList))
+                {
+                    animList = new List<Sprite>();
+                    HornetSpriteDriver.FrameAnimSprites[fullAnimKey] = animList;
+                }
+                animList.Add(spr);
             }
 
             HornetSpriteDriver.FrameSprites = sprites;
-            Log($"Loaded {sprites.Count} Hornet frames");
+            Log($"Loaded {sprites.Count} Hornet frames into {HornetSpriteDriver.FrameAnimSprites.Count} animation categories");
         }
 
         private void OnHeroStart(On.HeroController.orig_Start orig, HeroController self)
@@ -74,10 +85,23 @@ namespace HornetInHallownest
             var oldMovement = self.GetComponent<MovementManager>();
             if (oldMovement != null) Object.Destroy(oldMovement);
 
+            var oldHud = self.GetComponent<HudSpriteManager>();
+            if (oldHud != null) Object.Destroy(oldHud);
+
             self.gameObject.AddComponent<HornetSpriteDriver>();
             self.gameObject.AddComponent<CrestManager>();
             self.gameObject.AddComponent<MovementManager>();
-            Log("HornetSpriteDriver + CrestManager + MovementManager attached");
+            self.gameObject.AddComponent<HudSpriteManager>();
+
+            if (!_maxHpBoosted && PlayerData.instance != null)
+            {
+                PlayerData.instance.AddToMaxHealth(1);
+                self.MaxHealth();
+                _maxHpBoosted = true;
+                Log("Max HP boosted by 1");
+            }
+
+            Log("HornetSpriteDriver + CrestManager + MovementManager + HudSpriteManager attached");
         }
     }
 }

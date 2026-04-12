@@ -8,6 +8,7 @@ namespace HornetInHallownest
     {
         // Populated by HornetInHallownest.LoadHornetSprites()
         internal static Dictionary<string, Sprite> FrameSprites;
+        internal static Dictionary<string, List<Sprite>> FrameAnimSprites;
 
         // Toggle: press ToggleKey to switch between Hornet and Knight skins.
         // Static so state persists across scene loads.
