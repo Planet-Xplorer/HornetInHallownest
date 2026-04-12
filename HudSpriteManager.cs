@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using GlobalEnums;
 
 namespace HornetInHallownest
 {
@@ -11,6 +12,24 @@ namespace HornetInHallownest
         private bool _initialized;
         private readonly List<AnimatedHudOverlay> _overlays = new List<AnimatedHudOverlay>();
         private readonly HashSet<string> _missingLogged = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+
+        // Crest UI system (from Silksong HUD analysis)
+        private CrestType _currentDisplayedCrest = CrestType.Hunter;
+        private AnimatedHudOverlay _crestOverlay;
+        private GameObject _crestDisplayContainer;
+        private SpriteRenderer _crestIconRenderer;
+        private tk2dSprite _crestIconTk2d;
+        
+        // Silk spool integration
+        private AnimatedHudOverlay _silkSpoolOverlay;
+        private Component _soulOrbTarget;
+        
+        // HUD frame management
+        private Component _hudFrameTarget;
+        private AnimatedHudOverlay _hudFrameOverlay;
+        
+        // Coroutine tracking for safe cleanup
+        private System.Collections.Coroutine _crestSwitchCoroutine;
 
         void Start()
         {
@@ -24,11 +43,18 @@ namespace HornetInHallownest
                 EnsureHudOverlays();
             }
 
+            // Update all overlays
             foreach (var overlay in _overlays)
             {
                 overlay.Tick(Time.deltaTime);
                 overlay.Enabled = HornetSpriteDriver.IsEnabled;
             }
+            
+            // Update crest display if changed
+            UpdateCrestDisplay();
+            
+            // Update silk spool display
+            UpdateSilkSpoolDisplay();
         }
 
         private void EnsureHudOverlays()
@@ -36,34 +62,46 @@ namespace HornetInHallownest
             if (_initialized) return;
             if (HornetSpriteDriver.FrameSprites == null || HornetSpriteDriver.FrameAnimSprites == null) return;
 
+            // Setup HUD frame (Hunter frame animation)
             var frameAnim = FindAnimation("HUD Frame Hunter v2 Idle", "HUD Frame Hunter v3 Idle", "HUD Frame Hunter v2", "HUD Frame Hunter v3");
-            var spoolAnim = FindAnimation("Spool Appear", "Spool Extender Appear", "Spool Cursed Bob", "Spool Cursed");
-            var maskAnim = FindAnimation("Fractured Mask Appear", "Fractured Mask Shine", "Fractured Mask Disappear");
-
-            var frameTarget = FindTargetComponent(new[] { "HUD Frame", "HUDFrame", "HUD", "Hud" }, new[] { "frame" });
-            var soulTarget = FindTargetComponent(new[] { "normalSoulOrb", "soulOrbIcon", "hardcoreSoulOrbCg", "boundSoulDisplay", "boundSoulButton" }, new[] { "soul" });
-            var maskTargets = FindMaskTargets();
-
-            if (frameTarget != null && frameAnim != null)
+            _hudFrameTarget = FindTargetComponent(new[] { "HUD Frame", "HUDFrame", "HUD", "Hud" }, new[] { "frame" });
+            
+            if (_hudFrameTarget != null && frameAnim != null)
             {
-                var overlay = CreateOverlay(frameTarget, "HornetHudFrameOverlay", frameAnim[0]);
-                if (overlay != null) _overlays.Add(new AnimatedHudOverlay(overlay, frameAnim));
+                var overlay = CreateOverlay(_hudFrameTarget, "HornetHudFrameOverlay", frameAnim[0]);
+                if (overlay != null)
+                {
+                    _hudFrameOverlay = new AnimatedHudOverlay(overlay, frameAnim);
+                    _overlays.Add(_hudFrameOverlay);
+                }
             }
             else
             {
                 LogMissing("HUD frame hunter overlay");
             }
 
-            if (soulTarget != null && spoolAnim != null)
+            // Setup silk spool (replaces soul orb)
+            var spoolAnim = FindAnimation("Spool Appear", "Spool Extender Appear", "Spool Cursed Bob", "Spool Cursed");
+            _soulOrbTarget = FindTargetComponent(new[] { "normalSoulOrb", "soulOrbIcon", "hardcoreSoulOrbCg", "boundSoulDisplay", "boundSoulButton" }, new[] { "soul" });
+            
+            if (_soulOrbTarget != null && spoolAnim != null)
             {
-                var overlay = CreateOverlay(soulTarget, "HornetSoulSpoolOverlay", spoolAnim[0]);
-                if (overlay != null) _overlays.Add(new AnimatedHudOverlay(overlay, spoolAnim));
+                var overlay = CreateOverlay(_soulOrbTarget, "HornetSilkSpoolOverlay", spoolAnim[0]);
+                if (overlay != null)
+                {
+                    _silkSpoolOverlay = new AnimatedHudOverlay(overlay, spoolAnim);
+                    _overlays.Add(_silkSpoolOverlay);
+                }
             }
             else
             {
-                LogMissing("soul spool overlay");
+                LogMissing("silk spool overlay");
             }
 
+            // Setup mask overlays (Hornet's mask system)
+            var maskAnim = FindAnimation("Fractured Mask Appear", "Fractured Mask Shine", "Fractured Mask Disappear");
+            var maskTargets = FindMaskTargets();
+            
             if (maskAnim != null)
             {
                 foreach (var target in maskTargets)
@@ -76,6 +114,9 @@ namespace HornetInHallownest
             {
                 LogMissing("mask overlays");
             }
+
+            // Setup crest display system
+            SetupCrestDisplay();
 
             _initialized = true;
         }
@@ -183,12 +224,231 @@ namespace HornetInHallownest
             return target.GetComponent<Renderer>();
         }
 
+        // ── Crest Display System (Silksong HUD integration) ──────────────────────
+        private void SetupCrestDisplay()
+        {
+            // Find or create crest display container
+            var crestContainer = GameObject.Find("Crest Display");
+            if (crestContainer == null)
+            {
+                crestContainer = new GameObject("Crest Display");
+                // Position it where Silksong's crest UI would be
+                crestContainer.transform.position = new Vector3(-4f, 2.5f, 0f);
+            }
+            
+            _crestDisplayContainer = crestContainer;
+            
+            // Create crest icon renderer
+            _crestIconRenderer = _crestDisplayContainer.AddComponent<SpriteRenderer>();
+            _crestIconRenderer.sortingLayerName = "UI";
+            _crestIconRenderer.sortingOrder = 100;
+            
+            // Set initial crest
+            UpdateCrestIcon();
+        }
+        
+        private void UpdateCrestDisplay()
+        {
+            if (_crestDisplayContainer == null) return;
+            
+            // Only update when crest actually changes
+            if (_currentDisplayedCrest != CrestManager.CurrentCrest)
+            {
+                _currentDisplayedCrest = CrestManager.CurrentCrest;
+                UpdateCrestIcon();
+                PlayCrestSwitchAnimation();
+            }
+            
+            // Enable/disable based on Hornet state
+            _crestDisplayContainer.SetActive(HornetSpriteDriver.IsEnabled);
+        }
+        
+        private void UpdateCrestIcon()
+        {
+            if (_crestIconRenderer == null) return;
+            
+            var crestSpriteKey = GetCrestSpriteKey(_currentDisplayedCrest);
+            if (HornetSpriteDriver.FrameSprites.TryGetValue(crestSpriteKey, out var crestSprite) && crestSprite != null)
+            {
+                _crestIconRenderer.sprite = crestSprite;
+            }
+            else
+            {
+                // Fallback to Hunter crest sprite with null check
+                if (HornetSpriteDriver.FrameSprites.TryGetValue("Hunter Crest Icon", out crestSprite) && crestSprite != null)
+                {
+                    _crestIconRenderer.sprite = crestSprite;
+                }
+                else
+                {
+                    // Ultimate fallback - clear sprite if none available
+                    _crestIconRenderer.sprite = null;
+                }
+            }
+        }
+        
+        private string GetCrestSpriteKey(CrestType crestType)
+        {
+            return crestType switch
+            {
+                CrestType.Hunter => "Hunter Crest Icon v3", // Use v3 when available for future upgrades
+                CrestType.Reaper => "Reaper Crest Icon", 
+                CrestType.Wanderer => "Wanderer Crest Icon",
+                CrestType.Warrior => "Warrior Crest Icon",
+                CrestType.Witch => "Witch Crest Icon",
+                CrestType.Toolmaster => "Toolmaster Crest Icon",
+                CrestType.Spinner => "Spinner Crest Icon",
+                CrestType.Cloakless => "Cloakless Crest Icon",
+                CrestType.Cursed => "Cursed Crest Icon",
+                _ => "Hunter Crest Icon v3"
+            };
+        }
+        
+        private void PlayCrestSwitchAnimation()
+        {
+            if (_crestIconRenderer == null) return;
+            
+            // Stop any existing crest switch animation
+            if (_crestSwitchCoroutine != null)
+            {
+                StopCoroutine(_crestSwitchCoroutine);
+                _crestSwitchCoroutine = null;
+            }
+            
+            // Enhanced crest switch animation inspired by Silksong FSM
+            _crestSwitchCoroutine = StartCoroutine(CrestSwitchAnimationSequence());
+        }
+        
+        private System.Collections.IEnumerator CrestSwitchAnimationSequence()
+        {
+            if (_crestIconRenderer == null) yield break;
+            
+            Vector3 originalScale = _crestIconRenderer.transform.localScale;
+            Color originalColor = _crestIconRenderer.color;
+            
+            // Phase 1: Fade out and scale down
+            float elapsed = 0f;
+            while (elapsed < 0.2f)
+            {
+                float t = elapsed / 0.2f;
+                _crestIconRenderer.transform.localScale = Vector3.Lerp(originalScale, originalScale * 0.5f, t);
+                _crestIconRenderer.color = Color.Lerp(originalColor, new Color(1f, 1f, 1f, 0f), t);
+                elapsed += Time.deltaTime;
+                yield return null;
+            }
+            
+            // Phase 2: Switch sprite (this happens during the fade)
+            UpdateCrestIcon();
+            
+            // Phase 3: Scale up and fade in with bounce
+            elapsed = 0f;
+            while (elapsed < 0.3f)
+            {
+                float t = elapsed / 0.3f;
+                
+                // Bounce effect using ease-out-back
+                float bounce = 1f + Mathf.Sin(t * Mathf.PI) * 0.3f * (1f - t);
+                _crestIconRenderer.transform.localScale = originalScale * bounce;
+                
+                // Fade in
+                _crestIconRenderer.color = Color.Lerp(new Color(1f, 1f, 1f, 0f), originalColor, t);
+                
+                elapsed += Time.deltaTime;
+                yield return null;
+            }
+            
+            // Reset to final state
+            _crestIconRenderer.transform.localScale = originalScale;
+            _crestIconRenderer.color = originalColor;
+        }
+        
+        // Legacy method kept for compatibility, but not used in new animation system
+        private System.Collections.IEnumerator ScalePulse(Transform target, float duration)
+        {
+            Vector3 originalScale = target.localScale;
+            Vector3 targetScale = originalScale * 1.2f;
+            
+            float elapsed = 0f;
+            while (elapsed < duration)
+            {
+                target.localScale = Vector3.Lerp(originalScale, targetScale, elapsed / duration);
+                elapsed += Time.deltaTime;
+                yield return null;
+            }
+            
+            elapsed = 0f;
+            while (elapsed < duration)
+            {
+                target.localScale = Vector3.Lerp(targetScale, originalScale, elapsed / duration);
+                elapsed += Time.deltaTime;
+                yield return null;
+            }
+            
+            target.localScale = originalScale;
+        }
+        
+        // ── Silk Spool Integration ───────────────────────────────────────────────
+        private void UpdateSilkSpoolDisplay()
+        {
+            if (_silkSpoolOverlay == null || _silkSpoolOverlay.Renderer == null) return;
+            
+            // Update silk spool visual based on current silk amount with division by zero protection
+            var silkPercentage = CrestManager.SilkMax > 0f ? CrestManager.SilkAmount / CrestManager.SilkMax : 0f;
+            
+            // TODO: Update spool animation based on silk amount
+            // This would involve switching between different animation states
+            // like "Spool Empty", "Spool Low", "Spool Medium", "Spool Full"
+        }
+        
+        // ── Public API for Crest Switching ───────────────────────────────────────────
+        public void SwitchToCrest(CrestType newCrest)
+        {
+            if (newCrest == _currentDisplayedCrest) return;
+            
+            _currentDisplayedCrest = newCrest;
+            CrestManager.CurrentCrest = newCrest;
+            
+            // Force immediate update
+            UpdateCrestIcon();
+            PlayCrestSwitchAnimation();
+        }
+        
+        public CrestType GetCurrentDisplayedCrest() => _currentDisplayedCrest;
+        
+        // ── Helper Methods ───────────────────────────────────────────────────────
         private void LogMissing(string item)
         {
             if (_missingLogged.Contains(item)) return;
             _missingLogged.Add(item);
             if (HornetInHallownest.Instance != null)
                 HornetInHallownest.Instance.Log($"[HudSpriteManager] no target found for {item}");
+        }
+        
+        void OnDestroy()
+        {
+            // Clean up coroutines to prevent post-destruction execution
+            if (_crestSwitchCoroutine != null)
+            {
+                StopCoroutine(_crestSwitchCoroutine);
+                _crestSwitchCoroutine = null;
+            }
+            
+            // Clean up overlay references
+            if (_crestDisplayContainer != null)
+            {
+                Destroy(_crestDisplayContainer);
+                _crestDisplayContainer = null;
+            }
+        }
+        
+        void OnDisable()
+        {
+            // Stop coroutines when disabled to prevent issues
+            if (_crestSwitchCoroutine != null)
+            {
+                StopCoroutine(_crestSwitchCoroutine);
+                _crestSwitchCoroutine = null;
+            }
         }
 
         private class AnimatedHudOverlay
@@ -197,6 +457,8 @@ namespace HornetInHallownest
             private float _timer;
             private int _index;
             private bool _enabled = true;
+            private bool _loop = true;
+            private bool _finished;
 
             public SpriteRenderer Renderer { get; }
             public bool Enabled
@@ -209,23 +471,76 @@ namespace HornetInHallownest
                         Renderer.enabled = value;
                 }
             }
+            
+            public bool IsPlaying => !_finished && _enabled;
+            public bool Loop { get => _loop; set => _loop = value; }
 
-            public AnimatedHudOverlay(SpriteRenderer renderer, List<Sprite> frames)
+            public AnimatedHudOverlay(SpriteRenderer renderer, List<Sprite> frames, bool loop = true)
             {
                 Renderer = renderer;
                 _frames = frames ?? new List<Sprite>();
-                if (Renderer != null && _frames.Count > 0)
+                _loop = loop;
+                
+                // Validate animation state
+                if (_frames.Count == 0)
+                {
+                    // Mark as finished if no frames available
+                    _finished = true;
+                    if (Renderer != null)
+                        Renderer.sprite = null;
+                }
+                else if (Renderer != null)
+                {
+                    // Set initial frame only if valid frames exist
                     Renderer.sprite = _frames[0];
+                }
             }
 
             public void Tick(float deltaTime)
             {
-                if (_frames.Count <= 1 || Renderer == null) return;
+                if (_frames.Count <= 1 || Renderer == null || _finished) return;
+                
                 _timer += deltaTime;
                 if (_timer < FrameDuration) return;
+                
                 _timer -= FrameDuration;
-                _index = (_index + 1) % _frames.Count;
-                Renderer.sprite = _frames[_index];
+                _index++;
+                
+                if (_index >= _frames.Count)
+                {
+                    if (_loop)
+                    {
+                        _index = 0;
+                    }
+                    else
+                    {
+                        _index = _frames.Count - 1;
+                        _finished = true;
+                        return;
+                    }
+                }
+                
+                // Additional safety check before accessing frame
+                if (_index < _frames.Count && _frames[_index] != null)
+                {
+                    Renderer.sprite = _frames[_index];
+                }
+            }
+            
+            public void Restart()
+            {
+                _index = 0;
+                _timer = 0f;
+                _finished = false;
+                if (Renderer != null && _frames.Count > 0)
+                    Renderer.sprite = _frames[0];
+            }
+            
+            public void PlayAnimation(List<Sprite> newFrames, bool loop = true)
+            {
+                _frames = newFrames ?? new List<Sprite>();
+                _loop = loop;
+                Restart();
             }
         }
     }

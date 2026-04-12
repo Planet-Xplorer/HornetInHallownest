@@ -32,7 +32,7 @@ Thanks to the whole hollow knight community for being cool (and for not making t
 Thanks to Reddit user Sumwann for posting all the silksong assets for me properly extracted! I tried to do it on my own and failed miserably so thanks to you man (even if i didn't end up using these)!
 https://www.reddit.com/r/Silksong/comments/1nmzg0p/all_silksong_sprites_sorted_and_renamed/
 
-Thank you to Yuki.kaco on discord for making the main google drive where I got the actual sprites in a much more structured and labelled way.
+Thank you to Yuki.kaco on discord for making the main google drive where I got the actual sprites in a much more structured and labelled way. Also thanks for the help whenever I asked silly questions.
 
 Most of all, thanks to Team Cherry for making two awesome games in a row, and inspiring me to make this mod in the first place.
 

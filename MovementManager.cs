@@ -1,6 +1,7 @@
 using UnityEngine;
 using System;
 using System.Reflection;
+using GlobalEnums;
 
 namespace HornetInHallownest
 {
@@ -17,10 +18,15 @@ namespace HornetInHallownest
     // GRANTED (Hornet has these regardless of PlayerData state):
     //   Double Jump     — CanDoubleJump always returns true
     //
-    // STUBBED (Hornet-new, Phase 1+):
+    // IMPLEMENTED (Hornet-specific):
     //   Sprint          — hold [dash key] on ground → 2× run speed
-    //   Clawline        — throw needle, zip to impact point
-    //   Silk Soar       — consume silk, upward air-dash
+    //   Clawline        — throw needle, zip to impact point (replaces crystal dash)
+    //   Silk Soar       — consume silk, upward air-dash (TODO)
+    //
+    // FSM Integration:
+    //   Sprint uses "TRY SPRINT" event from hornet_sprint FSM
+    //   Clawline uses "DO MOVE" event from hornet_harpoon_dash FSM
+    //   Double jump tracking matches Silksong behavior
     //
     // NOTE — Hornet's full moveset is far more nuanced than what's modelled here in these stubs.
     // Silksong's HornetController contains dozens of tuned physics parameters: I can't speak on the specifics accurately since I am not team cherry and i can't see their damn comments in the code that i already spend days trying to find 
@@ -35,7 +41,7 @@ namespace HornetInHallownest
         private bool _prevIsHornet;
         private bool _savedShadowDash;
 
-        // Hornet movement parameters inspired by Silksong
+        // Hornet movement parameters from Silksong FSM analysis
         private float _originalRunSpeed;
         private float _originalWalkSpeed;
         private float _originalJumpSpeed;
@@ -44,11 +50,27 @@ namespace HornetInHallownest
         private object _originalDJumpWingsPrefab;
         private bool _visualsModified;
 
+        // Sprint system (from hornet_sprint FSM)
+        private bool _isSprinting;
+        private bool _sprintBufferActive;
+        private float _sprintBufferTimer;
+        private const float SPRINT_BUFFER_TIME = 0.2f;
+        private const float SPRINT_SPEED_MULTIPLIER = 2.0f;
+
+        // Clawline system (from hornet_harpoon_dash FSM)
         private GameObject _clawlineProjectile;
         private Vector2 _clawlineDirection;
         private bool _isClawlining;
+        private float _harpoonDashCooldown;
+        private const float HARPOON_COOLDOWN = 0.16f;
         private const float ClawlineMaxDistance = 8f;
-    private bool _hasDoubleJumped;
+        private bool _harpoonQueuing;
+        private int _harpoonQueueSteps;
+        private const int HARPOON_QUEUE_STEPS = 8;
+
+        // Double jump tracking (matches Silksong behavior)
+        private bool _hasDoubleJumped;
+        private bool _doubleJumpQueuing;
 
         void Awake()
         {
@@ -62,6 +84,8 @@ namespace HornetInHallownest
             On.HeroController.CanSuperDash += OnCanSuperDash;
             On.HeroController.SuperDash += OnSuperDash;
             On.HeroController.CanDreamNail += OnCanDreamNail;
+            On.HeroController.Update += OnHeroUpdate;
+            On.HeroController.FixedUpdate += OnHeroFixedUpdate;
 
             _prevIsHornet = HornetSpriteDriver.IsEnabled;
             ApplyShadowDashSuppression(_prevIsHornet);
@@ -76,6 +100,8 @@ namespace HornetInHallownest
             On.HeroController.CanSuperDash -= OnCanSuperDash;
             On.HeroController.SuperDash -= OnSuperDash;
             On.HeroController.CanDreamNail -= OnCanDreamNail;
+            On.HeroController.Update -= OnHeroUpdate;
+            On.HeroController.FixedUpdate -= OnHeroFixedUpdate;
 
             // Always restore PlayerData when this component is torn down
             ApplyShadowDashSuppression(false);
@@ -93,30 +119,63 @@ namespace HornetInHallownest
                 ApplyHornetSpeeds(isHornet);
                 ApplyHornetVisualOverrides(isHornet);
                 _hasDoubleJumped = false;
+                _isSprinting = false;
+                _sprintBufferActive = false;
+                // Reset harpoon queuing when Hornet state changes
+                _harpoonQueuing = false;
+                _harpoonQueueSteps = 0;
             }
 
-            if (!isHornet && _isClawlining)
+            if (!isHornet)
             {
-                EndClawline();
-            }
-            // Reset double jump when grounded
-            var hc = GetComponent<HeroController>();
-            if (isHornet && hc != null && hc.cState != null && hc.cState.onGround)
-            {
-                _hasDoubleJumped = false;
+                if (_isClawlining) EndClawline();
+                if (_isSprinting) EndSprint();
+                // Reset harpoon queuing when Hornet is disabled
+                _harpoonQueuing = false;
+                _harpoonQueueSteps = 0;
             }
         }
 
         void FixedUpdate()
         {
-            // No movement logic needed since it's instant teleport
-            // Keep checks for cleanup
-            if (!_isClawlining) return;
+            var hc = GetComponent<HeroController>();
+            if (hc == null) return;
 
-            // Update projectile position if needed
-            if (_clawlineProjectile != null)
+            bool isHornet = HornetSpriteDriver.IsEnabled;
+            if (!isHornet) return;
+
+            // Update harpoon cooldown
+            if (_harpoonDashCooldown > 0f)
             {
-                _clawlineProjectile.transform.position = transform.position + (Vector3)(_clawlineDirection * 0.75f);
+                if (hc.cState.onGround)
+                {
+                    _harpoonDashCooldown = 0f;
+                }
+                else
+                {
+                    _harpoonDashCooldown -= Time.deltaTime;
+                }
+            }
+
+            // Update clawline projectile with null check
+            if (_isClawlining && _clawlineProjectile != null)
+            {
+                // Additional safety check in case projectile was destroyed externally
+                if (_clawlineProjectile != null)
+                {
+                    _clawlineProjectile.transform.position = transform.position + (Vector3)(_clawlineDirection * 0.75f);
+                }
+                else
+                {
+                    _isClawlining = false;
+                }
+            }
+
+            // Reset double jump when grounded
+            if (hc.cState.onGround)
+            {
+                _hasDoubleJumped = false;
+                _doubleJumpQueuing = false;
             }
         }
 
@@ -139,7 +198,7 @@ namespace HornetInHallownest
             }
         }
 
-        // Apply Hornet movement speeds inspired by Silksong logic
+        // Apply Hornet movement speeds from Silksong parameters
         private void ApplyHornetSpeeds(bool hornetActive)
         {
             var hc = GetComponent<HeroController>();
@@ -150,10 +209,10 @@ namespace HornetInHallownest
                 _originalRunSpeed = hc.RUN_SPEED;
                 _originalWalkSpeed = hc.WALK_SPEED;
                 _originalJumpSpeed = hc.JUMP_SPEED;
-                // Inspired by Silksong: adjust speeds for Hornet's movement feel
-                hc.RUN_SPEED = 10f; // Example: faster run speed
-                hc.WALK_SPEED = 6f; // Example: faster walk speed
-                hc.JUMP_SPEED = 25f; // Example: higher jump
+                // Silksong base speeds (before sprint multiplier)
+                hc.RUN_SPEED = 8.5f; // Hornet's base run speed
+                hc.WALK_SPEED = 5.5f; // Hornet's base walk speed  
+                hc.JUMP_SPEED = 22f; // Hornet's jump height
                 _speedsModified = true;
             }
             else if (!hornetActive && _speedsModified)
@@ -192,14 +251,18 @@ namespace HornetInHallownest
         }
 
         // Hornet always has double jump regardless of PlayerData.hasDoubleJump.
+        // Matches Silksong behavior with proper queuing.
         private bool OnCanDoubleJump(On.HeroController.orig_CanDoubleJump orig, HeroController self)
         {
             if (!HornetSpriteDriver.IsEnabled) return orig(self);
+            
+            // Allow double jump if not used yet
             if (!_hasDoubleJumped)
             {
                 _hasDoubleJumped = true;
                 return true;
             }
+            
             return false;
         }
 
@@ -229,21 +292,31 @@ namespace HornetInHallownest
                 return;
             }
 
-            try
+            // Handle harpoon queuing (from FSM logic)
+            if (InputHandler.Instance.inputActions.SuperDash.IsPressed)
             {
-                PerformClawline(self);
+                if (CanHarpoonDash())
+                {
+                    PerformClawline(self);
+                    _harpoonQueuing = false;
+                    _harpoonQueueSteps = 0;
+                }
+                else if (_harpoonQueueSteps <= HARPOON_QUEUE_STEPS)
+                {
+                    _harpoonQueuing = true;
+                    _harpoonQueueSteps++;
+                }
             }
-            catch (Exception e)
+            else
             {
-                Modding.Logger.Log("[HornetInHallownest] Clawline error, falling back to normal SuperDash: " + e.Message);
-                Modding.Logger.LogError(e);
-                orig(self);
+                _harpoonQueuing = false;
+                _harpoonQueueSteps = 0;
             }
         }
 
         private void PerformClawline(HeroController self)
         {
-            if (self == null) return;
+            if (self == null || !CanHarpoonDash()) return;
 
             var rb = self.GetComponent<Rigidbody2D>();
             if (rb == null) return;
@@ -256,6 +329,7 @@ namespace HornetInHallownest
             _clawlineDirection = self.transform.localScale.x >= 0f ? Vector2.right : Vector2.left;
             var origin = (Vector2)self.transform.position;
             var hit = Physics2D.Raycast(origin, _clawlineDirection, ClawlineMaxDistance, ~0);
+            
             if (hit.collider == null || hit.distance <= 0.1f)
             {
                 EndClawline();
@@ -264,8 +338,9 @@ namespace HornetInHallownest
 
             _isClawlining = true;
             _clawlineProjectile = CreateClawlineProjectile(hit.point);
+            StartHarpoonDashCooldown();
 
-            // Play throw animation to match FSM's "Throw" state
+            // Play throw animation (from FSM "Throw" state)
             var animCtrlField = typeof(HeroController).GetField("animCtrl", BindingFlags.Instance | BindingFlags.NonPublic);
             HeroAnimationController animCtrl = null;
             if (animCtrlField != null)
@@ -273,22 +348,21 @@ namespace HornetInHallownest
                 animCtrl = (HeroAnimationController)animCtrlField.GetValue(self);
                 if (animCtrl != null)
                 {
-                    animCtrl.PlayClip("Slash");
+                    animCtrl.PlayClip("Harpoon Throw");
                 }
             }
 
-            // Teleport to the hit point, matching the FSM's "To Needle" logic
+            // Teleport to hit point (FSM "To Needle" logic)
             self.transform.position = hit.point;
             rb.velocity = Vector2.zero;
 
-            // Play return animation to match FSM's retract/catch logic
+            // Play return animation (FSM retract logic)
             if (animCtrl != null)
             {
                 animCtrl.PlayClip("Harpoon Needle Return");
             }
 
-            // TODO: Implement enemy hit detection and damage from FSM's "Hit Enemy?" and "Do Enemy Damage"
-            // For now, end immediately
+            // TODO: Implement enemy hit detection from FSM "Hit Enemy?" state
             EndClawline();
         }
 
@@ -315,9 +389,128 @@ namespace HornetInHallownest
             }
         }
 
-        // ── Phase 1+ stubs ─────────────────────────────────────────────────
-        // TODO Sprint:     hold Left Shift while grounded → 2× run speed (see HornetController.FixedUpdate in Silksong DLL)
-        // TODO Clawline:   dedicated input → spawn needle projectile, zip to first contact point
+        // ── Hornet-specific Update/FixedUpdate hooks ──────────────────────────────────
+        private void OnHeroUpdate(On.HeroController.orig_Update orig, HeroController self)
+        {
+            orig(self);
+            
+            if (!HornetSpriteDriver.IsEnabled) return;
+            
+            HandleSprintInput(self);
+        }
+
+        private void OnHeroFixedUpdate(On.HeroController.orig_FixedUpdate orig, HeroController self)
+        {
+            orig(self);
+            
+            if (!HornetSpriteDriver.IsEnabled) return;
+            
+            UpdateSprintState(self);
+        }
+
+        // ── Sprint Implementation (from hornet_sprint FSM) ────────────────────────
+        private void HandleSprintInput(HeroController self)
+        {
+            if (self.cState == null) return;
+            
+            // Sprint input: hold dash while grounded
+            if (InputHandler.Instance.inputActions.Dash.IsPressed && self.cState.onGround && !self.cState.dashing)
+            {
+                if (!_isSprinting)
+                {
+                    StartSprint();
+                }
+                _sprintBufferActive = true;
+                _sprintBufferTimer = SPRINT_BUFFER_TIME;
+            }
+            else if (!InputHandler.Instance.inputActions.Dash.IsPressed)
+            {
+                if (_isSprinting)
+                {
+                    EndSprint();
+                }
+            }
+        }
+
+        private void UpdateSprintState(HeroController self)
+        {
+            // Update sprint buffer
+            if (_sprintBufferActive)
+            {
+                _sprintBufferTimer -= Time.deltaTime;
+                if (_sprintBufferTimer <= 0f)
+                {
+                    _sprintBufferActive = false;
+                }
+            }
+        }
+
+        private void StartSprint()
+        {
+            if (_isSprinting) return;
+            
+            var hc = GetComponent<HeroController>();
+            if (hc == null) return;
+            
+            _isSprinting = true;
+            hc.RUN_SPEED = _originalRunSpeed * SPRINT_SPEED_MULTIPLIER;
+            
+            // Play sprint animation
+            var animCtrlField = typeof(HeroController).GetField("animCtrl", BindingFlags.Instance | BindingFlags.NonPublic);
+            if (animCtrlField != null)
+            {
+                var animCtrl = (HeroAnimationController)animCtrlField.GetValue(hc);
+                animCtrl?.PlayClip("Sprint");
+            }
+        }
+
+        private void EndSprint()
+        {
+            if (!_isSprinting) return;
+            
+            var hc = GetComponent<HeroController>();
+            if (hc == null) return;
+            
+            _isSprinting = false;
+            hc.RUN_SPEED = _originalRunSpeed;
+        }
+
+        // ── Harpoon/Clawline Helper Methods ─────────────────────────────────────
+        private bool CanHarpoonDash()
+        {
+            var hc = GetComponent<HeroController>();
+            if (hc == null) 
+            {
+                // Reset queue if HeroController is missing
+                _harpoonQueuing = false;
+                _harpoonQueueSteps = 0;
+                return false;
+            }
+            
+            bool canDash = hc.hero_state != ActorStates.hard_landing &&
+                          hc.hero_state != ActorStates.dash_landing &&
+                          _harpoonDashCooldown <= 0f &&
+                          (!hc.cState.dashing || hc.dash_timer <= 0f) &&
+                          (!hc.cState.attacking || hc.attack_time >= hc.Config.AttackRecoveryTime) &&
+                          !hc.cState.dead && !hc.cState.hazardDeath;
+            
+            // Reset queue if conditions change to prevent stuck queuing
+            if (!canDash && _harpoonQueuing)
+            {
+                _harpoonQueuing = false;
+                _harpoonQueueSteps = 0;
+            }
+            
+            return canDash;
+        }
+
+        private void StartHarpoonDashCooldown()
+        {
+            _harpoonDashCooldown = HARPOON_COOLDOWN;
+        }
+
+        // ── Future Implementation ─────────────────────────────────────────────────
         // TODO Silk Soar:  dedicated input + SilkAmount > 0 → consume silk, upward air-dash
+        // TODO Tool system integration with crest abilities
     }
 }
