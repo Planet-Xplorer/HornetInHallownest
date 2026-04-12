@@ -1,0 +1,2665 @@
+{
+	"m_CorrespondingSourceObject": { "m_FileID": 0, "m_PathID": 0 },
+	"m_EditorClassIdentifier": "",
+	"m_EditorHideFlags": 0,
+	"m_Enabled": 1,
+	"m_GameObject": { "m_FileID": 0, "m_PathID": 0 },
+	"m_HideFlags": 0,
+	"m_Name": "hornet_sprint_silk_usage",
+	"m_PrefabInternal": { "m_FileID": 0, "m_PathID": 0 },
+	"m_Script": { "m_FileID": 1, "m_PathID": 363282619214226719 },
+	"m_Structure": {
+		"category": "General",
+		"fsm": {
+			"dataVersion": 2,
+			"usedInTemplate": { "m_FileID": 0, "m_PathID": -525038429020192474 },
+			"name": "Sprint Silk Usage",
+			"startState": "Check Pause",
+			"states": [
+				{
+					"name": "Idle",
+					"description": "",
+					"colorIndex": 0,
+					"position": {
+						"x": 307.98438,
+						"y": 424,
+						"width": 208,
+						"height": 64
+					},
+					"isBreakpoint": 0,
+					"isSequence": 0,
+					"hideUnused": 0,
+					"transitions": [
+						{
+							"fsmEvent": {
+								"name": "START SILK USAGE",
+								"isSystemEvent": 0,
+								"isGlobal": 0
+							},
+							"toState": "Start Usage",
+							"linkStyle": 0,
+							"linkConstraint": 0,
+							"linkTarget": 0,
+							"colorIndex": 0
+						},
+						{
+							"fsmEvent": {
+								"name": "RESET",
+								"isSystemEvent": 0,
+								"isGlobal": 0
+							},
+							"toState": "Reset Timer",
+							"linkStyle": 0,
+							"linkConstraint": 0,
+							"linkTarget": 0,
+							"colorIndex": 0
+						},
+						{
+							"fsmEvent": {
+								"name": "START SILK USAGE BURST",
+								"isSystemEvent": 0,
+								"isGlobal": 0
+							},
+							"toState": "",
+							"linkStyle": 0,
+							"linkConstraint": 0,
+							"linkTarget": 0,
+							"colorIndex": 0
+						}
+					],
+					"actionData": {
+						"actionNames": [
+							"HutongGames.PlayMaker.Actions.Wait"
+						],
+						"customNames": [
+							""
+						],
+						"actionEnabled": [
+							1
+						],
+						"actionIsOpen": [
+							1
+						],
+						"actionStartIndex": [
+							0
+						],
+						"actionHashCodes": [
+							17940552
+						],
+						"unityObjectParams": [],
+						"fsmGameObjectParams": [],
+						"fsmOwnerDefaultParams": [],
+						"animationCurveParams": [],
+						"functionCallParams": [],
+						"fsmTemplateControlParams": [],
+						"fsmEventTargetParams": [],
+						"fsmPropertyParams": [],
+						"layoutOptionParams": [],
+						"fsmStringParams": [],
+						"fsmObjectParams": [],
+						"fsmVarParams": [],
+						"fsmArrayParams": [],
+						"fsmEnumParams": [],
+						"fsmFloatParams": [
+							{
+								"useVariable": 0,
+								"name": "",
+								"tooltip": "",
+								"showInInspector": 0,
+								"networkSync": 0,
+								"value": 4
+							}
+						],
+						"fsmIntParams": [],
+						"fsmBoolParams": [],
+						"fsmVector2Params": [],
+						"fsmVector3Params": [],
+						"fsmColorParams": [],
+						"fsmRectParams": [],
+						"fsmQuaternionParams": [],
+						"stringParams": [
+							"RESET"
+						],
+						"byteData": [
+							0
+						],
+						"arrayParamSizes": [],
+						"arrayParamTypes": [],
+						"customTypeSizes": [],
+						"customTypeNames": [],
+						"paramDataType": [
+							15,
+							23,
+							1
+						],
+						"paramName": [
+							"time",
+							"finishEvent",
+							"realTime"
+						],
+						"paramDataPos": [
+							0,
+							0,
+							0
+						],
+						"paramByteDataSize": [
+							0,
+							0,
+							1
+						]
+					}
+				},
+				{
+					"name": "Usage",
+					"description": "",
+					"colorIndex": 0,
+					"position": {
+						"x": 782,
+						"y": 471,
+						"width": 137,
+						"height": 64
+					},
+					"isBreakpoint": 0,
+					"isSequence": 0,
+					"hideUnused": 0,
+					"transitions": [
+						{
+							"fsmEvent": {
+								"name": "STOP SILK USAGE",
+								"isSystemEvent": 0,
+								"isGlobal": 0
+							},
+							"toState": "StopUsage",
+							"linkStyle": 0,
+							"linkConstraint": 0,
+							"linkTarget": 0,
+							"colorIndex": 0
+						},
+						{
+							"fsmEvent": {
+								"name": "USE SILK",
+								"isSystemEvent": 0,
+								"isGlobal": 0
+							},
+							"toState": "Use Silk",
+							"linkStyle": 0,
+							"linkConstraint": 0,
+							"linkTarget": 0,
+							"colorIndex": 0
+						},
+						{
+							"fsmEvent": {
+								"name": "CANCEL",
+								"isSystemEvent": 0,
+								"isGlobal": 0
+							},
+							"toState": "Pause Usage",
+							"linkStyle": 0,
+							"linkConstraint": 0,
+							"linkTarget": 0,
+							"colorIndex": 0
+						}
+					],
+					"actionData": {
+						"actionNames": [
+							"HutongGames.PlayMaker.Actions.GetSilk",
+							"HutongGames.PlayMaker.Actions.IntCompare",
+							"HutongGames.PlayMaker.Actions.AddUsingSilk",
+							"HutongGames.PlayMaker.Actions.PerSecond",
+							"HutongGames.PlayMaker.Actions.FloatOperator",
+							"HutongGames.PlayMaker.Actions.FloatCompare"
+						],
+						"customNames": [
+							"",
+							"",
+							"",
+							"",
+							"",
+							""
+						],
+						"actionEnabled": [
+							1,
+							1,
+							1,
+							1,
+							1,
+							1
+						],
+						"actionIsOpen": [
+							1,
+							1,
+							1,
+							1,
+							1,
+							1
+						],
+						"actionStartIndex": [
+							0,
+							1,
+							7,
+							10,
+							13,
+							18
+						],
+						"actionHashCodes": [
+							71876316,
+							44169737,
+							79769369,
+							95634840,
+							84204300,
+							80399643
+						],
+						"unityObjectParams": [],
+						"fsmGameObjectParams": [],
+						"fsmOwnerDefaultParams": [],
+						"animationCurveParams": [],
+						"functionCallParams": [],
+						"fsmTemplateControlParams": [],
+						"fsmEventTargetParams": [],
+						"fsmPropertyParams": [],
+						"layoutOptionParams": [],
+						"fsmStringParams": [],
+						"fsmObjectParams": [],
+						"fsmVarParams": [],
+						"fsmArrayParams": [],
+						"fsmEnumParams": [
+							{
+								"useVariable": 0,
+								"name": "",
+								"tooltip": "",
+								"showInInspector": 0,
+								"networkSync": 0,
+								"enumName": "SilkSpool+SilkUsingFlags",
+								"intValue": 1
+							}
+						],
+						"fsmFloatParams": [
+							{
+								"useVariable": 0,
+								"name": "",
+								"tooltip": "",
+								"showInInspector": 0,
+								"networkSync": 0,
+								"value": 1
+							},
+							{
+								"useVariable": 1,
+								"name": "Timer Add",
+								"tooltip": "",
+								"showInInspector": 0,
+								"networkSync": 0,
+								"value": 0
+							},
+							{
+								"useVariable": 1,
+								"name": "Use Silk Timer",
+								"tooltip": "",
+								"showInInspector": 0,
+								"networkSync": 0,
+								"value": 0
+							},
+							{
+								"useVariable": 1,
+								"name": "Timer Add",
+								"tooltip": "",
+								"showInInspector": 0,
+								"networkSync": 0,
+								"value": 0
+							},
+							{
+								"useVariable": 1,
+								"name": "Use Silk Timer",
+								"tooltip": "",
+								"showInInspector": 0,
+								"networkSync": 0,
+								"value": 0
+							},
+							{
+								"useVariable": 1,
+								"name": "Use Silk Timer",
+								"tooltip": "",
+								"showInInspector": 0,
+								"networkSync": 0,
+								"value": 0
+							},
+							{
+								"useVariable": 0,
+								"name": "",
+								"tooltip": "",
+								"showInInspector": 0,
+								"networkSync": 0,
+								"value": 6
+							},
+							{
+								"useVariable": 0,
+								"name": "",
+								"tooltip": "",
+								"showInInspector": 0,
+								"networkSync": 0,
+								"value": 0
+							}
+						],
+						"fsmIntParams": [
+							{
+								"useVariable": 1,
+								"name": "Current Silk",
+								"tooltip": "",
+								"showInInspector": 0,
+								"networkSync": 0,
+								"value": 0
+							},
+							{
+								"useVariable": 1,
+								"name": "Current Silk",
+								"tooltip": "",
+								"showInInspector": 0,
+								"networkSync": 0,
+								"value": 0
+							},
+							{
+								"useVariable": 0,
+								"name": "",
+								"tooltip": "",
+								"showInInspector": 0,
+								"networkSync": 0,
+								"value": 0
+							},
+							{
+								"useVariable": 0,
+								"name": "",
+								"tooltip": "",
+								"showInInspector": 0,
+								"networkSync": 0,
+								"value": 1
+							}
+						],
+						"fsmBoolParams": [
+							{
+								"useVariable": 1,
+								"name": "Added Using Silk",
+								"tooltip": "",
+								"showInInspector": 0,
+								"networkSync": 0,
+								"value": 0
+							}
+						],
+						"fsmVector2Params": [],
+						"fsmVector3Params": [],
+						"fsmColorParams": [],
+						"fsmRectParams": [],
+						"fsmQuaternionParams": [],
+						"stringParams": [
+							"CANCEL",
+							"CANCEL",
+							"",
+							"USE SILK",
+							"",
+							"USE SILK"
+						],
+						"byteData": [
+							0,
+							1,
+							0,
+							0,
+							0,
+							0,
+							1,
+							1
+						],
+						"arrayParamSizes": [],
+						"arrayParamTypes": [],
+						"customTypeSizes": [],
+						"customTypeNames": [],
+						"paramDataType": [
+							16,
+							16,
+							16,
+							23,
+							23,
+							23,
+							1,
+							16,
+							42,
+							17,
+							15,
+							15,
+							1,
+							15,
+							15,
+							7,
+							15,
+							1,
+							15,
+							15,
+							15,
+							23,
+							23,
+							23,
+							1
+						],
+						"paramName": [
+							"StoreAmount",
+							"integer1",
+							"integer2",
+							"equal",
+							"lessThan",
+							"greaterThan",
+							"everyFrame",
+							"Amount",
+							"UsingType",
+							"DidAddTracker",
+							"floatValue",
+							"storeResult",
+							"everyFrame",
+							"float1",
+							"float2",
+							"operation",
+							"storeResult",
+							"everyFrame",
+							"float1",
+							"float2",
+							"tolerance",
+							"equal",
+							"lessThan",
+							"greaterThan",
+							"everyFrame"
+						],
+						"paramDataPos": [
+							0,
+							1,
+							2,
+							0,
+							1,
+							2,
+							0,
+							3,
+							0,
+							0,
+							0,
+							1,
+							1,
+							2,
+							3,
+							2,
+							4,
+							6,
+							5,
+							6,
+							7,
+							3,
+							4,
+							5,
+							7
+						],
+						"paramByteDataSize": [
+							0,
+							0,
+							0,
+							0,
+							0,
+							0,
+							1,
+							0,
+							0,
+							0,
+							0,
+							0,
+							1,
+							0,
+							0,
+							4,
+							0,
+							1,
+							0,
+							0,
+							0,
+							0,
+							0,
+							0,
+							1
+						]
+					}
+				},
+				{
+					"name": "StopUsage",
+					"description": "",
+					"colorIndex": 0,
+					"position": {
+						"x": 615,
+						"y": 521,
+						"width": 101,
+						"height": 32
+					},
+					"isBreakpoint": 0,
+					"isSequence": 0,
+					"hideUnused": 0,
+					"transitions": [
+						{
+							"fsmEvent": {
+								"name": "FINISHED",
+								"isSystemEvent": 1,
+								"isGlobal": 0
+							},
+							"toState": "Idle",
+							"linkStyle": 0,
+							"linkConstraint": 0,
+							"linkTarget": 0,
+							"colorIndex": 0
+						}
+					],
+					"actionData": {
+						"actionNames": [
+							"HutongGames.PlayMaker.Actions.SetFsmBool",
+							"HutongGames.PlayMaker.Actions.RemoveUsingSilk",
+							"HutongGames.PlayMaker.Actions.CallMethodProper"
+						],
+						"customNames": [
+							"",
+							"",
+							""
+						],
+						"actionEnabled": [
+							1,
+							1,
+							1
+						],
+						"actionIsOpen": [
+							1,
+							1,
+							1
+						],
+						"actionStartIndex": [
+							0,
+							5,
+							8
+						],
+						"actionHashCodes": [
+							97451624,
+							79769369,
+							7865249
+						],
+						"unityObjectParams": [],
+						"fsmGameObjectParams": [],
+						"fsmOwnerDefaultParams": [
+							{
+								"ownerOption": 0,
+								"gameObject": {
+									"useVariable": 0,
+									"name": "",
+									"tooltip": "",
+									"showInInspector": 0,
+									"networkSync": 0,
+									"value": { "m_FileID": 0, "m_PathID": 0 }
+								}
+							},
+							{
+								"ownerOption": 0,
+								"gameObject": {
+									"useVariable": 0,
+									"name": "",
+									"tooltip": "",
+									"showInInspector": 0,
+									"networkSync": 0,
+									"value": { "m_FileID": 0, "m_PathID": 0 }
+								}
+							}
+						],
+						"animationCurveParams": [],
+						"functionCallParams": [],
+						"fsmTemplateControlParams": [],
+						"fsmEventTargetParams": [],
+						"fsmPropertyParams": [],
+						"layoutOptionParams": [],
+						"fsmStringParams": [
+							{
+								"useVariable": 0,
+								"name": "",
+								"tooltip": "",
+								"showInInspector": 0,
+								"networkSync": 0,
+								"value": "Sprint"
+							},
+							{
+								"useVariable": 0,
+								"name": "",
+								"tooltip": "",
+								"showInInspector": 0,
+								"networkSync": 0,
+								"value": "Sprintmaster Active"
+							},
+							{
+								"useVariable": 0,
+								"name": "",
+								"tooltip": "",
+								"showInInspector": 0,
+								"networkSync": 0,
+								"value": "HeroController"
+							},
+							{
+								"useVariable": 0,
+								"name": "",
+								"tooltip": "",
+								"showInInspector": 0,
+								"networkSync": 0,
+								"value": "SetSilkRegenBlocked"
+							}
+						],
+						"fsmObjectParams": [],
+						"fsmVarParams": [
+							{
+								"variableName": "",
+								"objectType": "UnityEngine.Object",
+								"useVariable": 0,
+								"type": 2,
+								"floatValue": 0,
+								"intValue": 0,
+								"boolValue": 0,
+								"stringValue": "",
+								"vector4Value": {
+									"x": 0,
+									"y": 0,
+									"z": 0,
+									"w": 0
+								},
+								"objectReference": { "m_FileID": 0, "m_PathID": 0 },
+								"arrayValue": {
+									"useVariable": 0,
+									"name": "",
+									"tooltip": "",
+									"showInInspector": 0,
+									"networkSync": 0,
+									"type": -1,
+									"objectTypeName": "",
+									"floatValues": [],
+									"intValues": [],
+									"boolValues": [],
+									"stringValues": [],
+									"vector4Values": [],
+									"objectReferences": []
+								}
+							},
+							{
+								"variableName": "",
+								"objectType": "UnityEngine.Object",
+								"useVariable": 1,
+								"type": -1,
+								"floatValue": 0,
+								"intValue": 0,
+								"boolValue": 0,
+								"stringValue": "",
+								"vector4Value": {
+									"x": 0,
+									"y": 0,
+									"z": 0,
+									"w": 0
+								},
+								"objectReference": { "m_FileID": 0, "m_PathID": 0 },
+								"arrayValue": {
+									"useVariable": 0,
+									"name": "",
+									"tooltip": "",
+									"showInInspector": 0,
+									"networkSync": 0,
+									"type": -1,
+									"objectTypeName": "",
+									"floatValues": [],
+									"intValues": [],
+									"boolValues": [],
+									"stringValues": [],
+									"vector4Values": [],
+									"objectReferences": []
+								}
+							}
+						],
+						"fsmArrayParams": [],
+						"fsmEnumParams": [
+							{
+								"useVariable": 0,
+								"name": "",
+								"tooltip": "",
+								"showInInspector": 0,
+								"networkSync": 0,
+								"enumName": "SilkSpool+SilkUsingFlags",
+								"intValue": 1
+							}
+						],
+						"fsmFloatParams": [],
+						"fsmIntParams": [
+							{
+								"useVariable": 0,
+								"name": "",
+								"tooltip": "",
+								"showInInspector": 0,
+								"networkSync": 0,
+								"value": 1
+							}
+						],
+						"fsmBoolParams": [
+							{
+								"useVariable": 0,
+								"name": "",
+								"tooltip": "",
+								"showInInspector": 0,
+								"networkSync": 0,
+								"value": 0
+							},
+							{
+								"useVariable": 1,
+								"name": "Added Using Silk",
+								"tooltip": "",
+								"showInInspector": 0,
+								"networkSync": 0,
+								"value": 0
+							}
+						],
+						"fsmVector2Params": [],
+						"fsmVector3Params": [],
+						"fsmColorParams": [],
+						"fsmRectParams": [],
+						"fsmQuaternionParams": [],
+						"stringParams": [],
+						"byteData": [
+							0,
+							0
+						],
+						"arrayParamSizes": [
+							1
+						],
+						"arrayParamTypes": [
+							"HutongGames.PlayMaker.FsmVar"
+						],
+						"customTypeSizes": [],
+						"customTypeNames": [],
+						"paramDataType": [
+							20,
+							18,
+							18,
+							17,
+							1,
+							16,
+							42,
+							17,
+							20,
+							18,
+							18,
+							12,
+							39,
+							39,
+							1
+						],
+						"paramName": [
+							"gameObject",
+							"fsmName",
+							"variableName",
+							"setValue",
+							"everyFrame",
+							"Amount",
+							"UsingType",
+							"DidAddTracker",
+							"gameObject",
+							"behaviour",
+							"methodName",
+							"parameters",
+							"",
+							"storeResult",
+							"EveryFrame"
+						],
+						"paramDataPos": [
+							0,
+							0,
+							1,
+							0,
+							0,
+							0,
+							0,
+							1,
+							1,
+							2,
+							3,
+							0,
+							0,
+							1,
+							1
+						],
+						"paramByteDataSize": [
+							0,
+							0,
+							0,
+							0,
+							1,
+							0,
+							0,
+							0,
+							0,
+							0,
+							0,
+							0,
+							0,
+							0,
+							1
+						]
+					}
+				},
+				{
+					"name": "Use Silk",
+					"description": "",
+					"colorIndex": 0,
+					"position": {
+						"x": 812,
+						"y": 396,
+						"width": 100,
+						"height": 32
+					},
+					"isBreakpoint": 0,
+					"isSequence": 0,
+					"hideUnused": 0,
+					"transitions": [
+						{
+							"fsmEvent": {
+								"name": "FINISHED",
+								"isSystemEvent": 1,
+								"isGlobal": 0
+							},
+							"toState": "Usage",
+							"linkStyle": 0,
+							"linkConstraint": 0,
+							"linkTarget": 0,
+							"colorIndex": 0
+						}
+					],
+					"actionData": {
+						"actionNames": [
+							"HutongGames.PlayMaker.Actions.RemoveUsingSilk",
+							"HutongGames.PlayMaker.Actions.SetFloatValue",
+							"HutongGames.PlayMaker.Actions.CheckIsSilkDrainDisabled",
+							"HutongGames.PlayMaker.Actions.TakeSilkV2"
+						],
+						"customNames": [
+							"",
+							"",
+							"",
+							""
+						],
+						"actionEnabled": [
+							1,
+							1,
+							1,
+							1
+						],
+						"actionIsOpen": [
+							1,
+							1,
+							1,
+							1
+						],
+						"actionStartIndex": [
+							0,
+							3,
+							6,
+							9
+						],
+						"actionHashCodes": [
+							79769369,
+							95634840,
+							2192091,
+							35818738
+						],
+						"unityObjectParams": [],
+						"fsmGameObjectParams": [],
+						"fsmOwnerDefaultParams": [
+							{
+								"ownerOption": 1,
+								"gameObject": {
+									"useVariable": 1,
+									"name": "Hero",
+									"tooltip": "",
+									"showInInspector": 0,
+									"networkSync": 0,
+									"value": { "m_FileID": 0, "m_PathID": 0 }
+								}
+							}
+						],
+						"animationCurveParams": [],
+						"functionCallParams": [],
+						"fsmTemplateControlParams": [],
+						"fsmEventTargetParams": [],
+						"fsmPropertyParams": [],
+						"layoutOptionParams": [],
+						"fsmStringParams": [],
+						"fsmObjectParams": [],
+						"fsmVarParams": [],
+						"fsmArrayParams": [],
+						"fsmEnumParams": [
+							{
+								"useVariable": 0,
+								"name": "",
+								"tooltip": "",
+								"showInInspector": 0,
+								"networkSync": 0,
+								"enumName": "SilkSpool+SilkUsingFlags",
+								"intValue": 1
+							},
+							{
+								"useVariable": 0,
+								"name": "",
+								"tooltip": "",
+								"showInInspector": 0,
+								"networkSync": 0,
+								"enumName": "SilkSpool+SilkTakeSource",
+								"intValue": 4
+							}
+						],
+						"fsmFloatParams": [
+							{
+								"useVariable": 1,
+								"name": "Use Silk Timer",
+								"tooltip": "",
+								"showInInspector": 0,
+								"networkSync": 0,
+								"value": 0
+							},
+							{
+								"useVariable": 0,
+								"name": "",
+								"tooltip": "",
+								"showInInspector": 0,
+								"networkSync": 0,
+								"value": 0
+							}
+						],
+						"fsmIntParams": [
+							{
+								"useVariable": 0,
+								"name": "",
+								"tooltip": "",
+								"showInInspector": 0,
+								"networkSync": 0,
+								"value": 1
+							},
+							{
+								"useVariable": 0,
+								"name": "",
+								"tooltip": "",
+								"showInInspector": 0,
+								"networkSync": 0,
+								"value": 1
+							}
+						],
+						"fsmBoolParams": [
+							{
+								"useVariable": 1,
+								"name": "Added Using Silk",
+								"tooltip": "",
+								"showInInspector": 0,
+								"networkSync": 0,
+								"value": 0
+							},
+							{
+								"useVariable": 1,
+								"name": "",
+								"tooltip": "",
+								"showInInspector": 0,
+								"networkSync": 0,
+								"value": 0
+							}
+						],
+						"fsmVector2Params": [],
+						"fsmVector3Params": [],
+						"fsmColorParams": [],
+						"fsmRectParams": [],
+						"fsmQuaternionParams": [],
+						"stringParams": [
+							"FINISHED",
+							""
+						],
+						"byteData": [
+							0
+						],
+						"arrayParamSizes": [],
+						"arrayParamTypes": [],
+						"customTypeSizes": [],
+						"customTypeNames": [],
+						"paramDataType": [
+							16,
+							42,
+							17,
+							15,
+							15,
+							1,
+							23,
+							23,
+							17,
+							20,
+							16,
+							42
+						],
+						"paramName": [
+							"Amount",
+							"UsingType",
+							"DidAddTracker",
+							"floatVariable",
+							"floatValue",
+							"everyFrame",
+							"trueEvent",
+							"falseEvent",
+							"storeValue",
+							"Target",
+							"Amount",
+							"TakeSource"
+						],
+						"paramDataPos": [
+							0,
+							0,
+							0,
+							0,
+							1,
+							0,
+							0,
+							1,
+							1,
+							0,
+							1,
+							1
+						],
+						"paramByteDataSize": [
+							0,
+							0,
+							0,
+							0,
+							0,
+							1,
+							0,
+							0,
+							0,
+							0,
+							0,
+							0
+						]
+					}
+				},
+				{
+					"name": "Reset Timer",
+					"description": "",
+					"colorIndex": 0,
+					"position": {
+						"x": 356,
+						"y": 535.5,
+						"width": 109,
+						"height": 32
+					},
+					"isBreakpoint": 0,
+					"isSequence": 0,
+					"hideUnused": 0,
+					"transitions": [
+						{
+							"fsmEvent": {
+								"name": "FINISHED",
+								"isSystemEvent": 1,
+								"isGlobal": 0
+							},
+							"toState": "Idle",
+							"linkStyle": 0,
+							"linkConstraint": 0,
+							"linkTarget": 0,
+							"colorIndex": 0
+						}
+					],
+					"actionData": {
+						"actionNames": [
+							"HutongGames.PlayMaker.Actions.SetFloatValue"
+						],
+						"customNames": [
+							""
+						],
+						"actionEnabled": [
+							1
+						],
+						"actionIsOpen": [
+							1
+						],
+						"actionStartIndex": [
+							0
+						],
+						"actionHashCodes": [
+							95634840
+						],
+						"unityObjectParams": [],
+						"fsmGameObjectParams": [],
+						"fsmOwnerDefaultParams": [],
+						"animationCurveParams": [],
+						"functionCallParams": [],
+						"fsmTemplateControlParams": [],
+						"fsmEventTargetParams": [],
+						"fsmPropertyParams": [],
+						"layoutOptionParams": [],
+						"fsmStringParams": [],
+						"fsmObjectParams": [],
+						"fsmVarParams": [],
+						"fsmArrayParams": [],
+						"fsmEnumParams": [],
+						"fsmFloatParams": [
+							{
+								"useVariable": 1,
+								"name": "Use Silk Timer",
+								"tooltip": "",
+								"showInInspector": 0,
+								"networkSync": 0,
+								"value": 0
+							},
+							{
+								"useVariable": 0,
+								"name": "",
+								"tooltip": "",
+								"showInInspector": 0,
+								"networkSync": 0,
+								"value": 0
+							}
+						],
+						"fsmIntParams": [],
+						"fsmBoolParams": [],
+						"fsmVector2Params": [],
+						"fsmVector3Params": [],
+						"fsmColorParams": [],
+						"fsmRectParams": [],
+						"fsmQuaternionParams": [],
+						"stringParams": [],
+						"byteData": [
+							0
+						],
+						"arrayParamSizes": [],
+						"arrayParamTypes": [],
+						"customTypeSizes": [],
+						"customTypeNames": [],
+						"paramDataType": [
+							15,
+							15,
+							1
+						],
+						"paramName": [
+							"floatVariable",
+							"floatValue",
+							"everyFrame"
+						],
+						"paramDataPos": [
+							0,
+							1,
+							0
+						],
+						"paramByteDataSize": [
+							0,
+							0,
+							1
+						]
+					}
+				},
+				{
+					"name": "Start Usage",
+					"description": "",
+					"colorIndex": 0,
+					"position": {
+						"x": 606,
+						"y": 443,
+						"width": 101,
+						"height": 48
+					},
+					"isBreakpoint": 0,
+					"isSequence": 0,
+					"hideUnused": 0,
+					"transitions": [
+						{
+							"fsmEvent": {
+								"name": "CANCEL",
+								"isSystemEvent": 0,
+								"isGlobal": 0
+							},
+							"toState": "Pause Usage",
+							"linkStyle": 0,
+							"linkConstraint": 0,
+							"linkTarget": 0,
+							"colorIndex": 0
+						},
+						{
+							"fsmEvent": {
+								"name": "FINISHED",
+								"isSystemEvent": 1,
+								"isGlobal": 0
+							},
+							"toState": "Usage",
+							"linkStyle": 0,
+							"linkConstraint": 0,
+							"linkTarget": 0,
+							"colorIndex": 0
+						}
+					],
+					"actionData": {
+						"actionNames": [
+							"HutongGames.PlayMaker.Actions.GetSilk",
+							"HutongGames.PlayMaker.Actions.IntCompare",
+							"HutongGames.PlayMaker.Actions.SetFsmBool",
+							"HutongGames.PlayMaker.Actions.CallMethodProper"
+						],
+						"customNames": [
+							"",
+							"",
+							"",
+							""
+						],
+						"actionEnabled": [
+							1,
+							1,
+							1,
+							1
+						],
+						"actionIsOpen": [
+							1,
+							1,
+							1,
+							1
+						],
+						"actionStartIndex": [
+							0,
+							1,
+							7,
+							12
+						],
+						"actionHashCodes": [
+							71876316,
+							44169737,
+							97451624,
+							7865249
+						],
+						"unityObjectParams": [],
+						"fsmGameObjectParams": [],
+						"fsmOwnerDefaultParams": [
+							{
+								"ownerOption": 0,
+								"gameObject": {
+									"useVariable": 0,
+									"name": "",
+									"tooltip": "",
+									"showInInspector": 0,
+									"networkSync": 0,
+									"value": { "m_FileID": 0, "m_PathID": 0 }
+								}
+							},
+							{
+								"ownerOption": 0,
+								"gameObject": {
+									"useVariable": 0,
+									"name": "",
+									"tooltip": "",
+									"showInInspector": 0,
+									"networkSync": 0,
+									"value": { "m_FileID": 0, "m_PathID": 0 }
+								}
+							}
+						],
+						"animationCurveParams": [],
+						"functionCallParams": [],
+						"fsmTemplateControlParams": [],
+						"fsmEventTargetParams": [],
+						"fsmPropertyParams": [],
+						"layoutOptionParams": [],
+						"fsmStringParams": [
+							{
+								"useVariable": 0,
+								"name": "",
+								"tooltip": "",
+								"showInInspector": 0,
+								"networkSync": 0,
+								"value": "Sprint"
+							},
+							{
+								"useVariable": 0,
+								"name": "",
+								"tooltip": "",
+								"showInInspector": 0,
+								"networkSync": 0,
+								"value": "Sprintmaster Active"
+							},
+							{
+								"useVariable": 0,
+								"name": "",
+								"tooltip": "",
+								"showInInspector": 0,
+								"networkSync": 0,
+								"value": "HeroController"
+							},
+							{
+								"useVariable": 0,
+								"name": "",
+								"tooltip": "",
+								"showInInspector": 0,
+								"networkSync": 0,
+								"value": "SetSilkRegenBlocked"
+							}
+						],
+						"fsmObjectParams": [],
+						"fsmVarParams": [
+							{
+								"variableName": "",
+								"objectType": "UnityEngine.Object",
+								"useVariable": 0,
+								"type": 2,
+								"floatValue": 0,
+								"intValue": 0,
+								"boolValue": 1,
+								"stringValue": "",
+								"vector4Value": {
+									"x": 0,
+									"y": 0,
+									"z": 0,
+									"w": 0
+								},
+								"objectReference": { "m_FileID": 0, "m_PathID": 0 },
+								"arrayValue": {
+									"useVariable": 0,
+									"name": "",
+									"tooltip": "",
+									"showInInspector": 0,
+									"networkSync": 0,
+									"type": -1,
+									"objectTypeName": "",
+									"floatValues": [],
+									"intValues": [],
+									"boolValues": [],
+									"stringValues": [],
+									"vector4Values": [],
+									"objectReferences": []
+								}
+							},
+							{
+								"variableName": "",
+								"objectType": "UnityEngine.Object",
+								"useVariable": 1,
+								"type": -1,
+								"floatValue": 0,
+								"intValue": 0,
+								"boolValue": 0,
+								"stringValue": "",
+								"vector4Value": {
+									"x": 0,
+									"y": 0,
+									"z": 0,
+									"w": 0
+								},
+								"objectReference": { "m_FileID": 0, "m_PathID": 0 },
+								"arrayValue": {
+									"useVariable": 0,
+									"name": "",
+									"tooltip": "",
+									"showInInspector": 0,
+									"networkSync": 0,
+									"type": -1,
+									"objectTypeName": "",
+									"floatValues": [],
+									"intValues": [],
+									"boolValues": [],
+									"stringValues": [],
+									"vector4Values": [],
+									"objectReferences": []
+								}
+							}
+						],
+						"fsmArrayParams": [],
+						"fsmEnumParams": [],
+						"fsmFloatParams": [],
+						"fsmIntParams": [
+							{
+								"useVariable": 1,
+								"name": "Current Silk",
+								"tooltip": "",
+								"showInInspector": 0,
+								"networkSync": 0,
+								"value": 0
+							},
+							{
+								"useVariable": 1,
+								"name": "Current Silk",
+								"tooltip": "",
+								"showInInspector": 0,
+								"networkSync": 0,
+								"value": 0
+							},
+							{
+								"useVariable": 0,
+								"name": "",
+								"tooltip": "",
+								"showInInspector": 0,
+								"networkSync": 0,
+								"value": 0
+							}
+						],
+						"fsmBoolParams": [
+							{
+								"useVariable": 0,
+								"name": "",
+								"tooltip": "",
+								"showInInspector": 0,
+								"networkSync": 0,
+								"value": 1
+							}
+						],
+						"fsmVector2Params": [],
+						"fsmVector3Params": [],
+						"fsmColorParams": [],
+						"fsmRectParams": [],
+						"fsmQuaternionParams": [],
+						"stringParams": [
+							"CANCEL",
+							"CANCEL",
+							""
+						],
+						"byteData": [
+							0,
+							0,
+							0
+						],
+						"arrayParamSizes": [
+							1
+						],
+						"arrayParamTypes": [
+							"HutongGames.PlayMaker.FsmVar"
+						],
+						"customTypeSizes": [],
+						"customTypeNames": [],
+						"paramDataType": [
+							16,
+							16,
+							16,
+							23,
+							23,
+							23,
+							1,
+							20,
+							18,
+							18,
+							17,
+							1,
+							20,
+							18,
+							18,
+							12,
+							39,
+							39,
+							1
+						],
+						"paramName": [
+							"StoreAmount",
+							"integer1",
+							"integer2",
+							"equal",
+							"lessThan",
+							"greaterThan",
+							"everyFrame",
+							"gameObject",
+							"fsmName",
+							"variableName",
+							"setValue",
+							"everyFrame",
+							"gameObject",
+							"behaviour",
+							"methodName",
+							"parameters",
+							"",
+							"storeResult",
+							"EveryFrame"
+						],
+						"paramDataPos": [
+							0,
+							1,
+							2,
+							0,
+							1,
+							2,
+							0,
+							0,
+							0,
+							1,
+							0,
+							1,
+							1,
+							2,
+							3,
+							0,
+							0,
+							1,
+							2
+						],
+						"paramByteDataSize": [
+							0,
+							0,
+							0,
+							0,
+							0,
+							0,
+							1,
+							0,
+							0,
+							0,
+							0,
+							1,
+							0,
+							0,
+							0,
+							0,
+							0,
+							0,
+							1
+						]
+					}
+				},
+				{
+					"name": "Burst",
+					"description": "",
+					"colorIndex": 0,
+					"position": {
+						"x": 618,
+						"y": 358,
+						"width": 100,
+						"height": 32
+					},
+					"isBreakpoint": 0,
+					"isSequence": 0,
+					"hideUnused": 0,
+					"transitions": [
+						{
+							"fsmEvent": {
+								"name": "FINISHED",
+								"isSystemEvent": 1,
+								"isGlobal": 0
+							},
+							"toState": "Start Usage",
+							"linkStyle": 0,
+							"linkConstraint": 0,
+							"linkTarget": 0,
+							"colorIndex": 0
+						}
+					],
+					"actionData": {
+						"actionNames": [
+							"HutongGames.PlayMaker.Actions.FloatOperator"
+						],
+						"customNames": [
+							""
+						],
+						"actionEnabled": [
+							1
+						],
+						"actionIsOpen": [
+							1
+						],
+						"actionStartIndex": [
+							0
+						],
+						"actionHashCodes": [
+							84204300
+						],
+						"unityObjectParams": [],
+						"fsmGameObjectParams": [],
+						"fsmOwnerDefaultParams": [],
+						"animationCurveParams": [],
+						"functionCallParams": [],
+						"fsmTemplateControlParams": [],
+						"fsmEventTargetParams": [],
+						"fsmPropertyParams": [],
+						"layoutOptionParams": [],
+						"fsmStringParams": [],
+						"fsmObjectParams": [],
+						"fsmVarParams": [],
+						"fsmArrayParams": [],
+						"fsmEnumParams": [],
+						"fsmFloatParams": [
+							{
+								"useVariable": 1,
+								"name": "Use Silk Timer",
+								"tooltip": "",
+								"showInInspector": 0,
+								"networkSync": 0,
+								"value": 0
+							},
+							{
+								"useVariable": 0,
+								"name": "",
+								"tooltip": "",
+								"showInInspector": 0,
+								"networkSync": 0,
+								"value": 1
+							},
+							{
+								"useVariable": 1,
+								"name": "Use Silk Timer",
+								"tooltip": "",
+								"showInInspector": 0,
+								"networkSync": 0,
+								"value": 0
+							}
+						],
+						"fsmIntParams": [],
+						"fsmBoolParams": [],
+						"fsmVector2Params": [],
+						"fsmVector3Params": [],
+						"fsmColorParams": [],
+						"fsmRectParams": [],
+						"fsmQuaternionParams": [],
+						"stringParams": [],
+						"byteData": [
+							0,
+							0,
+							0,
+							0,
+							0
+						],
+						"arrayParamSizes": [],
+						"arrayParamTypes": [],
+						"customTypeSizes": [],
+						"customTypeNames": [],
+						"paramDataType": [
+							15,
+							15,
+							7,
+							15,
+							1
+						],
+						"paramName": [
+							"float1",
+							"float2",
+							"operation",
+							"storeResult",
+							"everyFrame"
+						],
+						"paramDataPos": [
+							0,
+							1,
+							0,
+							2,
+							4
+						],
+						"paramByteDataSize": [
+							0,
+							0,
+							4,
+							0,
+							1
+						]
+					}
+				},
+				{
+					"name": "Check Pause",
+					"description": "",
+					"colorIndex": 0,
+					"position": {
+						"x": 302,
+						"y": 126,
+						"width": 195,
+						"height": 32
+					},
+					"isBreakpoint": 0,
+					"isSequence": 0,
+					"hideUnused": 0,
+					"transitions": [
+						{
+							"fsmEvent": {
+								"name": "FINISHED",
+								"isSystemEvent": 1,
+								"isGlobal": 0
+							},
+							"toState": "Check Sprintmaster",
+							"linkStyle": 0,
+							"linkConstraint": 0,
+							"linkTarget": 0,
+							"colorIndex": 0
+						}
+					],
+					"actionData": {
+						"actionNames": [
+							"HutongGames.PlayMaker.Actions.Wait"
+						],
+						"customNames": [
+							""
+						],
+						"actionEnabled": [
+							1
+						],
+						"actionIsOpen": [
+							1
+						],
+						"actionStartIndex": [
+							0
+						],
+						"actionHashCodes": [
+							17940552
+						],
+						"unityObjectParams": [],
+						"fsmGameObjectParams": [],
+						"fsmOwnerDefaultParams": [],
+						"animationCurveParams": [],
+						"functionCallParams": [],
+						"fsmTemplateControlParams": [],
+						"fsmEventTargetParams": [],
+						"fsmPropertyParams": [],
+						"layoutOptionParams": [],
+						"fsmStringParams": [],
+						"fsmObjectParams": [],
+						"fsmVarParams": [],
+						"fsmArrayParams": [],
+						"fsmEnumParams": [],
+						"fsmFloatParams": [
+							{
+								"useVariable": 0,
+								"name": "",
+								"tooltip": "",
+								"showInInspector": 0,
+								"networkSync": 0,
+								"value": 0.25
+							}
+						],
+						"fsmIntParams": [],
+						"fsmBoolParams": [],
+						"fsmVector2Params": [],
+						"fsmVector3Params": [],
+						"fsmColorParams": [],
+						"fsmRectParams": [],
+						"fsmQuaternionParams": [],
+						"stringParams": [
+							"FINISHED"
+						],
+						"byteData": [
+							0
+						],
+						"arrayParamSizes": [],
+						"arrayParamTypes": [],
+						"customTypeSizes": [],
+						"customTypeNames": [],
+						"paramDataType": [
+							15,
+							23,
+							1
+						],
+						"paramName": [
+							"time",
+							"finishEvent",
+							"realTime"
+						],
+						"paramDataPos": [
+							0,
+							0,
+							0
+						],
+						"paramByteDataSize": [
+							0,
+							0,
+							1
+						]
+					}
+				},
+				{
+					"name": "Check Sprintmaster",
+					"description": "",
+					"colorIndex": 0,
+					"position": {
+						"x": 321,
+						"y": 188,
+						"width": 160,
+						"height": 48
+					},
+					"isBreakpoint": 0,
+					"isSequence": 0,
+					"hideUnused": 0,
+					"transitions": [
+						{
+							"fsmEvent": {
+								"name": "EQUIPPED",
+								"isSystemEvent": 0,
+								"isGlobal": 0
+							},
+							"toState": "Idle",
+							"linkStyle": 0,
+							"linkConstraint": 0,
+							"linkTarget": 0,
+							"colorIndex": 0
+						},
+						{
+							"fsmEvent": {
+								"name": "UNEQUIPPED",
+								"isSystemEvent": 0,
+								"isGlobal": 0
+							},
+							"toState": "Unequipped",
+							"linkStyle": 0,
+							"linkConstraint": 0,
+							"linkTarget": 0,
+							"colorIndex": 0
+						}
+					],
+					"actionData": {
+						"actionNames": [
+							"HutongGames.PlayMaker.Actions.CheckIfToolEquipped"
+						],
+						"customNames": [
+							""
+						],
+						"actionEnabled": [
+							1
+						],
+						"actionIsOpen": [
+							1
+						],
+						"actionStartIndex": [
+							0
+						],
+						"actionHashCodes": [
+							13856292
+						],
+						"unityObjectParams": [],
+						"fsmGameObjectParams": [],
+						"fsmOwnerDefaultParams": [],
+						"animationCurveParams": [],
+						"functionCallParams": [],
+						"fsmTemplateControlParams": [],
+						"fsmEventTargetParams": [],
+						"fsmPropertyParams": [],
+						"layoutOptionParams": [],
+						"fsmStringParams": [],
+						"fsmObjectParams": [
+							{
+								"useVariable": 0,
+								"name": "",
+								"tooltip": "",
+								"showInInspector": 0,
+								"networkSync": 0,
+								"typeName": "ToolItem",
+								"value": { "m_FileID": 12, "m_PathID": -8197221262263070345 }
+							}
+						],
+						"fsmVarParams": [],
+						"fsmArrayParams": [],
+						"fsmEnumParams": [],
+						"fsmFloatParams": [],
+						"fsmIntParams": [
+							{
+								"useVariable": 1,
+								"name": "",
+								"tooltip": "",
+								"showInInspector": 0,
+								"networkSync": 0,
+								"value": 0
+							}
+						],
+						"fsmBoolParams": [
+							{
+								"useVariable": 1,
+								"name": "",
+								"tooltip": "",
+								"showInInspector": 0,
+								"networkSync": 0,
+								"value": 0
+							}
+						],
+						"fsmVector2Params": [],
+						"fsmVector3Params": [],
+						"fsmColorParams": [],
+						"fsmRectParams": [],
+						"fsmQuaternionParams": [],
+						"stringParams": [
+							"EQUIPPED",
+							"UNEQUIPPED"
+						],
+						"byteData": [],
+						"arrayParamSizes": [],
+						"arrayParamTypes": [],
+						"customTypeSizes": [],
+						"customTypeNames": [],
+						"paramDataType": [
+							24,
+							16,
+							23,
+							23,
+							17
+						],
+						"paramName": [
+							"Tool",
+							"RequiredAmountLeft",
+							"trueEvent",
+							"falseEvent",
+							"storeValue"
+						],
+						"paramDataPos": [
+							0,
+							0,
+							0,
+							1,
+							0
+						],
+						"paramByteDataSize": [
+							0,
+							0,
+							0,
+							0,
+							0
+						]
+					}
+				},
+				{
+					"name": "Unequipped",
+					"description": "",
+					"colorIndex": 0,
+					"position": {
+						"x": 63,
+						"y": 236,
+						"width": 108,
+						"height": 16
+					},
+					"isBreakpoint": 0,
+					"isSequence": 0,
+					"hideUnused": 0,
+					"transitions": [],
+					"actionData": {
+						"actionNames": [
+							"HutongGames.PlayMaker.Actions.SetFsmBool"
+						],
+						"customNames": [
+							""
+						],
+						"actionEnabled": [
+							1
+						],
+						"actionIsOpen": [
+							1
+						],
+						"actionStartIndex": [
+							0
+						],
+						"actionHashCodes": [
+							97451624
+						],
+						"unityObjectParams": [],
+						"fsmGameObjectParams": [],
+						"fsmOwnerDefaultParams": [
+							{
+								"ownerOption": 0,
+								"gameObject": {
+									"useVariable": 0,
+									"name": "",
+									"tooltip": "",
+									"showInInspector": 0,
+									"networkSync": 0,
+									"value": { "m_FileID": 0, "m_PathID": 0 }
+								}
+							}
+						],
+						"animationCurveParams": [],
+						"functionCallParams": [],
+						"fsmTemplateControlParams": [],
+						"fsmEventTargetParams": [],
+						"fsmPropertyParams": [],
+						"layoutOptionParams": [],
+						"fsmStringParams": [
+							{
+								"useVariable": 0,
+								"name": "",
+								"tooltip": "",
+								"showInInspector": 0,
+								"networkSync": 0,
+								"value": "Sprint"
+							},
+							{
+								"useVariable": 0,
+								"name": "",
+								"tooltip": "",
+								"showInInspector": 0,
+								"networkSync": 0,
+								"value": "Sprintmaster Active"
+							}
+						],
+						"fsmObjectParams": [],
+						"fsmVarParams": [],
+						"fsmArrayParams": [],
+						"fsmEnumParams": [],
+						"fsmFloatParams": [],
+						"fsmIntParams": [],
+						"fsmBoolParams": [
+							{
+								"useVariable": 0,
+								"name": "",
+								"tooltip": "",
+								"showInInspector": 0,
+								"networkSync": 0,
+								"value": 0
+							}
+						],
+						"fsmVector2Params": [],
+						"fsmVector3Params": [],
+						"fsmColorParams": [],
+						"fsmRectParams": [],
+						"fsmQuaternionParams": [],
+						"stringParams": [],
+						"byteData": [
+							0
+						],
+						"arrayParamSizes": [],
+						"arrayParamTypes": [],
+						"customTypeSizes": [],
+						"customTypeNames": [],
+						"paramDataType": [
+							20,
+							18,
+							18,
+							17,
+							1
+						],
+						"paramName": [
+							"gameObject",
+							"fsmName",
+							"variableName",
+							"setValue",
+							"everyFrame"
+						],
+						"paramDataPos": [
+							0,
+							0,
+							1,
+							0,
+							0
+						],
+						"paramByteDataSize": [
+							0,
+							0,
+							0,
+							0,
+							1
+						]
+					}
+				},
+				{
+					"name": "Pause Usage",
+					"description": "",
+					"colorIndex": 0,
+					"position": {
+						"x": 595,
+						"y": 598,
+						"width": 137,
+						"height": 48
+					},
+					"isBreakpoint": 0,
+					"isSequence": 0,
+					"hideUnused": 0,
+					"transitions": [
+						{
+							"fsmEvent": {
+								"name": "CANCEL",
+								"isSystemEvent": 0,
+								"isGlobal": 0
+							},
+							"toState": "Start Usage",
+							"linkStyle": 0,
+							"linkConstraint": 0,
+							"linkTarget": 0,
+							"colorIndex": 0
+						},
+						{
+							"fsmEvent": {
+								"name": "STOP SILK USAGE",
+								"isSystemEvent": 0,
+								"isGlobal": 0
+							},
+							"toState": "Idle",
+							"linkStyle": 0,
+							"linkConstraint": 0,
+							"linkTarget": 0,
+							"colorIndex": 0
+						}
+					],
+					"actionData": {
+						"actionNames": [
+							"HutongGames.PlayMaker.Actions.SetFsmBool",
+							"HutongGames.PlayMaker.Actions.RemoveUsingSilk",
+							"HutongGames.PlayMaker.Actions.CallMethodProper",
+							"HutongGames.PlayMaker.Actions.GetSilkV2",
+							"HutongGames.PlayMaker.Actions.IntCompare"
+						],
+						"customNames": [
+							"",
+							"",
+							"",
+							"",
+							""
+						],
+						"actionEnabled": [
+							1,
+							1,
+							1,
+							1,
+							1
+						],
+						"actionIsOpen": [
+							1,
+							1,
+							1,
+							1,
+							1
+						],
+						"actionStartIndex": [
+							0,
+							5,
+							8,
+							15,
+							17
+						],
+						"actionHashCodes": [
+							97451624,
+							79769369,
+							7865249,
+							2613434,
+							44169737
+						],
+						"unityObjectParams": [],
+						"fsmGameObjectParams": [],
+						"fsmOwnerDefaultParams": [
+							{
+								"ownerOption": 0,
+								"gameObject": {
+									"useVariable": 0,
+									"name": "",
+									"tooltip": "",
+									"showInInspector": 0,
+									"networkSync": 0,
+									"value": { "m_FileID": 0, "m_PathID": 0 }
+								}
+							},
+							{
+								"ownerOption": 0,
+								"gameObject": {
+									"useVariable": 0,
+									"name": "",
+									"tooltip": "",
+									"showInInspector": 0,
+									"networkSync": 0,
+									"value": { "m_FileID": 0, "m_PathID": 0 }
+								}
+							}
+						],
+						"animationCurveParams": [],
+						"functionCallParams": [],
+						"fsmTemplateControlParams": [],
+						"fsmEventTargetParams": [],
+						"fsmPropertyParams": [],
+						"layoutOptionParams": [],
+						"fsmStringParams": [
+							{
+								"useVariable": 0,
+								"name": "",
+								"tooltip": "",
+								"showInInspector": 0,
+								"networkSync": 0,
+								"value": "Sprint"
+							},
+							{
+								"useVariable": 0,
+								"name": "",
+								"tooltip": "",
+								"showInInspector": 0,
+								"networkSync": 0,
+								"value": "Sprintmaster Active"
+							},
+							{
+								"useVariable": 0,
+								"name": "",
+								"tooltip": "",
+								"showInInspector": 0,
+								"networkSync": 0,
+								"value": "HeroController"
+							},
+							{
+								"useVariable": 0,
+								"name": "",
+								"tooltip": "",
+								"showInInspector": 0,
+								"networkSync": 0,
+								"value": "SetSilkRegenBlocked"
+							}
+						],
+						"fsmObjectParams": [],
+						"fsmVarParams": [
+							{
+								"variableName": "",
+								"objectType": "UnityEngine.Object",
+								"useVariable": 0,
+								"type": 2,
+								"floatValue": 0,
+								"intValue": 0,
+								"boolValue": 0,
+								"stringValue": "",
+								"vector4Value": {
+									"x": 0,
+									"y": 0,
+									"z": 0,
+									"w": 0
+								},
+								"objectReference": { "m_FileID": 0, "m_PathID": 0 },
+								"arrayValue": {
+									"useVariable": 0,
+									"name": "",
+									"tooltip": "",
+									"showInInspector": 0,
+									"networkSync": 0,
+									"type": -1,
+									"objectTypeName": "",
+									"floatValues": [],
+									"intValues": [],
+									"boolValues": [],
+									"stringValues": [],
+									"vector4Values": [],
+									"objectReferences": []
+								}
+							},
+							{
+								"variableName": "",
+								"objectType": "UnityEngine.Object",
+								"useVariable": 1,
+								"type": -1,
+								"floatValue": 0,
+								"intValue": 0,
+								"boolValue": 0,
+								"stringValue": "",
+								"vector4Value": {
+									"x": 0,
+									"y": 0,
+									"z": 0,
+									"w": 0
+								},
+								"objectReference": { "m_FileID": 0, "m_PathID": 0 },
+								"arrayValue": {
+									"useVariable": 0,
+									"name": "",
+									"tooltip": "",
+									"showInInspector": 0,
+									"networkSync": 0,
+									"type": -1,
+									"objectTypeName": "",
+									"floatValues": [],
+									"intValues": [],
+									"boolValues": [],
+									"stringValues": [],
+									"vector4Values": [],
+									"objectReferences": []
+								}
+							}
+						],
+						"fsmArrayParams": [],
+						"fsmEnumParams": [
+							{
+								"useVariable": 0,
+								"name": "",
+								"tooltip": "",
+								"showInInspector": 0,
+								"networkSync": 0,
+								"enumName": "SilkSpool+SilkUsingFlags",
+								"intValue": 1
+							}
+						],
+						"fsmFloatParams": [],
+						"fsmIntParams": [
+							{
+								"useVariable": 0,
+								"name": "",
+								"tooltip": "",
+								"showInInspector": 0,
+								"networkSync": 0,
+								"value": 1
+							},
+							{
+								"useVariable": 1,
+								"name": "Current Silk",
+								"tooltip": "",
+								"showInInspector": 0,
+								"networkSync": 0,
+								"value": 0
+							},
+							{
+								"useVariable": 1,
+								"name": "Current Silk",
+								"tooltip": "",
+								"showInInspector": 0,
+								"networkSync": 0,
+								"value": 0
+							},
+							{
+								"useVariable": 0,
+								"name": "",
+								"tooltip": "",
+								"showInInspector": 0,
+								"networkSync": 0,
+								"value": 0
+							}
+						],
+						"fsmBoolParams": [
+							{
+								"useVariable": 0,
+								"name": "",
+								"tooltip": "",
+								"showInInspector": 0,
+								"networkSync": 0,
+								"value": 0
+							},
+							{
+								"useVariable": 1,
+								"name": "Added Using Silk",
+								"tooltip": "",
+								"showInInspector": 0,
+								"networkSync": 0,
+								"value": 0
+							}
+						],
+						"fsmVector2Params": [],
+						"fsmVector3Params": [],
+						"fsmColorParams": [],
+						"fsmRectParams": [],
+						"fsmQuaternionParams": [],
+						"stringParams": [
+							"",
+							"",
+							"CANCEL"
+						],
+						"byteData": [
+							0,
+							0,
+							1,
+							1
+						],
+						"arrayParamSizes": [
+							1
+						],
+						"arrayParamTypes": [
+							"HutongGames.PlayMaker.FsmVar"
+						],
+						"customTypeSizes": [],
+						"customTypeNames": [],
+						"paramDataType": [
+							20,
+							18,
+							18,
+							17,
+							1,
+							16,
+							42,
+							17,
+							20,
+							18,
+							18,
+							12,
+							39,
+							39,
+							1,
+							16,
+							1,
+							16,
+							16,
+							23,
+							23,
+							23,
+							1
+						],
+						"paramName": [
+							"gameObject",
+							"fsmName",
+							"variableName",
+							"setValue",
+							"everyFrame",
+							"Amount",
+							"UsingType",
+							"DidAddTracker",
+							"gameObject",
+							"behaviour",
+							"methodName",
+							"parameters",
+							"",
+							"storeResult",
+							"EveryFrame",
+							"StoreAmount",
+							"EveryFrame",
+							"integer1",
+							"integer2",
+							"equal",
+							"lessThan",
+							"greaterThan",
+							"everyFrame"
+						],
+						"paramDataPos": [
+							0,
+							0,
+							1,
+							0,
+							0,
+							0,
+							0,
+							1,
+							1,
+							2,
+							3,
+							0,
+							0,
+							1,
+							1,
+							1,
+							2,
+							2,
+							3,
+							0,
+							1,
+							2,
+							3
+						],
+						"paramByteDataSize": [
+							0,
+							0,
+							0,
+							0,
+							1,
+							0,
+							0,
+							0,
+							0,
+							0,
+							0,
+							0,
+							0,
+							0,
+							1,
+							0,
+							1,
+							0,
+							0,
+							0,
+							0,
+							0,
+							1
+						]
+					}
+				}
+			],
+			"events": [
+				{
+					"name": "FINISHED",
+					"isSystemEvent": 1,
+					"isGlobal": 0
+				},
+				{
+					"name": "EQUIPPED",
+					"isSystemEvent": 0,
+					"isGlobal": 0
+				},
+				{
+					"name": "FALSE",
+					"isSystemEvent": 0,
+					"isGlobal": 0
+				},
+				{
+					"name": "RESET",
+					"isSystemEvent": 0,
+					"isGlobal": 0
+				},
+				{
+					"name": "START SILK USAGE",
+					"isSystemEvent": 0,
+					"isGlobal": 0
+				},
+				{
+					"name": "START SILK USAGE BURST",
+					"isSystemEvent": 0,
+					"isGlobal": 0
+				},
+				{
+					"name": "STOP SILK USAGE",
+					"isSystemEvent": 0,
+					"isGlobal": 0
+				},
+				{
+					"name": "TOOL EQUIPS CHANGED",
+					"isSystemEvent": 0,
+					"isGlobal": 0
+				},
+				{
+					"name": "TRUE",
+					"isSystemEvent": 0,
+					"isGlobal": 0
+				},
+				{
+					"name": "UNEQUIPPED",
+					"isSystemEvent": 0,
+					"isGlobal": 0
+				},
+				{
+					"name": "USE SILK",
+					"isSystemEvent": 0,
+					"isGlobal": 0
+				},
+				{
+					"name": "CANCEL",
+					"isSystemEvent": 0,
+					"isGlobal": 0
+				}
+			],
+			"globalTransitions": [
+				{
+					"fsmEvent": {
+						"name": "TOOL EQUIPS CHANGED",
+						"isSystemEvent": 0,
+						"isGlobal": 0
+					},
+					"toState": "Check Pause",
+					"linkStyle": 0,
+					"linkConstraint": 0,
+					"linkTarget": 0,
+					"colorIndex": 0
+				}
+			],
+			"variables": {
+				"floatVariables": [
+					{
+						"useVariable": 1,
+						"name": "Use Silk Timer",
+						"tooltip": "",
+						"showInInspector": 0,
+						"networkSync": 0,
+						"value": 0
+					},
+					{
+						"useVariable": 1,
+						"name": "Timer Add",
+						"tooltip": "",
+						"showInInspector": 0,
+						"networkSync": 0,
+						"value": 0
+					}
+				],
+				"intVariables": [
+					{
+						"useVariable": 1,
+						"name": "Current Silk",
+						"tooltip": "",
+						"showInInspector": 0,
+						"networkSync": 0,
+						"value": 0
+					}
+				],
+				"boolVariables": [
+					{
+						"useVariable": 1,
+						"name": "Added Using Silk",
+						"tooltip": "",
+						"showInInspector": 0,
+						"networkSync": 0,
+						"value": 0
+					}
+				],
+				"stringVariables": [],
+				"vector2Variables": [],
+				"vector3Variables": [],
+				"colorVariables": [],
+				"rectVariables": [],
+				"quaternionVariables": [],
+				"gameObjectVariables": [],
+				"objectVariables": [],
+				"materialVariables": [],
+				"textureVariables": [],
+				"arrayVariables": [],
+				"enumVariables": [],
+				"categories": [
+					""
+				],
+				"variableCategoryIDs": [
+					0,
+					0,
+					0,
+					0
+				]
+			},
+			"description": "",
+			"docUrl": "",
+			"showStateLabel": 0,
+			"maxLoopCount": 0,
+			"watermark": "",
+			"password": "",
+			"locked": 0,
+			"manualUpdate": 0,
+			"outVariableIndices": [],
+			"keepDelayedEventsOnStateExit": 0,
+			"preprocessed": 0,
+			"ExposedEvents": [],
+			"OutputEvents": [],
+			"RestartOnEnable": 1,
+			"ResetVariablesOnEnable": 0,
+			"EnableDebugFlow": 0,
+			"EnableBreakpoints": 1,
+			"editorFlags": 1,
+			"activeStateName": "",
+			"mouseEvents": 0,
+			"handleLevelLoaded": 0,
+			"handleTriggerEnter2D": 0,
+			"handleTriggerExit2D": 0,
+			"handleTriggerStay2D": 0,
+			"handleCollisionEnter2D": 0,
+			"handleCollisionExit2D": 0,
+			"handleCollisionStay2D": 0,
+			"handleTriggerEnter": 0,
+			"handleTriggerExit": 0,
+			"handleTriggerStay": 0,
+			"handleCollisionEnter": 0,
+			"handleCollisionExit": 0,
+			"handleCollisionStay": 0,
+			"handleParticleCollision": 0,
+			"handleControllerColliderHit": 0,
+			"handleJointBreak": 0,
+			"handleJointBreak2D": 0,
+			"handleOnGUI": 0,
+			"handleFixedUpdate": 0,
+			"handleLateUpdate": 0,
+			"handleApplicationEvents": 0,
+			"handleUiEvents": 0,
+			"handleLegacyNetworking": 0,
+			"handleAnimatorMove": 0,
+			"handleAnimatorIK": 0
+		}
+	}
+}
