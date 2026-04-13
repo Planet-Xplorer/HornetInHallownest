@@ -1,5 +1,6 @@
 using GlobalEnums;
 using Modding;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace HornetInHallownest
@@ -504,46 +505,12 @@ namespace HornetInHallownest
 
         private static void UpdateSlashAnimations(string crestAnimationKey)
         {
-            // Find the crest-specific animation frames
-            if (HornetSpriteDriver.FrameAnimSprites.TryGetValue(crestAnimationKey, out var crestFrames) && crestFrames.Count > 0)
-            {
-                // Update the main animation mappings to use crest frames for all attack types
-                var animMap = HornetSpriteDriver.AnimMap;
-                
-                // Update all slash variants to use crest animations
-                if (animMap.ContainsKey("Slash"))
-                    animMap["Slash"] = crestFrames.ToArray();
-                if (animMap.ContainsKey("SlashAlt"))
-                    animMap["SlashAlt"] = crestFrames.ToArray();
-                if (animMap.ContainsKey("UpSlash"))
-                    animMap["UpSlash"] = crestFrames.ToArray();
-                if (animMap.ContainsKey("DownSlash"))
-                    animMap["DownSlash"] = crestFrames.ToArray();
-                if (animMap.ContainsKey("Wall Slash"))
-                    animMap["Wall Slash"] = crestFrames.ToArray();
-            }
+            // TODO: map crest-specific FrameAnimSprites keys back to AnimMap string-key arrays
         }
 
         private static void UpdateSlashEffects(CrestType crestType)
         {
-            // Update slash effect animations to match crest
-            if (!CrestSlashEffects.TryGetValue(crestType, out var effectData)) return;
-
-            // Update slash effect animations in the sprite driver
-            var animMap = HornetSpriteDriver.AnimMap;
-            
-            // Map crest-specific slash effects
-            if (HornetSpriteDriver.FrameAnimSprites.TryGetValue(effectData.SlashEffect, out var slashEffectFrames))
-                animMap["SlashEffect"] = slashEffectFrames.ToArray();
-            
-            if (HornetSpriteDriver.FrameAnimSprites.TryGetValue(effectData.SlashEffectAlt, out var slashAltEffectFrames))
-                animMap["SlashEffectAlt"] = slashAltEffectFrames.ToArray();
-            
-            if (HornetSpriteDriver.FrameAnimSprites.TryGetValue(effectData.UpSlashEffect, out var upSlashEffectFrames))
-                animMap["UpSlashEffect"] = upSlashEffectFrames.ToArray();
-            
-            if (HornetSpriteDriver.FrameAnimSprites.TryGetValue(effectData.DownSlashEffect, out var downSlashEffectFrames))
-                animMap["DownSlashEffect"] = downSlashEffectFrames.ToArray();
+            // TODO: map crest-specific slash effect FrameAnimSprites keys back to AnimMap string-key arrays
         }
 
         public static void PlayCrestSlashEffect(string attackType)

@@ -293,7 +293,7 @@ namespace HornetInHallownest
             }
 
             // Handle harpoon queuing (from FSM logic)
-            if (InputHandler.Instance.inputActions.SuperDash.IsPressed)
+            if (InputHandler.Instance.inputActions.superDash.IsPressed)
             {
                 if (CanHarpoonDash())
                 {
@@ -414,7 +414,7 @@ namespace HornetInHallownest
             if (self.cState == null) return;
             
             // Sprint input: hold dash while grounded
-            if (InputHandler.Instance.inputActions.Dash.IsPressed && self.cState.onGround && !self.cState.dashing)
+            if (InputHandler.Instance.inputActions.dash.IsPressed && self.cState.onGround && !self.cState.dashing)
             {
                 if (!_isSprinting)
                 {
@@ -423,7 +423,7 @@ namespace HornetInHallownest
                 _sprintBufferActive = true;
                 _sprintBufferTimer = SPRINT_BUFFER_TIME;
             }
-            else if (!InputHandler.Instance.inputActions.Dash.IsPressed)
+            else if (!InputHandler.Instance.inputActions.dash.IsPressed)
             {
                 if (_isSprinting)
                 {
@@ -490,8 +490,8 @@ namespace HornetInHallownest
             bool canDash = hc.hero_state != ActorStates.hard_landing &&
                           hc.hero_state != ActorStates.dash_landing &&
                           _harpoonDashCooldown <= 0f &&
-                          (!hc.cState.dashing || hc.dash_timer <= 0f) &&
-                          (!hc.cState.attacking || hc.attack_time >= hc.Config.AttackRecoveryTime) &&
+                          !hc.cState.dashing &&
+                          !hc.cState.attacking &&
                           !hc.cState.dead && !hc.cState.hazardDeath;
             
             // Reset queue if conditions change to prevent stuck queuing

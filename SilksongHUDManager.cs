@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using GlobalEnums;
@@ -27,7 +28,6 @@ namespace HornetInHallownest
         // Crest system
         private CrestType _currentCrest = CrestType.Hunter;
         private SpriteRenderer _crestIconRenderer;
-        private tk2dSprite _crestIconTk2d;
         private Animator _crestAnimator;
 
         // Silk display system (text-based)
@@ -57,7 +57,7 @@ namespace HornetInHallownest
         };
         
         // Coroutine tracking for safe cleanup
-        private System.Collections.Coroutine _crestSwitchEffectCoroutine;
+        private Coroutine _crestSwitchEffectCoroutine;
 
         void Awake()
         {
@@ -121,9 +121,6 @@ namespace HornetInHallownest
             _crestIconRenderer = _crestDisplay.AddComponent<SpriteRenderer>();
             _crestIconRenderer.sortingLayerName = "UI";
             _crestIconRenderer.sortingOrder = 100;
-
-            // Try to add tk2d sprite for compatibility
-            _crestIconTk2d = _crestDisplay.AddComponent<tk2dSprite>();
 
             // Add animator for crest animations
             _crestAnimator = _crestDisplay.AddComponent<Animator>();
@@ -217,9 +214,6 @@ namespace HornetInHallownest
             {
                 if (_crestIconRenderer != null)
                     _crestIconRenderer.sprite = crestSprite;
-                
-                if (_crestIconTk2d != null)
-                    _crestIconTk2d.sprite = crestSprite;
             }
             else
             {
@@ -228,18 +222,12 @@ namespace HornetInHallownest
                 {
                     if (_crestIconRenderer != null)
                         _crestIconRenderer.sprite = fallbackSprite;
-                    
-                    if (_crestIconTk2d != null)
-                        _crestIconTk2d.sprite = fallbackSprite;
                 }
                 else
                 {
-                    // Ultimate fallback - clear sprites if none available
+                    // Ultimate fallback - clear sprite if none available
                     if (_crestIconRenderer != null)
                         _crestIconRenderer.sprite = null;
-                    
-                    if (_crestIconTk2d != null)
-                        _crestIconTk2d.sprite = null;
                 }
             }
 
@@ -361,7 +349,7 @@ namespace HornetInHallownest
             if (playerData == null) return;
 
             // Update mask displays based on current masks
-            int maskCount = playerData.maskCount;
+            int maskCount = playerData.maxHealth;
             for (int i = 0; i < _maskDisplays.Count; i++)
             {
                 var maskDisplay = _maskDisplays[i];
@@ -497,11 +485,6 @@ namespace HornetInHallownest
                 Destroy(_hudRoot);
                 _hudRoot = null;
             }
-        }
-        
-        void OnDestroy()
-        {
-            Cleanup();
         }
         
         void OnDisable()

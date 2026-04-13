@@ -35,11 +35,11 @@ namespace HornetInHallownest
         public float NotificationDuration = 2.0f;
         public Vector3 NotificationOffset = new Vector3(0f, 1f, 0f);
 
-        // Crest cycling
+        // Crest cycling order (Cloakless and Cursed are intentionally excluded — see CONTROLS.md)
         private CrestType[] _crestOrder = new[]
         {
-            CrestType.Hunter, CrestType.Reaper, CrestType.Wanderer, CrestType.Warrior,
-            CrestType.Witch, CrestType.Toolmaster, CrestType.Spinner, CrestType.Cloakless, CrestType.Cursed
+            CrestType.Hunter, CrestType.Wanderer, CrestType.Warrior, CrestType.Reaper,
+            CrestType.Spinner, CrestType.Toolmaster, CrestType.Witch
         };
 
         private int _currentCrestIndex = 0;
@@ -55,8 +55,8 @@ namespace HornetInHallownest
         private const float SWITCH_COOLDOWN = 0.3f;
         
         // Coroutine tracking for safe cleanup
-        private System.Collections.Coroutine _notificationAnimationCoroutine;
-        private System.Collections.Coroutine _fadeoutNotificationCoroutine;
+        private Coroutine _notificationAnimationCoroutine;
+        private Coroutine _fadeoutNotificationCoroutine;
         
         // Cached component references for performance
         private SilksongHUDManager _cachedSilksongHUDManager;
@@ -160,7 +160,7 @@ namespace HornetInHallownest
             if (switched)
             {
                 _lastSwitchTime = Time.time;
-                ShowCrestSwitchNotification();
+                DisplayCrestNotification();
             }
         }
 
@@ -224,7 +224,7 @@ namespace HornetInHallownest
             _cachedHudSpriteManager = FindObjectOfType<HudSpriteManager>();
         }
 
-        private void ShowCrestSwitchNotification()
+        private void DisplayCrestNotification()
         {
             if (!ShowCrestSwitchNotification || _notificationObject == null) return;
 

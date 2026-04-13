@@ -1,5 +1,6 @@
 using UnityEngine;
-using GlobalEnums;
+using Modding;
+using System.Collections.Generic;
 
 namespace HornetInHallownest
 {
@@ -15,14 +16,15 @@ namespace HornetInHallownest
         // Silk system variables
         public static int CurrentSilk = 0;
         public const int MaxSilk = 18;
-        
+
         // Saved soul values for character switching
-        private static int _savedSoulOrbs;
         private static int _savedMPCharge;
         private static int _savedMPReserve;
-        
-        // Saved silk values for character switching  
+
+        // Saved silk values for character switching
         private static int _savedSilk;
+
+        private bool _silkSystemActive = false;
 
         void Awake()
         {
@@ -33,26 +35,20 @@ namespace HornetInHallownest
         {
             // Hook into enemy hit events for silk gain
             On.HealthManager.Hit += OnEnemyHit;
-            
-            // Hook into soul gain to block it when Hornet is active
-            On.PlayerData.AddMP += OnAddMP;
-            On.PlayerData.AddMPCharge += OnAddMPCharge;
-            
+
             // Hook into healing to block it when Hornet is active
+            // (Hornet uses silk-based healing instead of Knight's focus)
             On.PlayerData.AddHealth += OnAddHealth;
         }
 
         void OnDisable()
         {
             On.HealthManager.Hit -= OnEnemyHit;
-            On.PlayerData.AddMP -= OnAddMP;
-            On.PlayerData.AddMPCharge -= OnAddMPCharge;
             On.PlayerData.AddHealth -= OnAddHealth;
         }
 
         void Start()
         {
-            // Initialize silk system when Hornet becomes active
             if (HornetSpriteDriver.IsEnabled)
             {
                 EnableSilkSystem();
@@ -61,9 +57,8 @@ namespace HornetInHallownest
 
         void Update()
         {
-            // Check for Hornet state changes
             bool isHornet = HornetSpriteDriver.IsEnabled;
-            
+
             if (isHornet && !_silkSystemActive)
             {
                 EnableSilkSystem();
@@ -74,32 +69,26 @@ namespace HornetInHallownest
             }
         }
 
-        private bool _silkSystemActive = false;
-
         private void EnableSilkSystem()
         {
             if (_silkSystemActive) return;
 
-            // Save current soul values
+            // Save current soul values and zero them out while Hornet is active
             if (PlayerData.instance != null)
             {
-                _savedSoulOrbs = PlayerData.instance.soulOrbs;
                 _savedMPCharge = PlayerData.instance.MPCharge;
                 _savedMPReserve = PlayerData.instance.MPReserve;
-                
-                // Clear soul display while Hornet is active
-                PlayerData.instance.soulOrbs = 0;
+
                 PlayerData.instance.MPCharge = 0;
                 PlayerData.instance.MPReserve = 0;
             }
 
             // Restore saved silk if switching back to Hornet
             CurrentSilk = _savedSilk;
-            
+
             _silkSystemActive = true;
             HornetInHallownest.Instance?.Log("[SilkManager] Silk system enabled");
-            
-            // Update HUD displays
+
             UpdateSilkHUD();
         }
 
@@ -107,13 +96,11 @@ namespace HornetInHallownest
         {
             if (!_silkSystemActive) return;
 
-            // Save current silk for later
             _savedSilk = CurrentSilk;
-            
-            // Restore soul values
+
+            // Restore Knight's soul values
             if (PlayerData.instance != null)
             {
-                PlayerData.instance.soulOrbs = _savedSoulOrbs;
                 PlayerData.instance.MPCharge = _savedMPCharge;
                 PlayerData.instance.MPReserve = _savedMPReserve;
             }
@@ -125,82 +112,51 @@ namespace HornetInHallownest
 
         private void OnEnemyHit(On.HealthManager.orig_Hit orig, HealthManager self, HitInstance hitInstance)
         {
-            // Only give silk if Hornet is active and hit was from Hornet
-            if (!_silkSystemActive) 
-            {
-                orig(self, hitInstance);
-                return;
-            }
+            orig(self, hitInstance);
 
-            // Check if this hit was from the player (Hornet)
-            if (hitInstance.AttackType == AttackTypeEnum.Generic || 
-                hitInstance.AttackType == AttackTypeEnum.Regular)
+            // Grant silk for any hit while Hornet is active
+            if (_silkSystemActive)
             {
                 AddSilk(1);
             }
-
-            orig(self, hitInstance);
-        }
-
-        private void OnAddMP(On.PlayerData.orig_AddMP orig, PlayerData self, int amount)
-        {
-            // Block soul gain when Hornet is active
-            if (_silkSystemActive)
-            {
-                HornetInHallownest.Instance?.Log("[SilkManager] Blocked soul gain");
-                return;
-            }
-            
-            orig(self, amount);
-        }
-
-        private void OnAddMPCharge(On.PlayerData.orig_AddMPCharge orig, PlayerData self)
-        {
-            // Block soul charge gain when Hornet is active
-            if (_silkSystemActive)
-            {
-                HornetInHallownest.Instance?.Log("[SilkManager] Blocked soul charge gain");
-                return;
-            }
-            
-            orig(self);
         }
 
         private void OnAddHealth(On.PlayerData.orig_AddHealth orig, PlayerData self, int amount)
         {
-            // Block normal healing when Hornet is active
+            // Block Knight's focus healing while Hornet is active
+            // Hornet uses silk-based thread healing instead
             if (_silkSystemActive)
             {
-                HornetInHallownest.Instance?.Log("[SilkManager] Blocked normal healing");
+                HornetInHallownest.Instance?.Log("[SilkManager] Blocked focus heal (Hornet uses silk healing)");
                 return;
             }
-            
+
             orig(self, amount);
         }
 
         public static void AddSilk(int amount)
         {
             if (Instance == null || !Instance._silkSystemActive) return;
-            
+
             CurrentSilk = Mathf.Min(CurrentSilk + amount, MaxSilk);
             Instance.UpdateSilkHUD();
-            
+
             HornetInHallownest.Instance?.Log($"[SilkManager] Silk: {CurrentSilk}/{MaxSilk}");
         }
 
         public static void UseSilk(int amount)
         {
             if (Instance == null || !Instance._silkSystemActive) return;
-            
+
             CurrentSilk = Mathf.Max(CurrentSilk - amount, 0);
             Instance.UpdateSilkHUD();
-            
+
             HornetInHallownest.Instance?.Log($"[SilkManager] Silk used: {CurrentSilk}/{MaxSilk}");
         }
 
         private void UpdateSilkHUD()
         {
-            // Update HUD displays for spool and cap
+            // SilksongHUDManager owns the text-based silk display
             var hudManager = FindObjectOfType<SilksongHUDManager>();
             if (hudManager != null)
             {
@@ -209,16 +165,6 @@ namespace HornetInHallownest
             else
             {
                 HornetInHallownest.Instance?.Log("[SilkManager] SilksongHUDManager not found for silk update");
-            }
-
-            var spriteManager = FindObjectOfType<HudSpriteManager>();
-            if (spriteManager != null)
-            {
-                spriteManager.UpdateSilkSpoolVisual();
-            }
-            else
-            {
-                HornetInHallownest.Instance?.Log("[SilkManager] HudSpriteManager not found for silk update");
             }
         }
 

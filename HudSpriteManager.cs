@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -29,7 +30,7 @@ namespace HornetInHallownest
         private AnimatedHudOverlay _hudFrameOverlay;
         
         // Coroutine tracking for safe cleanup
-        private System.Collections.Coroutine _crestSwitchCoroutine;
+        private Coroutine _crestSwitchCoroutine;
 
         void Start()
         {
@@ -382,7 +383,7 @@ namespace HornetInHallownest
             if (_silkSpoolOverlay == null || _silkSpoolOverlay.Renderer == null) return;
             
             // Update silk spool visual based on current silk amount with division by zero protection
-            var silkPercentage = CrestManager.SilkMax > 0f ? CrestManager.SilkAmount / CrestManager.SilkMax : 0f;
+            var silkPercentage = SilkManager.MaxSilk > 0 ? (float)SilkManager.CurrentSilk / SilkManager.MaxSilk : 0f;
             
             // TODO: Update spool animation based on silk amount
             // This would involve switching between different animation states
@@ -442,7 +443,7 @@ namespace HornetInHallownest
 
         private class AnimatedHudOverlay
         {
-            private readonly List<Sprite> _frames;
+            private List<Sprite> _frames;
             private float _timer;
             private int _index;
             private bool _enabled = true;
