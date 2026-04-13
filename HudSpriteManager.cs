@@ -289,19 +289,8 @@ namespace HornetInHallownest
         
         private string GetCrestSpriteKey(CrestType crestType)
         {
-            return crestType switch
-            {
-                CrestType.Hunter => "Hunter Crest Icon v3", // Use v3 when available for future upgrades
-                CrestType.Reaper => "Reaper Crest Icon", 
-                CrestType.Wanderer => "Wanderer Crest Icon",
-                CrestType.Warrior => "Warrior Crest Icon",
-                CrestType.Witch => "Witch Crest Icon",
-                CrestType.Toolmaster => "Toolmaster Crest Icon",
-                CrestType.Spinner => "Spinner Crest Icon",
-                CrestType.Cloakless => "Cloakless Crest Icon",
-                CrestType.Cursed => "Cursed Crest Icon",
-                _ => "Hunter Crest Icon v3"
-            };
+            var animData = CrestManager.GetCrestHUDAnimationData(crestType);
+            return animData?.SpriteKey ?? "HUD Frame Hunter v3";
         }
         
         private void PlayCrestSwitchAnimation()

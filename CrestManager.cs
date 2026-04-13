@@ -38,14 +38,132 @@ namespace HornetInHallownest
         // Hunter is the default starting crest in Silksong.
         public static CrestType CurrentCrest = CrestType.Hunter;
 
-        // Silk resource — mirrors PlayerData.instance.MPCharge in concept.
-        // Full silk = 100f.
-        public static float SilkAmount = 100f;
-        public const  float SilkMax    = 100f;
+        // Sequential crest order (skipping Cloakless and Cursed)
+        private static readonly CrestType[] CrestSequence = new[]
+        {
+            CrestType.Hunter,
+            CrestType.Wanderer,
+            CrestType.Warrior,
+            CrestType.Reaper,
+            CrestType.Spinner,
+            CrestType.Toolmaster,
+            CrestType.Witch
+        };
+
+        // HUD animation mappings - using HUD Anim folder for display only
+        private static readonly Dictionary<CrestType, CrestAnimationData> CrestHUDAnimations = new()
+        {
+            { CrestType.Hunter, new CrestAnimationData { SpriteKey = "HUD Frame Hunter v3", AnimationFolder = "HUD Anim", AnimationName = "HUD Frame Hunter v3" } },
+            { CrestType.Wanderer, new CrestAnimationData { SpriteKey = "HUD Frame Wanderer", AnimationFolder = "HUD Anim", AnimationName = "HUD Frame Wanderer" } },
+            { CrestType.Warrior, new CrestAnimationData { SpriteKey = "HUD Frame Warrior", AnimationFolder = "HUD Anim", AnimationName = "HUD Frame Warrior" } },
+            { CrestType.Reaper, new CrestAnimationData { SpriteKey = "HUD Frame Reaper", AnimationFolder = "HUD Anim", AnimationName = "HUD Frame Reaper" } },
+            { CrestType.Spinner, new CrestAnimationData { SpriteKey = "HUD Frame Shaman", AnimationFolder = "HUD Anim", AnimationName = "HUD Frame Shaman" } },
+            { CrestType.Toolmaster, new CrestAnimationData { SpriteKey = "HUD Frame Toolmaster", AnimationFolder = "HUD Anim", AnimationName = "HUD Frame Toolmaster" } },
+            { CrestType.Witch, new CrestAnimationData { SpriteKey = "HUD Frame FWitch", AnimationFolder = "HUD Anim", AnimationName = "HUD Frame FWitch" } }
+        };
+
+        // Attack animation mappings - using CrestWeapon folders for combat only
+        private static readonly Dictionary<CrestType, CrestAnimationData> CrestAttackAnimations = new()
+        {
+            { CrestType.Hunter, new CrestAnimationData { SpriteKey = "Hunter Crest Icon v3", AnimationFolder = "Knight", AnimationName = "Hunter" } },
+            { CrestType.Wanderer, new CrestAnimationData { SpriteKey = "Wanderer Crest Icon", AnimationFolder = "Hornet CrestWeapon Dagger Anim", AnimationName = "Dagger" } },
+            { CrestType.Warrior, new CrestAnimationData { SpriteKey = "Warrior Crest Icon", AnimationFolder = "Hornet CrestWeapon Warrior Anim", AnimationName = "Warrior" } },
+            { CrestType.Reaper, new CrestAnimationData { SpriteKey = "Reaper Crest Icon", AnimationFolder = "Hornet CrestWeapon Scythe Anim", AnimationName = "Scythe" } },
+            { CrestType.Spinner, new CrestAnimationData { SpriteKey = "Spinner Crest Icon", AnimationFolder = "Hornet CrestWeapon Shaman Anim", AnimationName = "Shaman" } },
+            { CrestType.Toolmaster, new CrestAnimationData { SpriteKey = "Toolmaster Crest Icon", AnimationFolder = "Hornet CrestWeapon Drill Lance Anim", AnimationName = "Drill Lance" } },
+            { CrestType.Witch, new CrestAnimationData { SpriteKey = "Witch Crest Icon", AnimationFolder = "Hornet CrestWeapon Whip Anim", AnimationName = "Whip" } }
+        };
+
+        // Slash effect mappings - each crest has unique visual effects
+        private static readonly Dictionary<CrestType, CrestEffectData> CrestSlashEffects = new()
+        {
+            { CrestType.Hunter, new CrestEffectData { 
+                SlashEffect = "Knight/007.SlashEffect", 
+                SlashEffectAlt = "Knight/008.SlashEffectAlt", 
+                UpSlashEffect = "Knight/015.UpSlashEffect", 
+                DownSlashEffect = "Knight/016.DownSlashEffect" 
+            }},
+            { CrestType.Wanderer, new CrestEffectData { 
+                SlashEffect = "Hornet CrestWeapon Dagger Anim/SlashEffect", 
+                SlashEffectAlt = "Hornet CrestWeapon Dagger Anim/SlashEffectAlt", 
+                UpSlashEffect = "Hornet CrestWeapon Dagger Anim/UpSlashEffect", 
+                DownSlashEffect = "Hornet CrestWeapon Dagger Anim/DownSlashEffect" 
+            }},
+            { CrestType.Warrior, new CrestEffectData { 
+                SlashEffect = "Hornet CrestWeapon Warrior Anim/003.SlashEffect", 
+                SlashEffectAlt = "Hornet CrestWeapon Warrior Anim/002.SlashEffectAlt", 
+                UpSlashEffect = "Hornet CrestWeapon Warrior Anim/006.UpSlashEffect", 
+                DownSlashEffect = "Hornet CrestWeapon Warrior Anim/001.DownSlashEffect" 
+            }},
+            { CrestType.Reaper, new CrestEffectData { 
+                SlashEffect = "Hornet CrestWeapon Scythe Anim/SlashEffect", 
+                SlashEffectAlt = "Hornet CrestWeapon Scythe Anim/SlashEffectAlt", 
+                UpSlashEffect = "Hornet CrestWeapon Scythe Anim/UpSlashEffect", 
+                DownSlashEffect = "Hornet CrestWeapon Scythe Anim/DownSlashEffect" 
+            }},
+            { CrestType.Spinner, new CrestEffectData { 
+                SlashEffect = "Hornet CrestWeapon Shaman Anim/SlashEffect", 
+                SlashEffectAlt = "Hornet CrestWeapon Shaman Anim/SlashEffectAlt", 
+                UpSlashEffect = "Hornet CrestWeapon Shaman Anim/UpSlashEffect", 
+                DownSlashEffect = "Hornet CrestWeapon Shaman Anim/DownSlashEffect" 
+            }},
+            { CrestType.Toolmaster, new CrestEffectData { 
+                SlashEffect = "Hornet CrestWeapon Drill Lance Anim/SlashEffect", 
+                SlashEffectAlt = "Hornet CrestWeapon Drill Lance Anim/SlashEffectAlt", 
+                UpSlashEffect = "Hornet CrestWeapon Drill Lance Anim/UpSlashEffect", 
+                DownSlashEffect = "Hornet CrestWeapon Drill Lance Anim/DownSlashEffect" 
+            }},
+            { CrestType.Witch, new CrestEffectData { 
+                SlashEffect = "Hornet CrestWeapon Whip Anim/SlashEffect", 
+                SlashEffectAlt = "Hornet CrestWeapon Whip Anim/SlashEffectAlt", 
+                UpSlashEffect = "Hornet CrestWeapon Whip Anim/UpSlashEffect", 
+                DownSlashEffect = "Hornet CrestWeapon Whip Anim/DownSlashEffect" 
+            }}
+        };
+
+        public static KeyCode CrestSwitchKey = KeyCode.G;
 
         void Awake()
         {
             Instance = this;
+        }
+
+        void Update()
+        {
+            if (Input.GetKeyDown(CrestSwitchKey) && HornetSpriteDriver.IsEnabled)
+            {
+                SwitchToNextCrest();
+            }
+        }
+
+        public static void SwitchToNextCrest()
+        {
+            int currentIndex = System.Array.IndexOf(CrestSequence, CurrentCrest);
+            int nextIndex = (currentIndex + 1) % CrestSequence.Length;
+            CrestType nextCrest = CrestSequence[nextIndex];
+            
+            // Trigger crest switch animation
+            var hudManager = FindObjectOfType<SilksongHUDManager>();
+            if (hudManager != null)
+            {
+                hudManager.SwitchToCrestWithAnimation(nextCrest);
+            }
+            else
+            {
+                HornetInHallownest.Instance?.Log("[CrestManager] SilksongHUDManager not found, using direct switch");
+                // Fallback to direct switch
+                CurrentCrest = nextCrest;
+            }
+        }
+
+        public static CrestAnimationData GetCrestHUDAnimationData(CrestType crestType)
+        {
+            return CrestHUDAnimations.TryGetValue(crestType, out var data) ? data : null;
+        }
+
+        public static CrestAnimationData GetCrestAttackAnimationData(CrestType crestType)
+        {
+            return CrestAttackAnimations.TryGetValue(crestType, out var data) ? data : null;
         }
 
         void OnEnable()
@@ -124,68 +242,137 @@ namespace HornetInHallownest
 
         private void ActivateHunter(HeroController hc, AttackDirection dir)
         {
-            // TODO: Hunter crest visual + gameplay effect
+            // Hunter crest - balanced dagger attacks
+            PlayCrestAttackAnimation(CrestType.Hunter);
             HornetInHallownest.Instance.Log("[CrestManager] Hunter crest triggered");
-            On.HeroController.Attack -= OnAttack;
-            hc.Attack(dir);
-            On.HeroController.Attack += OnAttack;
+            
+            try
+            {
+                On.HeroController.Attack -= OnAttack;
+                hc.Attack(dir);
+            }
+            finally
+            {
+                On.HeroController.Attack += OnAttack;
+            }
         }
 
         private void ActivateReaper(HeroController hc, AttackDirection dir)
         {
+            // Reaper crest - scythe attacks
+            PlayCrestAttackAnimation(CrestType.Reaper);
             HornetInHallownest.Instance.Log("[CrestManager] Reaper crest triggered");
-            On.HeroController.Attack -= OnAttack;
-            hc.Attack(dir);
-            On.HeroController.Attack += OnAttack;
+            
+            try
+            {
+                On.HeroController.Attack -= OnAttack;
+                hc.Attack(dir);
+            }
+            finally
+            {
+                On.HeroController.Attack += OnAttack;
+            }
         }
 
         private void ActivateWanderer(HeroController hc, AttackDirection dir)
         {
+            // Wanderer crest - fast dagger attacks
+            PlayCrestAttackAnimation(CrestType.Wanderer);
             HornetInHallownest.Instance.Log("[CrestManager] Wanderer crest triggered");
-            On.HeroController.Attack -= OnAttack;
-            hc.Attack(dir);
-            On.HeroController.Attack += OnAttack;
+            
+            try
+            {
+                On.HeroController.Attack -= OnAttack;
+                hc.Attack(dir);
+            }
+            finally
+            {
+                On.HeroController.Attack += OnAttack;
+            }
         }
 
         private void ActivateWarrior(HeroController hc, AttackDirection dir)
         {
+            // Warrior/Beast crest - heavy attacks
+            PlayCrestAttackAnimation(CrestType.Warrior);
             HornetInHallownest.Instance.Log("[CrestManager] Warrior crest triggered");
-            On.HeroController.Attack -= OnAttack;
-            hc.Attack(dir);
-            On.HeroController.Attack += OnAttack;
+            
+            try
+            {
+                On.HeroController.Attack -= OnAttack;
+                hc.Attack(dir);
+            }
+            finally
+            {
+                On.HeroController.Attack += OnAttack;
+            }
         }
 
         private void ActivateWitch(HeroController hc, AttackDirection dir)
         {
+            // Witch crest - whip attacks
+            PlayCrestAttackAnimation(CrestType.Witch);
             HornetInHallownest.Instance.Log("[CrestManager] Witch crest triggered");
-            On.HeroController.Attack -= OnAttack;
-            hc.Attack(dir);
-            On.HeroController.Attack += OnAttack;
+            
+            try
+            {
+                On.HeroController.Attack -= OnAttack;
+                hc.Attack(dir);
+            }
+            finally
+            {
+                On.HeroController.Attack += OnAttack;
+            }
         }
 
         private void ActivateToolmaster(HeroController hc, AttackDirection dir)
         {
+            // Toolmaster/Architect crest - drill lance attacks
+            PlayCrestAttackAnimation(CrestType.Toolmaster);
             HornetInHallownest.Instance.Log("[CrestManager] Toolmaster crest triggered");
-            On.HeroController.Attack -= OnAttack;
-            hc.Attack(dir);
-            On.HeroController.Attack += OnAttack;
+            
+            try
+            {
+                On.HeroController.Attack -= OnAttack;
+                hc.Attack(dir);
+            }
+            finally
+            {
+                On.HeroController.Attack += OnAttack;
+            }
         }
 
         private void ActivateSpinner(HeroController hc, AttackDirection dir)
         {
+            // Spinner/Shaman crest - spinning attacks
+            PlayCrestAttackAnimation(CrestType.Spinner);
             HornetInHallownest.Instance.Log("[CrestManager] Spinner crest triggered");
-            On.HeroController.Attack -= OnAttack;
-            hc.Attack(dir);
-            On.HeroController.Attack += OnAttack;
+            
+            try
+            {
+                On.HeroController.Attack -= OnAttack;
+                hc.Attack(dir);
+            }
+            finally
+            {
+                On.HeroController.Attack += OnAttack;
+            }
         }
 
         private void ActivateCursed(HeroController hc, AttackDirection dir)
         {
             // TODO: Cursed crest visual (Hornet_Cursed_attack_tendril sprites) + gameplay effect
             HornetInHallownest.Instance.Log("[CrestManager] Cursed crest triggered");
-            On.HeroController.Attack -= OnAttack;
-            hc.Attack(dir);
-            On.HeroController.Attack += OnAttack;
+            
+            try
+            {
+                On.HeroController.Attack -= OnAttack;
+                hc.Attack(dir);
+            }
+            finally
+            {
+                On.HeroController.Attack += OnAttack;
+            }
         }
 
         // ── Damage Modulation ──────────────────────────────────────────────
@@ -251,5 +438,149 @@ namespace HornetInHallownest
 
             orig(self, hitInstance);
         }
+
+        private static void PlayCrestAttackAnimation(CrestType crestType)
+        {
+            var animData = GetCrestAttackAnimationData(crestType);
+            if (animData == null) return;
+
+            // Update the main sprite driver's animation mappings for this crest
+            UpdateCrestAttackMappings(crestType);
+            
+            HornetInHallownest.Instance?.Log($"[CrestManager] Updated to {crestType} attack animations from {animData.AnimationFolder}");
+        }
+
+        private static void UpdateCrestAttackMappings(CrestType crestType)
+        {
+            var animData = GetCrestAttackAnimationData(crestType);
+            if (animData == null) return;
+
+            // Update the main animation map in SpriteSwapper to use crest-specific attacks
+            // This ensures all subsequent attacks use the correct crest animations
+            switch (crestType)
+            {
+                case CrestType.Hunter:
+                    // Hunter uses standard Knight animations (already mapped in SpriteSwapper)
+                    UpdateSlashEffects(CrestType.Hunter);
+                    break;
+                    
+                case CrestType.Wanderer:
+                    // Wanderer uses dagger animations - update slash mappings
+                    UpdateSlashAnimations("Hornet CrestWeapon Dagger Anim/Dagger");
+                    UpdateSlashEffects(CrestType.Wanderer);
+                    break;
+                    
+                case CrestType.Warrior:
+                    // Warrior uses heavy animations - update slash mappings
+                    UpdateSlashAnimations("Hornet CrestWeapon Warrior Anim/Warrior");
+                    UpdateSlashEffects(CrestType.Warrior);
+                    break;
+                    
+                case CrestType.Reaper:
+                    // Reaper uses scythe animations - update slash mappings
+                    UpdateSlashAnimations("Hornet CrestWeapon Scythe Anim/Scythe");
+                    UpdateSlashEffects(CrestType.Reaper);
+                    break;
+                    
+                case CrestType.Spinner:
+                    // Spinner uses shaman animations - update slash mappings
+                    UpdateSlashAnimations("Hornet CrestWeapon Shaman Anim/Shaman");
+                    UpdateSlashEffects(CrestType.Spinner);
+                    break;
+                    
+                case CrestType.Toolmaster:
+                    // Toolmaster uses drill lance animations - update slash mappings
+                    UpdateSlashAnimations("Hornet CrestWeapon Drill Lance Anim/Drill Lance");
+                    UpdateSlashEffects(CrestType.Toolmaster);
+                    break;
+                    
+                case CrestType.Witch:
+                    // Witch uses whip animations - update slash mappings
+                    UpdateSlashAnimations("Hornet CrestWeapon Whip Anim/Whip");
+                    UpdateSlashEffects(CrestType.Witch);
+                    break;
+            }
+        }
+
+        private static void UpdateSlashAnimations(string crestAnimationKey)
+        {
+            // Find the crest-specific animation frames
+            if (HornetSpriteDriver.FrameAnimSprites.TryGetValue(crestAnimationKey, out var crestFrames) && crestFrames.Count > 0)
+            {
+                // Update the main animation mappings to use crest frames for all attack types
+                var animMap = HornetSpriteDriver.AnimMap;
+                
+                // Update all slash variants to use crest animations
+                if (animMap.ContainsKey("Slash"))
+                    animMap["Slash"] = crestFrames.ToArray();
+                if (animMap.ContainsKey("SlashAlt"))
+                    animMap["SlashAlt"] = crestFrames.ToArray();
+                if (animMap.ContainsKey("UpSlash"))
+                    animMap["UpSlash"] = crestFrames.ToArray();
+                if (animMap.ContainsKey("DownSlash"))
+                    animMap["DownSlash"] = crestFrames.ToArray();
+                if (animMap.ContainsKey("Wall Slash"))
+                    animMap["Wall Slash"] = crestFrames.ToArray();
+            }
+        }
+
+        private static void UpdateSlashEffects(CrestType crestType)
+        {
+            // Update slash effect animations to match crest
+            if (!CrestSlashEffects.TryGetValue(crestType, out var effectData)) return;
+
+            // Update slash effect animations in the sprite driver
+            var animMap = HornetSpriteDriver.AnimMap;
+            
+            // Map crest-specific slash effects
+            if (HornetSpriteDriver.FrameAnimSprites.TryGetValue(effectData.SlashEffect, out var slashEffectFrames))
+                animMap["SlashEffect"] = slashEffectFrames.ToArray();
+            
+            if (HornetSpriteDriver.FrameAnimSprites.TryGetValue(effectData.SlashEffectAlt, out var slashAltEffectFrames))
+                animMap["SlashEffectAlt"] = slashAltEffectFrames.ToArray();
+            
+            if (HornetSpriteDriver.FrameAnimSprites.TryGetValue(effectData.UpSlashEffect, out var upSlashEffectFrames))
+                animMap["UpSlashEffect"] = upSlashEffectFrames.ToArray();
+            
+            if (HornetSpriteDriver.FrameAnimSprites.TryGetValue(effectData.DownSlashEffect, out var downSlashEffectFrames))
+                animMap["DownSlashEffect"] = downSlashEffectFrames.ToArray();
+        }
+
+        public static void PlayCrestSlashEffect(string attackType)
+        {
+            var effectData = CrestSlashEffects.TryGetValue(CurrentCrest, out var data) ? data : null;
+            if (effectData == null) return;
+
+            string effectKey = attackType switch
+            {
+                "Slash" => effectData.SlashEffect,
+                "SlashAlt" => effectData.SlashEffectAlt,
+                "UpSlash" => effectData.UpSlashEffect,
+                "DownSlash" => effectData.DownSlashEffect,
+                _ => effectData.SlashEffect
+            };
+
+            if (HornetSpriteDriver.FrameAnimSprites.TryGetValue(effectKey, out var effectFrames) && effectFrames.Count > 0)
+            {
+                // Trigger the visual effect at the appropriate position
+                // This would be called by the main attack system when hits occur
+                HornetInHallownest.Instance?.Log($"[CrestManager] Playing {CurrentCrest} {attackType} effect: {effectKey}");
+            }
+        }
+    }
+
+    public class CrestAnimationData
+    {
+        public string SpriteKey { get; set; }
+        public string AnimationFolder { get; set; }
+        public string AnimationName { get; set; }
+    }
+
+    public class CrestEffectData
+    {
+        public string SlashEffect { get; set; }
+        public string SlashEffectAlt { get; set; }
+        public string UpSlashEffect { get; set; }
+        public string DownSlashEffect { get; set; }
     }
 }

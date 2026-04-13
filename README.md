@@ -1,11 +1,12 @@
 # Hornet in Hallownest!
 
-This is my repo for a mod that will ideally allow for the user to play as Hornet from Silksong in Hollow Knight.
+This is my repo for a mod that will ideally allow for user to play as Hornet from Silksong in Hollow Knight.
 
-The main goal for this is so that the player can use their tools, silk skills, etc. when being as hornet. Hornet should be spawning in with all her movement abilities unlocked, following the precedent by the "Knight in Silksong" mod, which did the same thing, since I presume it'll be irritating to also add progression, and generally most people using this mod just want to fight all the bosses in hollow knight as hornet anyway.
+The main goal for this is so that player can use their tools, silk skills, etc. when being as hornet. Hornet should be spawning in with all her movement abilities unlocked, following precedent by the "Knight in Silksong" mod, which did the same thing, since I presume it'll be irritating to also add progression, and generally most people using this mod just want to fight all the bosses in hollow knight as hornet anyway.
 
-# Configuration at this moment:
-Per-machine setup (one time only):
+# Installation
+
+## Per-machine setup (one time only):
 
 **Linux** — add to `~/.bashrc`, then restart your terminal:
 ```bash
@@ -24,22 +25,28 @@ Then build with:
 dotnet build MyHornetMod.csproj
 ```
 
+## Controls
+
+- **F5** - Toggle between Hornet and Knight sprites
+- **G** - Cycle through Hornet's crests (weapon types)
+- **Left Shift** - Silk dash (when playing as Hornet)
+
 # Shout Outs
-Thanks to the people at Lumafly for helping provide the template and some resources.
+Thanks to people at Lumafly for helping provide template and some resources.
 
 Thanks to the whole hollow knight community for being cool (and for not making this mod before I was inspired to and stealing my thunder ya'll are real for that).
 
-Thanks to Reddit user Sumwann for posting all the silksong assets for me properly extracted! I tried to do it on my own and failed miserably so thanks to you man (even if i didn't end up using these)!
+Thanks to Reddit user Sumwann for posting all silksong assets for me properly extracted! I tried to do it on my own and failed miserably so thanks to you man (even if i didn't end up using these)!
 https://www.reddit.com/r/Silksong/comments/1nmzg0p/all_silksong_sprites_sorted_and_renamed/
 
-Thank you to Yuki.kaco on discord for making the main google drive where I got the actual sprites in a much more structured and labelled way. Also thanks for the help whenever I asked silly questions.
+Thank you to Yuki.kaco on discord for making the main google drive where I got actual sprites in a much more structured and labeled way. Also thanks for help whenever I asked silly questions.
 
 Most of all, thanks to Team Cherry for making two awesome games in a row, and inspiring me to make this mod in the first place.
 
+## File Locations (Reference)
 
 Location of Hollow Knight Game file Executable folder:
 /home/fs/Documents/Hollow-Knight/Hollow Knight v1.5.78.11833
-
 
 Location of Silksong Game File Executable Folder:
 /home/fs/snap/steam/common/.local/share/Steam/steamapps/common/Hollow Knight Silksong

@@ -30,11 +30,9 @@ namespace HornetInHallownest
         private tk2dSprite _crestIconTk2d;
         private Animator _crestAnimator;
 
-        // Silk spool system
-        private SpriteRenderer _silkSpoolRenderer;
-        private tk2dSprite _silkSpoolTk2d;
-        private Animator _silkSpoolAnimator;
-        private List<Sprite> _silkLevelSprites;
+        // Silk display system (text-based)
+        private TextMesh _silkTextMesh;
+        private GameObject _silkTextObject;
 
         // Animation states
         private readonly Dictionary<CrestType, string> _crestAnimationNames = new()
@@ -136,23 +134,23 @@ namespace HornetInHallownest
 
         private void SetupSilkSpool()
         {
-            _silkSpoolDisplay = new GameObject("Silk Spool");
-            _silkSpoolDisplay.transform.SetParent(_hudRoot.transform);
-            _silkSpoolDisplay.transform.position = SilkSpoolPosition;
+            // Create simple text display for silk
+            _silkTextObject = new GameObject("Silk Text");
+            _silkTextObject.transform.SetParent(transform);
 
-            // Add sprite renderer
-            _silkSpoolRenderer = _silkSpoolDisplay.AddComponent<SpriteRenderer>();
-            _silkSpoolRenderer.sortingLayerName = "UI";
-            _silkSpoolRenderer.sortingOrder = 99;
+            // Create TextMesh component
+            _silkTextMesh = _silkTextObject.AddComponent<TextMesh>();
+            
+            // Configure text appearance
+            _silkTextMesh.font = Resources.GetBuiltinResource<Font>("Arial.ttf"); // Fallback font
+            _silkTextMesh.fontSize = 24;
+            _silkTextMesh.color = Color.white;
+            _silkTextMesh.anchor = TextAnchor.MiddleCenter;
+            _silkTextMesh.alignment = TextAlignment.Center;
 
-            // Try to add tk2d sprite
-            _silkSpoolTk2d = _silkSpoolDisplay.AddComponent<tk2dSprite>();
-
-            // Add animator
-            _silkSpoolAnimator = _silkSpoolDisplay.AddComponent<Animator>();
-
-            // Load silk level sprites
-            LoadSilkLevelSprites();
+            // Position below crest display
+            _silkTextObject.transform.localPosition = new Vector3(-2.5f, -2.0f, 0);
+            _silkTextObject.transform.localScale = Vector3.one;
 
             UpdateSilkSpoolVisual();
         }
@@ -182,29 +180,7 @@ namespace HornetInHallownest
             HornetInHallownest.Instance.Log($"[SilksongHUDManager] Found {_maskDisplays.Count} mask displays");
         }
 
-        private void LoadSilkLevelSprites()
-        {
-            _silkLevelSprites = new List<Sprite>();
-
-            // Load silk spool sprites for different levels
-            var silkKeys = new[]
-            {
-                "Spool Empty", "Spool Low", "Spool Medium", "Spool Full"
-            };
-
-            foreach (var key in silkKeys)
-            {
-                if (HornetSpriteDriver.FrameSprites.TryGetValue(key, out var sprite) && sprite != null)
-                {
-                    _silkLevelSprites.Add(sprite);
-                }
-                else
-                {
-                    // Don't add null placeholders - only add valid sprites
-                    // This prevents memory leaks and null reference issues
-                }
-            }
-        }
+        // Removed complex sprite loading - now using simple text display
 
         private void RegisterEvents()
         {
@@ -276,19 +252,8 @@ namespace HornetInHallownest
 
         private string GetCrestSpriteKey(CrestType crestType)
         {
-            return crestType switch
-            {
-                CrestType.Hunter => "Hunter Crest Icon v3", // Use v3 for future upgrade compatibility
-                CrestType.Reaper => "Reaper Crest Icon",
-                CrestType.Wanderer => "Wanderer Crest Icon",
-                CrestType.Warrior => "Warrior Crest Icon",
-                CrestType.Witch => "Witch Crest Icon",
-                CrestType.Toolmaster => "Toolmaster Crest Icon",
-                CrestType.Spinner => "Spinner Crest Icon",
-                CrestType.Cloakless => "Cloakless Crest Icon",
-                CrestType.Cursed => "Cursed Crest Icon",
-                _ => "Hunter Crest Icon v3"
-            };
+            var animData = CrestManager.GetCrestHUDAnimationData(crestType);
+            return animData?.SpriteKey ?? "HUD Frame Hunter v3";
         }
 
         private void PlayCrestSwitchAnimation()
@@ -357,38 +322,24 @@ namespace HornetInHallownest
 
         private void UpdateSilkSpoolDisplay()
         {
-            if (_silkSpoolDisplay == null) return;
+            if (_silkTextObject == null) return;
 
-            _silkSpoolDisplay.SetActive(HornetSpriteDriver.IsEnabled);
+            _silkTextObject.SetActive(HornetSpriteDriver.IsEnabled);
             UpdateSilkSpoolVisual();
         }
 
         private void UpdateSilkSpoolVisual()
         {
-            if (_silkSpoolRenderer == null || _silkSpoolTk2d == null) return;
+            if (_silkTextMesh == null) return;
 
-            // Division by zero protection
-            var silkPercentage = CrestManager.SilkMax > 0f ? CrestManager.SilkAmount / CrestManager.SilkMax : 0f;
-            var silkLevel = GetSilkLevel(silkPercentage);
+            // Use SilkManager data
+            int currentSilk = SilkManager.CurrentSilk;
+            int maxSilk = SilkManager.MaxSilk;
 
-            // Update sprite based on silk level with bounds checking
-            if (silkLevel < _silkLevelSprites.Count && _silkLevelSprites[silkLevel] != null)
-            {
-                _silkSpoolRenderer.sprite = _silkLevelSprites[silkLevel];
-                _silkSpoolTk2d.sprite = _silkLevelSprites[silkLevel];
-            }
-            else
-            {
-                // Clear sprites if no valid sprite available for this level
-                _silkSpoolRenderer.sprite = null;
-                _silkSpoolTk2d.sprite = null;
-            }
+            // Update text display
+            _silkTextMesh.text = $"{currentSilk}/{maxSilk}";
 
-            // Update animator
-            if (_silkSpoolAnimator != null && _silkLevelAnimations.TryGetValue(silkLevel, out var animName))
-            {
-                _silkSpoolAnimator.Play(animName);
-            }
+            HornetInHallownest.Instance?.Log($"[SilksongHUDManager] Silk display updated: {currentSilk}/{maxSilk}");
         }
 
         private int GetSilkLevel(float percentage)
@@ -449,6 +400,73 @@ namespace HornetInHallownest
             HornetInHallownest.Instance.Log($"[SilksongHUDManager] Switched to {newCrest} crest");
         }
 
+        // Enhanced crest switching with disappear/appear animation sequence
+        public void SwitchToCrestWithAnimation(CrestType newCrest)
+        {
+            if (newCrest == _currentCrest) return;
+
+            // Stop any existing crest switch effect
+            if (_crestSwitchEffectCoroutine != null)
+            {
+                StopCoroutine(_crestSwitchEffectCoroutine);
+                _crestSwitchEffectCoroutine = null;
+            }
+            
+            // Start the full disappear/appear sequence
+            _crestSwitchEffectCoroutine = StartCoroutine(CrestDisappearAppearSequence(newCrest));
+        }
+
+        private System.Collections.IEnumerator CrestDisappearAppearSequence(CrestType newCrest)
+        {
+            if (_crestIconRenderer == null) yield break;
+
+            CrestType oldCrest = _currentCrest;
+            Vector3 originalScale = _crestIconRenderer.transform.localScale;
+            Color originalColor = _crestIconRenderer.color;
+
+            // Phase 1: Disappear animation for current crest
+            float elapsed = 0f;
+            while (elapsed < 0.3f)
+            {
+                float t = elapsed / 0.3f;
+                
+                // Fade out and shrink
+                _crestIconRenderer.color = Color.Lerp(originalColor, new Color(1f, 1f, 1f, 0f), t);
+                _crestIconRenderer.transform.localScale = Vector3.Lerp(originalScale, originalScale * 0.1f, t);
+                
+                elapsed += Time.deltaTime;
+                yield return null;
+            }
+
+            // Phase 2: Switch crest data
+            _currentCrest = newCrest;
+            CrestManager.CurrentCrest = newCrest;
+            UpdateCrestIcon();
+
+            // Phase 3: Appear animation for new crest
+            elapsed = 0f;
+            while (elapsed < 0.4f)
+            {
+                float t = elapsed / 0.4f;
+                
+                // Elastic bounce effect for appearance
+                float bounce = 1f + Mathf.Sin(t * Mathf.PI) * 0.5f * (1f - t);
+                _crestIconRenderer.transform.localScale = originalScale * bounce;
+                
+                // Fade in
+                _crestIconRenderer.color = Color.Lerp(new Color(1f, 1f, 1f, 0f), originalColor, t);
+                
+                elapsed += Time.deltaTime;
+                yield return null;
+            }
+
+            // Reset to final state
+            _crestIconRenderer.transform.localScale = originalScale;
+            _crestIconRenderer.color = originalColor;
+
+            HornetInHallownest.Instance.Log($"[SilksongHUDManager] Crest switch: {oldCrest} -> {newCrest}");
+        }
+
         public CrestType GetCurrentCrest() => _currentCrest;
 
         // Public API for silk updates
@@ -465,6 +483,13 @@ namespace HornetInHallownest
             {
                 StopCoroutine(_crestSwitchEffectCoroutine);
                 _crestSwitchEffectCoroutine = null;
+            }
+            
+            // Clean up silk text object
+            if (_silkTextObject != null)
+            {
+                Destroy(_silkTextObject);
+                _silkTextObject = null;
             }
             
             if (_hudRoot != null)

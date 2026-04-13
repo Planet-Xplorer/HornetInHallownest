@@ -95,6 +95,7 @@ namespace HornetInHallownest
             self.gameObject.AddComponent<SilksongHUDManager>();
             self.gameObject.AddComponent<CrestSwitchManager>();
             self.gameObject.AddComponent<SilksongInventoryManager>();
+            self.gameObject.AddComponent<SilkManager>();
 
             if (!_maxHpBoosted && PlayerData.instance != null)
             {
@@ -104,7 +105,7 @@ namespace HornetInHallownest
                 Log("Max HP boosted by 1");
             }
 
-            Log("HornetSpriteDriver + CrestManager + MovementManager + HudSpriteManager + SilksongHUDManager + CrestSwitchManager + SilksongInventoryManager attached");
+            Log("HornetSpriteDriver + CrestManager + MovementManager + HudSpriteManager + SilksongHUDManager + CrestSwitchManager + SilksongInventoryManager + SilkManager attached");
         }
     }
 }
