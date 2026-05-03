@@ -11,7 +11,7 @@
   <PropertyGroup>
     <RootNamespace>HornetInHallownest</RootNamespace>
     <AssemblyName>HornetInHallownest</AssemblyName>
-    <TargetFramework>net472</TargetFramework>
+    <TargetFramework>net48</TargetFramework>
     <AssemblyTitle>HornetInHallownest</AssemblyTitle>
     <Product>HornetInHallownest</Product>
     <Description>A Hollow Knight Mod</Description>
@@ -329,7 +329,11 @@
     <None Include="README.md" />
     <None Include="Resources\.gitignore" />
     <EmbeddedResource Include="Resources/Audio/**/*" />
-    <EmbeddedResource Include="Resources/Every_Hornet_Animation/**/*" />
+    <EmbeddedResource Include="Resources/Every_Hornet_Animation/*/0.Atlases/*.json" />
+    <EmbeddedResource Include="Resources/Every_Hornet_Animation/*/0.Atlases/*.png" />
     <EmbeddedResource Include="Resources/Gameplay_Menu_Sprites/**/*" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="System.Text.Json" Version="10.0.7" />
   </ItemGroup>
 </Project>
