@@ -1,0 +1,2197 @@
+{
+	"m_AssetBundleName": "81cdd0803a8bcfb81097fa4b8f33bb6e.bundle",
+	"m_Container": {
+		"Assets/Audio/HornetMusic/H179_new_wish_granted redo.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -2469695264461719244 },
+			"m_PreloadIndex": 147,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/HornetMusic/H179_new_wish_promised redo.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -5425516394512242119 },
+			"m_PreloadIndex": 186,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/HornetMusic/SHRINE/H6-08 Safe.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 7555136122463123293 },
+			"m_PreloadIndex": 108,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/HornetMusic/SHRINE/Shrine Act 3.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -8026502982202593201 },
+			"m_PreloadIndex": 68,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Bellshrine/strain_quick.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 6624472263056757173 },
+			"m_PreloadIndex": 346,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Beta_additions_03/button.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -4106237260571524121 },
+			"m_PreloadIndex": 349,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Dream/dream_dialogue_loop.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 7912881815138594852 },
+			"m_PreloadIndex": 375,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Enemy/Abyss/abyss_tendrils_loop.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 2412362142858025040 },
+			"m_PreloadIndex": 105,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Enemy/Abyss/mawlek_turret_gushing_loop.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 6712292059189711548 },
+			"m_PreloadIndex": 195,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Enemy/Bosses/Broken Wanderer/brkn_wand_jump.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -5050930603828427579 },
+			"m_PreloadIndex": 287,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Enemy/Bosses/Broken Wanderer/brkn_wand_land.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 1535310246285640123 },
+			"m_PreloadIndex": 150,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Enemy/Bosses/Hornet/hornet_jump_nogap.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 8562153919487327376 },
+			"m_PreloadIndex": 353,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Enemy/Bosses/Hornet/hornet_needle_catch.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 5664729009724527329 },
+			"m_PreloadIndex": 289,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Enemy/Bosses/Hornet/hornet_needle_spin_loop.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 3467796190763602955 },
+			"m_PreloadIndex": 39,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Enemy/Bosses/Hornet/hornet_parry_prepare.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -4787925808260872674 },
+			"m_PreloadIndex": 194,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Enemy/Bosses/Hornet/hornet_superjump_cancel.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 1520374220921451619 },
+			"m_PreloadIndex": 32,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Enemy/Explosions/explosion_1.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -6625636251515723071 },
+			"m_PreloadIndex": 54,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Enemy/Fog Canyon/zap_bug_pt2.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 4057785277513051984 },
+			"m_PreloadIndex": 368,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Enemy/Hollow Shade/hollow_shade_idle.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -7666425479446918488 },
+			"m_PreloadIndex": 121,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Enemy/Hornet/bone_hunter_jump.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -9005861845379705225 },
+			"m_PreloadIndex": 202,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Enemy/Hornet/boss_death_pt_1.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -527475942739928241 },
+			"m_PreloadIndex": 434,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Enemy/Hornet/hunter_child_dive_underground.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -8568173709408344664 },
+			"m_PreloadIndex": 256,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Enemy/Hornet/hunter_child_emerge.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -2730642743041449255 },
+			"m_PreloadIndex": 291,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Enemy/Hornet/small_bell_projectile_bounce.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 7999155064433558700 },
+			"m_PreloadIndex": 320,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Enemy/Hornet/small_bell_projectile_bounce_2.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -7052890361304498997 },
+			"m_PreloadIndex": 309,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Enemy/Hornet/small_bell_projectile_bounce_3.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 5443195509233021550 },
+			"m_PreloadIndex": 42,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Enemy/Hornet/spear_in_air_loop.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -1983892489069533961 },
+			"m_PreloadIndex": 336,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Enemy/automaton_generic_damage_1.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -2714042979108441999 },
+			"m_PreloadIndex": 388,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Enemy/enemy_damage_poison.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -8860231529129806717 },
+			"m_PreloadIndex": 123,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Enemy/enemy_death_in_lava.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 2187371503585120693 },
+			"m_PreloadIndex": 111,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Enemy/enemy_death_sword.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 4663799107214251633 },
+			"m_PreloadIndex": 367,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Enemy/enemy_death_sword_old.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -2261244871164210497 },
+			"m_PreloadIndex": 359,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Enemy/orange_shot_impact.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 3980554159183068276 },
+			"m_PreloadIndex": 148,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Environment/acid_hiss.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 763024002266742910 },
+			"m_PreloadIndex": 63,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Environment/acid_splash.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -4406337962984079211 },
+			"m_PreloadIndex": 392,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Environment/rumble_a.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 3425494207322605585 },
+			"m_PreloadIndex": 93,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Environment/sword_hit_window_1.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 6710473589670992218 },
+			"m_PreloadIndex": 247,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Environment/sword_hit_window_2.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 7903264384310961138 },
+			"m_PreloadIndex": 225,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Environment/sword_hit_window_3.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 2231157428238773875 },
+			"m_PreloadIndex": 339,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Environment/sword_hit_window_4.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 9015483846168109462 },
+			"m_PreloadIndex": 269,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/GG/gg_pure_vessel_big_orb_appear.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 8899284462330577742 },
+			"m_PreloadIndex": 132,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/GG/gg_pure_vessel_small_orb_appear_and_burst.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 130815134603386277 },
+			"m_PreloadIndex": 340,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Generic/foley_shell_misc_move_1.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -6640370227263924388 },
+			"m_PreloadIndex": 55,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Generic/foley_shell_misc_move_2.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 6854060563713765862 },
+			"m_PreloadIndex": 60,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Generic/foley_shell_misc_move_3.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -5521812199228712531 },
+			"m_PreloadIndex": 77,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Generic/foley_shell_misc_move_4.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -552780015602569881 },
+			"m_PreloadIndex": 224,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Generic/foley_shell_misc_move_5.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -4888121528253669290 },
+			"m_PreloadIndex": 144,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Generic/foley_shell_misc_move_6.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -3773718378513337673 },
+			"m_PreloadIndex": 409,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Generic/foley_shell_misc_move_7.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -489971229121542925 },
+			"m_PreloadIndex": 71,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Generic/foley_shell_misc_move_8.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 7652294858289811724 },
+			"m_PreloadIndex": 420,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Generic/generic_weapon_physics_impact_1.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -942775960494179788 },
+			"m_PreloadIndex": 161,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Generic/generic_weapon_physics_impact_2.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 5629018009453518857 },
+			"m_PreloadIndex": 285,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Generic/generic_weapon_physics_impact_3.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -1116261169420209665 },
+			"m_PreloadIndex": 333,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Generic/generic_weapon_physics_impact_4.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -1705031412793534804 },
+			"m_PreloadIndex": 278,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Generic/generic_weapon_physics_impact_5.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 5882932884866487710 },
+			"m_PreloadIndex": 206,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Generic/generic_weapon_physics_impact_6.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -785551373118839069 },
+			"m_PreloadIndex": 394,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/Crest Weapons/hornet_architect_bind_pt_1.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 1987110810542619069 },
+			"m_PreloadIndex": 174,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/Crest Weapons/hornet_architect_bind_pt_2.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 788849299361490449 },
+			"m_PreloadIndex": 398,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/Crest Weapons/hornet_architect_charge_attack_grounded_start.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -6477774978298987174 },
+			"m_PreloadIndex": 378,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/Crest Weapons/hornet_architect_charge_attack_in_air_start.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 1436937705901972264 },
+			"m_PreloadIndex": 316,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/Crest Weapons/hornet_architect_charge_attack_slashes_long.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -1736736275345090075 },
+			"m_PreloadIndex": 235,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/Crest Weapons/hornet_architect_charge_attack_slashes_short.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -1271002099403272642 },
+			"m_PreloadIndex": 67,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/Crest Weapons/hornet_architect_charge_prep_long.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 6472757803190374080 },
+			"m_PreloadIndex": 229,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/Crest Weapons/hornet_architect_charge_prep_short.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -5117621695693673927 },
+			"m_PreloadIndex": 376,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/Crest Weapons/hornet_architect_stab_1.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -711006790433500148 },
+			"m_PreloadIndex": 433,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/Crest Weapons/hornet_architect_stab_2.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 3755913067783896189 },
+			"m_PreloadIndex": 410,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/Crest Weapons/hornet_architect_stab_3.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 569890126304288274 },
+			"m_PreloadIndex": 188,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/Crest Weapons/hornet_architect_stab_4.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -557138137052071244 },
+			"m_PreloadIndex": 125,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/Crest Weapons/hornet_beast_claw_1.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -154263361198470745 },
+			"m_PreloadIndex": 264,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/Crest Weapons/hornet_beast_claw_2.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 7608404514597826221 },
+			"m_PreloadIndex": 284,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/Crest Weapons/hornet_beast_claw_3.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 1674781494415777378 },
+			"m_PreloadIndex": 192,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/Crest Weapons/hornet_beast_claw_4.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 8836112877359215256 },
+			"m_PreloadIndex": 190,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/Crest Weapons/hornet_beast_dash_attack_foley.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 4570144129744217428 },
+			"m_PreloadIndex": 386,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/Crest Weapons/hornet_beast_dash_attack_sword.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 1747696609316880272 },
+			"m_PreloadIndex": 431,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/Crest Weapons/hornet_beast_mode_loop.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 7829215079308957254 },
+			"m_PreloadIndex": 11,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/Crest Weapons/hornet_beast_needle_art.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -3965712086146816978 },
+			"m_PreloadIndex": 53,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/Crest Weapons/hornet_hunter_needleart_slash_1.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -7016601276469979085 },
+			"m_PreloadIndex": 24,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/Crest Weapons/hornet_hunter_needleart_slash_2.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 3850739214562163353 },
+			"m_PreloadIndex": 379,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/Crest Weapons/hornet_reaper_dash_attack.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -6358253981471443186 },
+			"m_PreloadIndex": 237,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/Crest Weapons/hornet_reaper_dash_scrape.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -7761750582800963758 },
+			"m_PreloadIndex": 326,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/Crest Weapons/hornet_reaper_down_slash.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -9005088741853408068 },
+			"m_PreloadIndex": 116,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/Crest Weapons/hornet_reaper_mode_new.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 6860971263507786535 },
+			"m_PreloadIndex": 142,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/Crest Weapons/hornet_reaper_nailart_start_on_flash.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 8936665732492616134 },
+			"m_PreloadIndex": 234,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/Crest Weapons/hornet_reaper_slash_1.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 1087119521617793931 },
+			"m_PreloadIndex": 109,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/Crest Weapons/hornet_reaper_slash_2.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 5938239414334898028 },
+			"m_PreloadIndex": 162,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/Crest Weapons/hornet_reaper_slash_3_upslash_maybe.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 554450244968450819 },
+			"m_PreloadIndex": 221,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/Crest Weapons/hornet_shaman_needle_art_impact.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 1639965952144279824 },
+			"m_PreloadIndex": 276,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/Crest Weapons/hornet_wanderer_dash_sword_1.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 7572591178200741891 },
+			"m_PreloadIndex": 152,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/Crest Weapons/hornet_wanderer_dash_sword_2.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -4293384727746884009 },
+			"m_PreloadIndex": 183,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/Crest Weapons/hornet_wanderer_needle_art.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 3497785115601499073 },
+			"m_PreloadIndex": 143,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/Crest Weapons/hornet_wanderer_sword_1.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 6174623562754120766 },
+			"m_PreloadIndex": 89,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/Crest Weapons/hornet_wanderer_sword_2.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 8392627635725463739 },
+			"m_PreloadIndex": 408,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/Crest Weapons/hornet_wanderer_sword_3.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 2058786586158634849 },
+			"m_PreloadIndex": 337,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/Crest Weapons/hornet_wanderer_sword_4.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -4517601135376288044 },
+			"m_PreloadIndex": 169,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/Crest Weapons/hornet_witch_slash_1.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -742549583648125022 },
+			"m_PreloadIndex": 56,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/Crest Weapons/hornet_witch_slash_3.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -8656950927724337891 },
+			"m_PreloadIndex": 22,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/Crest Weapons/hornet_witch_slash_4.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -5076913079164992999 },
+			"m_PreloadIndex": 301,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/bind_break_with_note_opt_2.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -8964470597062477145 },
+			"m_PreloadIndex": 400,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/cogwork_fly_dash_1.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 7179493055037031386 },
+			"m_PreloadIndex": 210,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/cogwork_fly_dash_2.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -7741484739669652488 },
+			"m_PreloadIndex": 391,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/cogwork_fly_dash_3.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -895398730184999268 },
+			"m_PreloadIndex": 321,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/harpoon_bone_ring_hit_needle_1.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -2291192608642860532 },
+			"m_PreloadIndex": 428,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/harpoon_bone_ring_hit_needle_2.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 3785992979265729047 },
+			"m_PreloadIndex": 25,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/harpoon_bone_ring_hit_needle_3.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 426983296585817704 },
+			"m_PreloadIndex": 45,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/harpoon_bone_ring_shake_1.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 3818825772804550913 },
+			"m_PreloadIndex": 218,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/harpoon_bone_ring_shake_2.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 6325940937440759947 },
+			"m_PreloadIndex": 369,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/harpoon_bone_ring_shake_3.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 67428651166769921 },
+			"m_PreloadIndex": 274,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/harpoon_ring_hit_needle_1.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -6752897360873246009 },
+			"m_PreloadIndex": 44,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/harpoon_ring_hit_needle_2.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -6063043131951851333 },
+			"m_PreloadIndex": 382,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/harpoon_ring_hit_needle_3.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -1751021864895689435 },
+			"m_PreloadIndex": 243,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/hornet_architect_charge_attack.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 8847349277954457713 },
+			"m_PreloadIndex": 330,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/hornet_bind.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 1806902966871301409 },
+			"m_PreloadIndex": 219,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/hornet_cloakless_dash_attack.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 2972267253872166071 },
+			"m_PreloadIndex": 74,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/hornet_cloakless_kick_1.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -3484291064181405661 },
+			"m_PreloadIndex": 177,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/hornet_cloakless_kick_2.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -1494877785596055245 },
+			"m_PreloadIndex": 424,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/hornet_cloakless_kick_3.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -4166691115118807344 },
+			"m_PreloadIndex": 385,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/hornet_cloakless_kick_4.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 2107804408213922840 },
+			"m_PreloadIndex": 390,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/hornet_cross_stitch_and_sharpdart_volt_overlay.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -4410582524262790809 },
+			"m_PreloadIndex": 335,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/hornet_dazzle_bind_new_2d.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 3122577060787764423 },
+			"m_PreloadIndex": 236,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/hornet_death_frost.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -8608241708063109940 },
+			"m_PreloadIndex": 170,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/hornet_delvers_dash_into_it.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 295832895878990753 },
+			"m_PreloadIndex": 98,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/hornet_delvers_drill_antic_burst.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 4397518426836569655 },
+			"m_PreloadIndex": 91,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/hornet_delvers_drill_cancel.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -1955567959744879390 },
+			"m_PreloadIndex": 43,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/hornet_delvers_drill_floor_hit_finish.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 8843391674173345000 },
+			"m_PreloadIndex": 307,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/hornet_delvers_drill_floor_hit_start.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 3093565677213794899 },
+			"m_PreloadIndex": 20,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/hornet_delvers_drill_loop.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 7181114940142484552 },
+			"m_PreloadIndex": 115,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/hornet_dress_updraft_loop.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -2261471311554176188 },
+			"m_PreloadIndex": 401,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/hornet_edge_grab_v2_2.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 6149906238134204296 },
+			"m_PreloadIndex": 136,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/hornet_edge_grab_v2_3.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 7132457122916985755 },
+			"m_PreloadIndex": 363,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/hornet_edge_grab_v2_4.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -4426420485111592224 },
+			"m_PreloadIndex": 347,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/hornet_fast_swim_kick_off.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 5020250236047117776 },
+			"m_PreloadIndex": 92,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/hornet_flea_brew_ambient_effect_end.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 6187623220540231856 },
+			"m_PreloadIndex": 176,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/hornet_flea_brew_effect_trigger.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 8414793752702517496 },
+			"m_PreloadIndex": 9,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/hornet_flintstone_ignite.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -4246723827636841462 },
+			"m_PreloadIndex": 300,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/hornet_flintstone_ignite_antic.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -2466088594155375942 },
+			"m_PreloadIndex": 120,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/hornet_flying_through_air_fast_loop.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 180737510588864161 },
+			"m_PreloadIndex": 280,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/hornet_forward_spin.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -4367767628392716808 },
+			"m_PreloadIndex": 51,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/hornet_mothers_needles_summon.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 4645910191671490458 },
+			"m_PreloadIndex": 365,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/hornet_needle_dash.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 5113932513111060352 },
+			"m_PreloadIndex": 273,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/hornet_overblood_burst.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -5205650445176135339 },
+			"m_PreloadIndex": 28,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/hornet_overblood_charge.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -3058633279367013145 },
+			"m_PreloadIndex": 154,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/hornet_piton_01.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 6786333100532271856 },
+			"m_PreloadIndex": 343,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/hornet_piton_02.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -4440404124346380253 },
+			"m_PreloadIndex": 417,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/hornet_piton_03.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -1401631221886596234 },
+			"m_PreloadIndex": 294,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/hornet_poisonstone_ignite.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 7696299173694560502 },
+			"m_PreloadIndex": 259,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/hornet_poisonstone_ignite_antic.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 6745978727360992104 },
+			"m_PreloadIndex": 407,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/hornet_reserve_bind_use.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -5662591892243207249 },
+			"m_PreloadIndex": 208,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/hornet_rune_rage_antic.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 1348595694022583635 },
+			"m_PreloadIndex": 414,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/hornet_rune_rage_burst.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 2503677591021813716 },
+			"m_PreloadIndex": 302,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/hornet_scuttlebrace_activate_2.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -6035502623753459217 },
+			"m_PreloadIndex": 18,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/hornet_scuttlebrace_backdash_1.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -3948631232553164230 },
+			"m_PreloadIndex": 380,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/hornet_scuttlebrace_backdash_2.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -2255689532542734427 },
+			"m_PreloadIndex": 151,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/hornet_scuttlebrace_scuttle_loop.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -6117697794573130885 },
+			"m_PreloadIndex": 61,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/hornet_shaman_needle_art.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 7952714169126541440 },
+			"m_PreloadIndex": 185,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/hornet_shaman_slash_alt_C_1.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -1323276616561491349 },
+			"m_PreloadIndex": 296,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/hornet_shaman_slash_alt_C_2.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 8941422643026076081 },
+			"m_PreloadIndex": 338,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/hornet_silk_spear.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 161340649942560369 },
+			"m_PreloadIndex": 72,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/hornet_silk_spear_antic.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -4521641522209373196 },
+			"m_PreloadIndex": 283,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/hornet_silkcharge.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -6187982440426454262 },
+			"m_PreloadIndex": 389,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/hornet_silkcharge_antic.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -3884911647853319612 },
+			"m_PreloadIndex": 325,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/hornet_snare_pt1_initial_pull_out.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -3506684193498048742 },
+			"m_PreloadIndex": 106,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/hornet_snare_pt2_setup_initial_ground_impact.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 9207929018314587500 },
+			"m_PreloadIndex": 196,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/hornet_snare_pt3_setup_charge_loop.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 5629355126952562091 },
+			"m_PreloadIndex": 8,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/hornet_snare_pt4_setup_ready.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 262780500511022565 },
+			"m_PreloadIndex": 189,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/hornet_snare_trap_buildup.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 5350669936033182586 },
+			"m_PreloadIndex": 94,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/hornet_snare_trap_burst.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 2577019555562532704 },
+			"m_PreloadIndex": 238,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/hornet_sprint_jump_cloakless.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -7396986752610815936 },
+			"m_PreloadIndex": 204,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/hornet_superjump_pt_1_into_position.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -7126537907394719392 },
+			"m_PreloadIndex": 95,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/hornet_superjump_pt_2_charge_2d.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -6703351600304592461 },
+			"m_PreloadIndex": 88,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/hornet_superjump_pt_5_needle_impact_2d.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -900509763030987439 },
+			"m_PreloadIndex": 416,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/hornet_superjump_pt_5_needle_impact_2d_distant.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 5817231713150255608 },
+			"m_PreloadIndex": 377,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/hornet_taunt_silk.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -5554736459409449771 },
+			"m_PreloadIndex": 270,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/hornet_thread_sphere_burst.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -2279266258763498647 },
+			"m_PreloadIndex": 187,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/hornet_threadstorm_volt_overlay_loop.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -8338684730647673817 },
+			"m_PreloadIndex": 260,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/hornet_updraft_flying_loop_new.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -180940593839371263 },
+			"m_PreloadIndex": 272,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/hornet_volt_detail_on_parry_stance.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 7242398910385857432 },
+			"m_PreloadIndex": 329,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/hornet_wall_jump_kickoff_1.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 943769425994800602 },
+			"m_PreloadIndex": 149,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/hornet_wall_scramble_1.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 400735138304344491 },
+			"m_PreloadIndex": 83,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/hornet_wall_scramble_2.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -4479685835136492347 },
+			"m_PreloadIndex": 158,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/hornet_wall_scramble_3.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -6633708962960587759 },
+			"m_PreloadIndex": 5,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/hornet_warding_bell_bind.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -9079161631049862655 },
+			"m_PreloadIndex": 265,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/hornet_warding_bell_bind_break.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 8983489794623602467 },
+			"m_PreloadIndex": 181,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/hornet_weaver_silk_shot.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -1469892579000042277 },
+			"m_PreloadIndex": 279,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/needolin_break_1.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 4472016090488886344 },
+			"m_PreloadIndex": 199,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/needolin_break_2.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 9044191810219644033 },
+			"m_PreloadIndex": 246,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/needolin_break_3.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 1042178814240248572 },
+			"m_PreloadIndex": 244,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/poison_syringe_blast.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -4634696326199337022 },
+			"m_PreloadIndex": 19,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/ui_lifeblood_break.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 3862015356278768228 },
+			"m_PreloadIndex": 374,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/ui_lifeblood_regen.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -5622975697335717567 },
+			"m_PreloadIndex": 313,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Hornet/voltvessels_spear_water_reaction_one_shot_2d.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -8314786234041123583 },
+			"m_PreloadIndex": 40,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Knight/focus_health_charging.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -8791647830908047749 },
+			"m_PreloadIndex": 421,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Knight/hero_damage_less_harsh.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -579430745781916961 },
+			"m_PreloadIndex": 233,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Knight/hero_dream_nail_slash.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 8134866215389440503 },
+			"m_PreloadIndex": 255,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Knight/hero_falling.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -4920474593735783337 },
+			"m_PreloadIndex": 175,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Knight/hero_fury_charm_loop.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 3109646841309346188 },
+			"m_PreloadIndex": 310,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Knight/hero_mantis_claw.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -1983066732751656676 },
+			"m_PreloadIndex": 0,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Knight/hero_run_footsteps_stone.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 787724276008470196 },
+			"m_PreloadIndex": 352,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Knight/hero_super_dash_charge.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -2444675119694289658 },
+			"m_PreloadIndex": 201,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Knight/hero_super_dash_loop.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -4216837870075822005 },
+			"m_PreloadIndex": 360,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Knight/hero_wall_jump.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -1765328770000346102 },
+			"m_PreloadIndex": 249,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Heroes/Knight/hornet_double_jump.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -8793948879185188615 },
+			"m_PreloadIndex": 271,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/HornetEnemy/Feb 2021/delivery2/shakra_entrance_shing.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 1484474977931502755 },
+			"m_PreloadIndex": 33,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/HornetEnemy/Feb 2021/delivery2/understore_spanner_break.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 817538475667168371 },
+			"m_PreloadIndex": 79,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/HornetEnemy/Flower Queen/Flower_queen_pollen_explode.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 495895763833558917 },
+			"m_PreloadIndex": 251,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/HornetEnemy/Lace/lace_multi_stab_hornet_damaging.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -6441793996017849159 },
+			"m_PreloadIndex": 131,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/HornetEnemy/Lace/lace_multi_stab_hornet_damaging_final_hit.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -6842747373168340818 },
+			"m_PreloadIndex": 304,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/HornetEnemy/Silk Boss/silk_fight_white_mage_snare_loop.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 5090968986061720428 },
+			"m_PreloadIndex": 160,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/HornetEnemy/Trobbio/trobbio_jump.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -7745623586386429940 },
+			"m_PreloadIndex": 216,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/HornetEnemy/Trobbio/trobbio_recover_or_general_foley_movement.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -6881685183696991586 },
+			"m_PreloadIndex": 197,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/HornetEnemy/Trobbio/trobbios_projectile_explode.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -3314339311568544362 },
+			"m_PreloadIndex": 100,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/HornetEnemy/boss_stun_ss_release.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 6692840190207687820 },
+			"m_PreloadIndex": 81,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/HornetEnemy/boss_stun_ss_start.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -5785773415146686411 },
+			"m_PreloadIndex": 15,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/HornetEnemy/crystal_drifter_damage_2.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 3761868761435533560 },
+			"m_PreloadIndex": 37,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/HornetEnemy/farmer_wisp_generate_fireball.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 1106858552788496407 },
+			"m_PreloadIndex": 213,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/HornetEnemy/small_bell_projectile_break.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -2982228502371048964 },
+			"m_PreloadIndex": 328,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/HornetEnemy/song_automaton_01_charge_antic.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -911097942437113950 },
+			"m_PreloadIndex": 205,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/HornetEnemy/spine_floater_projectile_impact_1.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 2551607206146715590 },
+			"m_PreloadIndex": 263,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/HornetEnemy/spine_floater_projectile_impact_2.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 3994791764373215246 },
+			"m_PreloadIndex": 252,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/HornetEnemy/spine_floater_projectile_impact_3.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 5913327544298452496 },
+			"m_PreloadIndex": 140,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/HornetEnemy/spine_floater_projectile_impact_4.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 7240860094050038149 },
+			"m_PreloadIndex": 370,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/HornetEnemy/swamp_maggots_cleanse_pop.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 603471556237968158 },
+			"m_PreloadIndex": 412,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/HornetEnemy/swamp_maggots_on_hornet_outside_water_loop.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 192331582792624913 },
+			"m_PreloadIndex": 127,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/HornetEnemy/void_tick_damage.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 5899289961751730100 },
+			"m_PreloadIndex": 57,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/HornetEnemy/weaver_servitor_shoot_alt.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -1630336998349285755 },
+			"m_PreloadIndex": 80,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/HornetEnemy/wisp_fireball_explode.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 7468376830033256788 },
+			"m_PreloadIndex": 200,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/HornetEnemy/wisp_fireball_fly_loop.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -4307259671130705484 },
+			"m_PreloadIndex": 348,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/HornetEnemy/wisp_fireball_shoot.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -6764530325345612292 },
+			"m_PreloadIndex": 427,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Needolin/hornet_needolin_musicians_charm_layer.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 8610869558663804680 },
+			"m_PreloadIndex": 27,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Needolin/toll_booth_mouth_spit.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -6253564956269712949 },
+			"m_PreloadIndex": 207,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Props/Health Cocoon/health_bug_collect_1_amplified.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -3633247634550481970 },
+			"m_PreloadIndex": 124,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Props/Hornet/craft.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -6162085504153370508 },
+			"m_PreloadIndex": 415,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Props/Hornet/hornet_pond_pin_throw.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -7313403862429825870 },
+			"m_PreloadIndex": 23,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Props/Hornet/hornet_tool_quickbind_needles.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 7591353643621414789 },
+			"m_PreloadIndex": 230,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Props/Hornet/hornet_tool_tack_activate_1.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -2287439458784165269 },
+			"m_PreloadIndex": 21,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Props/Hornet/hornet_tool_tack_activate_2.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -7298194079752125903 },
+			"m_PreloadIndex": 13,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Props/Hornet/hornet_tool_tack_activate_3.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -1203141054119033964 },
+			"m_PreloadIndex": 215,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Props/Hornet/hornet_tool_tack_activate_4.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 5806927047260896287 },
+			"m_PreloadIndex": 372,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Props/Hornet/hornet_tool_tack_deal_damage_1.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -2009790210489070620 },
+			"m_PreloadIndex": 342,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Props/Hornet/hornet_tool_tack_deal_damage_2.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 1448703449102544779 },
+			"m_PreloadIndex": 212,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Props/Hornet/hornet_tool_tack_deal_damage_3.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 3665006532104703892 },
+			"m_PreloadIndex": 413,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Props/Hornet/hornet_tool_tack_deal_damage_4.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 2271001742667743396 },
+			"m_PreloadIndex": 226,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Props/Hornet/hornet_tool_tack_land_1.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -9204310349995293334 },
+			"m_PreloadIndex": 35,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Props/Hornet/hornet_tool_tack_land_2.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -7019713363977520232 },
+			"m_PreloadIndex": 2,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Props/Hornet/hornet_tool_tack_land_3.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 9179625475401471750 },
+			"m_PreloadIndex": 122,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Props/Hornet/hornet_tool_tack_land_4.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 7320085484436531293 },
+			"m_PreloadIndex": 184,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Props/Hornet/hornet_umbrella_floating_loop.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 8580692283292457208 },
+			"m_PreloadIndex": 16,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Props/Hornet/needle_phial_charge.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -3612282455067485833 },
+			"m_PreloadIndex": 29,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Props/Hornet/needle_phial_charged_loop.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 7379201505406266776 },
+			"m_PreloadIndex": 65,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Props/Hornet/needle_phial_pull_out.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 2208194390371215369 },
+			"m_PreloadIndex": 419,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Props/Hornet/needle_phial_stab.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -226920715830782659 },
+			"m_PreloadIndex": 168,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Props/Hornet/reaper_orb_collect.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 7288276355272900004 },
+			"m_PreloadIndex": 64,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Props/Hornet/sawtooth_circlet_slash.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 2902284643281917963 },
+			"m_PreloadIndex": 305,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Props/Hornet/tink_option_01.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 4401842069473310286 },
+			"m_PreloadIndex": 78,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Props/Hornet/tink_option_02.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -3906480813076934817 },
+			"m_PreloadIndex": 262,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Props/Hornet/tink_option_03.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -7657990833003837397 },
+			"m_PreloadIndex": 118,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Props/Hornet/tink_option_04.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 8824242017855405438 },
+			"m_PreloadIndex": 178,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Props/Hornet/tink_option_05.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -4291659847854829417 },
+			"m_PreloadIndex": 222,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Props/Hornet/tink_option_06.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -6628872518877068845 },
+			"m_PreloadIndex": 288,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Props/Hornet/tink_option_07.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 2325754502659464715 },
+			"m_PreloadIndex": 3,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Props/Hornet/tink_option_08.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 6485338324987846454 },
+			"m_PreloadIndex": 52,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Props/Hornet/updraft_hornet_exit.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -6543354217179305969 },
+			"m_PreloadIndex": 86,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Props/Hornet/updraft_hornet_takeoff.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 625157746577747457 },
+			"m_PreloadIndex": 231,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Props/Shaman_Bind_cancel_burst.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 6876902029745873790 },
+			"m_PreloadIndex": 99,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Props/automaton_trapdoor_spawner_steam.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -8273486701431116703 },
+			"m_PreloadIndex": 69,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Props/bellet_casing_hit_1.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 690309825442756820 },
+			"m_PreloadIndex": 139,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Props/bellet_casing_hit_2.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -974685985135580511 },
+			"m_PreloadIndex": 110,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Props/bellet_casing_hit_3.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 5718197496979344261 },
+			"m_PreloadIndex": 411,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Props/bellet_casing_hit_4.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 2757499877619120718 },
+			"m_PreloadIndex": 351,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Props/bellet_casing_hit_5.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 1317912000366511805 },
+			"m_PreloadIndex": 198,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Props/bench_rest.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -8691589237157707806 },
+			"m_PreloadIndex": 361,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Props/breakable_pole_death.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 1843312388534008226 },
+			"m_PreloadIndex": 299,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Props/breakable_pole_hit_1.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 1224716312349107849 },
+			"m_PreloadIndex": 129,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Props/breakable_pole_hit_2.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 3209214010564497883 },
+			"m_PreloadIndex": 232,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Props/breakable_wall_death.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 2072732056158250914 },
+			"m_PreloadIndex": 58,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Props/breakable_wall_hit_1.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 3418622243921122146 },
+			"m_PreloadIndex": 228,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Props/breakable_wall_hit_2.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -4246516037809036298 },
+			"m_PreloadIndex": 371,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Props/chest_open.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 6993316885500717903 },
+			"m_PreloadIndex": 103,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Props/crystal_break_new_1.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -6479596505538633568 },
+			"m_PreloadIndex": 180,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Props/crystal_break_new_2.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -4176371044189058986 },
+			"m_PreloadIndex": 214,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Props/crystal_break_new_3.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -2584155450309731858 },
+			"m_PreloadIndex": 166,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Props/hornet_slide_after_sprint.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 7467563315360053953 },
+			"m_PreloadIndex": 75,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Props/hornet_throw_tripin_1.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 4247067673058336908 },
+			"m_PreloadIndex": 128,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Props/hornet_throw_tripin_2.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -4332694259457460909 },
+			"m_PreloadIndex": 268,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Props/hornet_throw_tripin_3.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -1843473594532449447 },
+			"m_PreloadIndex": 87,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Props/hot_coal_damage.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 8676048998287381214 },
+			"m_PreloadIndex": 362,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Props/ice_reform_1_end.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 1863989924659769740 },
+			"m_PreloadIndex": 356,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Props/ice_reform_2_end.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -7018299430526142053 },
+			"m_PreloadIndex": 358,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Props/ice_reform_3_end.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 2289820729379887876 },
+			"m_PreloadIndex": 426,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Props/misc_rumble_impact.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -1119352515966541794 },
+			"m_PreloadIndex": 14,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Props/misc_rumble_loop.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 2310771361805044415 },
+			"m_PreloadIndex": 402,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Props/pot_death_1.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 1180678971584493715 },
+			"m_PreloadIndex": 281,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Props/pot_death_2.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 5422877430603942368 },
+			"m_PreloadIndex": 344,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Props/pot_death_3.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -893296582312442746 },
+			"m_PreloadIndex": 311,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Props/rope_cut.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -319981654460963702 },
+			"m_PreloadIndex": 76,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Props/rosary_rock_hit_1.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 338527179435206107 },
+			"m_PreloadIndex": 266,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Props/rosary_rock_hit_2.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 856592654856480649 },
+			"m_PreloadIndex": 130,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Props/rosary_rock_hit_3.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 256090989295614886 },
+			"m_PreloadIndex": 34,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Props/rosary_rock_hit_4.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -6398863430263184153 },
+			"m_PreloadIndex": 395,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Props/torch_flame_loop.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -509065145770149551 },
+			"m_PreloadIndex": 257,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Silksong Deliveries/2023-02 v2 Coral zap stuff coral tree hornet lands peak creature ui profiles/ice_reform_loop.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 7086396615576468055 },
+			"m_PreloadIndex": 85,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Silksong Deliveries/2023-02 v2 Coral zap stuff coral tree hornet lands peak creature ui profiles/lightning_antic.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -6970110903850566326 },
+			"m_PreloadIndex": 240,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Silksong Deliveries/2023-02 v2 Coral zap stuff coral tree hornet lands peak creature ui profiles/lightning_zap.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -6486418924136323762 },
+			"m_PreloadIndex": 366,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Silksong Deliveries/2023-02 v2 Coral zap stuff coral tree hornet lands peak creature ui profiles/lightning_zap_2.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -6641999817643636336 },
+			"m_PreloadIndex": 425,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/Silksong Deliveries/2023-02 v2 Coral zap stuff coral tree hornet lands peak creature ui profiles/lightning_zap_3.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -543807022189409618 },
+			"m_PreloadIndex": 423,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/UI/heartpiece_appear_option_3.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 7022169089087329474 },
+			"m_PreloadIndex": 253,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/UI/hi_hud_barbed_bracelet_damage.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 3184431114122495368 },
+			"m_PreloadIndex": 90,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/UI/ui_frost_water_enter.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 6056507086386775409 },
+			"m_PreloadIndex": 290,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/UI/ui_frost_water_loop.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 8386494332776169877 },
+			"m_PreloadIndex": 97,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/UI/ui_hud_barbed_bracelet_equip.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 5724642199314341432 },
+			"m_PreloadIndex": 10,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/UI/ui_hud_barbed_bracelet_unequip_pt_1.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 8066887393882646016 },
+			"m_PreloadIndex": 107,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/UI/ui_hud_fractured_mask_slide_in.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 5143916264091933051 },
+			"m_PreloadIndex": 429,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/UI/ui_hud_fractured_mask_slide_out.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -3310324141041657475 },
+			"m_PreloadIndex": 418,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/UI/ui_hud_heartpiece_gain_option.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 2049176757707317120 },
+			"m_PreloadIndex": 155,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/UI/ui_map_update.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -8665109841177477391 },
+			"m_PreloadIndex": 157,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/UI/ui_map_update_pins_only.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 437881759586192217 },
+			"m_PreloadIndex": 384,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/bind_for_crest_silk_spin_around_hornet_2d.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 1022587982182856180 },
+			"m_PreloadIndex": 292,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/effect/flame_damage_hit.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 8857634608213624517 },
+			"m_PreloadIndex": 331,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/effect/poison_damage_hit.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -1168580667422007838 },
+			"m_PreloadIndex": 314,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/effect/poison_damage_ignite.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -13951165565155916 },
+			"m_PreloadIndex": 48,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/effect/white flower cleanse.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 1380158079803818435 },
+			"m_PreloadIndex": 113,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/effect/zap_burst_quick.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 4460341667604714298 },
+			"m_PreloadIndex": 73,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/hero_wall_slide.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 2212454210714269239 },
+			"m_PreloadIndex": 322,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/hornet_lucky_dice_deflect.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 7504982654189908316 },
+			"m_PreloadIndex": 164,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/hornet_projectile_twang_option_1.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 3567420727557348380 },
+			"m_PreloadIndex": 47,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/hornet_projectile_twang_option_2.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 1246722884156470935 },
+			"m_PreloadIndex": 432,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/hornet_projectile_twang_option_3.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 3949360647126605973 },
+			"m_PreloadIndex": 332,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/hornet_steam_hazard_damage.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -3726363208227873943 },
+			"m_PreloadIndex": 156,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/ice_enter.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 854656384171380399 },
+			"m_PreloadIndex": 383,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/ice_exit.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 2688616705990069450 },
+			"m_PreloadIndex": 403,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/ice_loop.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -7739816059437279468 },
+			"m_PreloadIndex": 245,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/npc/beastling_land_1.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -5918030252736397962 },
+			"m_PreloadIndex": 220,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/npc/beastling_land_2.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 3416372371581190163 },
+			"m_PreloadIndex": 82,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/npc/beastling_land_3.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -7830385191994604036 },
+			"m_PreloadIndex": 138,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/npc/greyroot_hornet_grab_pt_6_final_break.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 925029656017871562 },
+			"m_PreloadIndex": 46,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/roasry_cannon_pull_out.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -7706348117851355623 },
+			"m_PreloadIndex": 163,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/rosary_cannon_shoot_loop.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -7801446519834074919 },
+			"m_PreloadIndex": 146,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/rosary_string_empty_hit_1.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -3536260977325077857 },
+			"m_PreloadIndex": 153,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/rosary_string_empty_hit_2.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -5093882981329855655 },
+			"m_PreloadIndex": 397,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/secret_discovered_temp.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -4271547779735076387 },
+			"m_PreloadIndex": 6,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/slab_16_cloak_get_jump_off_slow_motion_2d_sound.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 624390295378101741 },
+			"m_PreloadIndex": 405,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/sword_1.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -5546983986602040563 },
+			"m_PreloadIndex": 387,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/sword_2.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 855901448011815837 },
+			"m_PreloadIndex": 112,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/sword_3.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -440222296913659544 },
+			"m_PreloadIndex": 145,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/sword_4.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -3976831624875080432 },
+			"m_PreloadIndex": 101,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/sword_5.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 919033202319838234 },
+			"m_PreloadIndex": 30,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/sword_hit_reject.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -1041548998458929116 },
+			"m_PreloadIndex": 36,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/sword_terrain_temp.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 6080867104558816438 },
+			"m_PreloadIndex": 135,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/ui_frost_start.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -2478486806427900425 },
+			"m_PreloadIndex": 134,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/SFX/warmth_region_enter.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -680877545334843019 },
+			"m_PreloadIndex": 209,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/Voices/Beastlings/Beastling_ambient_purr_01.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 8287722652444182589 },
+			"m_PreloadIndex": 165,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/Voices/Beastlings/Beastling_ambient_purr_02.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 5859404152822715679 },
+			"m_PreloadIndex": 275,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/Voices/Beastlings/Beastling_ambient_purr_03.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -3168455861728875886 },
+			"m_PreloadIndex": 167,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/Voices/Beastlings/Beastling_ambient_purr_04.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -4146265841704130839 },
+			"m_PreloadIndex": 203,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/Voices/Beastlings/Beastling_ambient_purr_05.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -2394449695385567689 },
+			"m_PreloadIndex": 381,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/Voices/Beastlings/Beastling_ambient_purr_06.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -745890976988974169 },
+			"m_PreloadIndex": 297,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/Voices/Beastlings/Beastling_ambient_purr_07.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 6812755839769173926 },
+			"m_PreloadIndex": 430,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/Voices/Beastlings/Beastling_ambient_purr_08.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -5841926222455964148 },
+			"m_PreloadIndex": 96,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/Voices/Beastlings/Beastling_ambient_purr_09.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -5458699968798350209 },
+			"m_PreloadIndex": 406,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/Voices/Beastlings/Beastling_ambient_purr_10.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 5988452273416984775 },
+			"m_PreloadIndex": 267,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/Voices/Beastlings/Beastling_fail_call_distant.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -8480708393015656060 },
+			"m_PreloadIndex": 357,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/Voices/Beastlings/Beastling_short_exclaim_01.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -2502947540958304320 },
+			"m_PreloadIndex": 396,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/Voices/Beastlings/Beastling_short_exclaim_02.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -3807175085768681798 },
+			"m_PreloadIndex": 12,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/Voices/Beastlings/Beastling_short_exclaim_03.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 1365571169518126383 },
+			"m_PreloadIndex": 1,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/Voices/Beastlings/Beastling_short_exclaim_04.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -7310569302364747819 },
+			"m_PreloadIndex": 277,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/Voices/Beastlings/Beastling_short_exclaim_05.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -5874747944122882845 },
+			"m_PreloadIndex": 117,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/Voices/Beastlings/Beastling_short_exclaim_06.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 5420009633822383151 },
+			"m_PreloadIndex": 350,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/Voices/Beastlings/Beastling_short_exclaim_07.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 2812435720519542481 },
+			"m_PreloadIndex": 254,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/Voices/Beastlings/Beastling_short_exclaim_08.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -659631282132008614 },
+			"m_PreloadIndex": 114,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/Voices/Beastlings/Beastling_short_exclaim_09.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 5303645658261948992 },
+			"m_PreloadIndex": 31,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/Voices/Beastlings/Beastling_short_exclaim_10.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 6362731549812205591 },
+			"m_PreloadIndex": 62,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/Voices/Beastlings/Beastling_short_exclaim_11.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -3851573609295141543 },
+			"m_PreloadIndex": 261,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/Voices/Beastlings/Beastling_short_exclaim_12.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -6047309605311643132 },
+			"m_PreloadIndex": 312,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/Voices/Beastlings/Beastling_sing_01.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -4476476685458281732 },
+			"m_PreloadIndex": 50,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/Voices/Beastlings/Beastling_sing_02.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 8757820820536672583 },
+			"m_PreloadIndex": 211,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/Voices/Beastlings/Beastling_sleep_01.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 6693850146702831995 },
+			"m_PreloadIndex": 41,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/Voices/Beastlings/Beastling_sleep_02.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 1495450551955859122 },
+			"m_PreloadIndex": 223,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/Voices/Beastlings/beastling_stamp_bell_01.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -4246903971369284746 },
+			"m_PreloadIndex": 303,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/Voices/Beastlings/beastling_stamp_bell_02.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 3072340708580021179 },
+			"m_PreloadIndex": 248,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/Voices/Beastlings/beastling_stamp_bell_03.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -7285712472730388646 },
+			"m_PreloadIndex": 38,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/Voices/Beastlings/beastling_stamp_clean_01.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 6941097545696997052 },
+			"m_PreloadIndex": 182,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/Voices/Beastlings/beastling_stamp_clean_02.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 2045611306213570527 },
+			"m_PreloadIndex": 242,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/Voices/Beastlings/beastling_stamp_clean_03.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -8343663703225108851 },
+			"m_PreloadIndex": 258,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/Voices/Hornet_Silksong/a23.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -2246091471080175029 },
+			"m_PreloadIndex": 133,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/Voices/Hornet_Silksong/g10.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 9179622332511255799 },
+			"m_PreloadIndex": 364,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/Voices/Hornet_Silksong/g11.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -2962304598018315223 },
+			"m_PreloadIndex": 282,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/Voices/Hornet_Silksong/g12.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 5657171252209194716 },
+			"m_PreloadIndex": 315,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/Voices/Hornet_Silksong/g16.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -6576155345035570007 },
+			"m_PreloadIndex": 159,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/Voices/Hornet_Silksong/g17.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -4114340726657255768 },
+			"m_PreloadIndex": 217,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/Voices/Hornet_Silksong/g19.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 240222851724308523 },
+			"m_PreloadIndex": 126,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/Voices/Hornet_Silksong/g5.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -6579487269902240341 },
+			"m_PreloadIndex": 66,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/Voices/Hornet_Silksong/g8.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -1006583389045931267 },
+			"m_PreloadIndex": 227,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/Voices/Hornet_Silksong/g9.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 8953065591665365972 },
+			"m_PreloadIndex": 327,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/Voices/Hornet_Silksong/hornet_extras/Garama_beast_01.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -2662983252153929503 },
+			"m_PreloadIndex": 250,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/Voices/Hornet_Silksong/hornet_extras/Garama_beast_02.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -5105493640733521156 },
+			"m_PreloadIndex": 341,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/Voices/Hornet_Silksong/hornet_extras/Garama_beast_03.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 6242105120265825850 },
+			"m_PreloadIndex": 373,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/Voices/Hornet_Silksong/hornet_extras/Garama_beast_04.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 4660074838264921089 },
+			"m_PreloadIndex": 59,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/Voices/Hornet_Silksong/hornet_extras/Garama_beast_05.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 6469143585435934489 },
+			"m_PreloadIndex": 318,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/Voices/Hornet_Silksong/hornet_extras/Hornet_poshanka_01.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -8058551470248772905 },
+			"m_PreloadIndex": 393,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/Voices/Hornet_Silksong/hornet_extras/Hornet_poshanka_02.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 1445160178162153126 },
+			"m_PreloadIndex": 345,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/Voices/Hornet_Silksong/hornet_extras/Hornet_poshanka_03.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -1449535952152213208 },
+			"m_PreloadIndex": 308,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/Voices/Hornet_Silksong/hornet_extras/Hornet_poshanka_04.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -4054351501449938329 },
+			"m_PreloadIndex": 355,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/Voices/Hornet_Silksong/hornet_extras/Hornet_roar_lock_grunt_01.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -4371391015046251980 },
+			"m_PreloadIndex": 84,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/Voices/Hornet_Silksong/hornet_extras/Hornet_roar_lock_grunt_02.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -7024376615679614478 },
+			"m_PreloadIndex": 173,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/Voices/Hornet_Silksong/hornet_extras/Hornet_roar_lock_grunt_03.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -7007295944973360446 },
+			"m_PreloadIndex": 422,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/Voices/Hornet_Silksong/hornet_extras/Hornet_roar_lock_grunt_04.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 2767264510730929212 },
+			"m_PreloadIndex": 70,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/Voices/Hornet_Silksong/hornet_extras/Hornet_roar_lock_grunt_05.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 861679700598051571 },
+			"m_PreloadIndex": 306,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/Voices/Hornet_Silksong/hornet_extras/Hornet_small_wake_sharp_01.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 7742736313578143030 },
+			"m_PreloadIndex": 404,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/Voices/Hornet_Silksong/hornet_extras/Hornet_small_wake_sharp_03.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 7000713276522853283 },
+			"m_PreloadIndex": 293,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/Voices/Hornet_Silksong/hornet_extras/Hornet_small_wake_sharp_04.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 5520751559662070404 },
+			"m_PreloadIndex": 179,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/Voices/Hornet_Silksong/hornet_extras/Hornet_small_wake_sharp_05.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -9043597068572998773 },
+			"m_PreloadIndex": 7,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/Voices/Hornet_Silksong/hornet_extras/Hornet_small_wake_sharp_06.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -8484003639851601563 },
+			"m_PreloadIndex": 241,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/Voices/Hornet_Silksong/hornet_extras/w_big_01.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -2822752281584538095 },
+			"m_PreloadIndex": 171,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/Voices/Hornet_Silksong/hornet_extras/w_big_02.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 2182149657724474553 },
+			"m_PreloadIndex": 102,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/Voices/Hornet_Silksong/hornet_extras/w_big_03.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 4323110003571464362 },
+			"m_PreloadIndex": 286,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/Voices/Hornet_Silksong/hornet_extras/w_big_04.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -8832751748694910110 },
+			"m_PreloadIndex": 334,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/Voices/Hornet_Silksong/hornet_extras/w_big_05.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -6219619748208455805 },
+			"m_PreloadIndex": 317,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/Voices/Hornet_Silksong/hornet_extras/w_big_06.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 2279145146992600107 },
+			"m_PreloadIndex": 49,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/Voices/Hornet_Silksong/hornet_extras/w_big_07.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -7303786349115261013 },
+			"m_PreloadIndex": 324,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/Voices/Hornet_Silksong/hornet_extras/w_big_08.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 7130013103732823575 },
+			"m_PreloadIndex": 298,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/Voices/Hornet_Silksong/hornet_extras/w_big_09.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 3238004626041796354 },
+			"m_PreloadIndex": 239,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/Voices/Hornet_Silksong/hornet_extras/warrior_rage_attack_01.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 3753250969124105897 },
+			"m_PreloadIndex": 323,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/Voices/Hornet_Silksong/hornet_extras/warrior_rage_attack_02.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -9209592534568035496 },
+			"m_PreloadIndex": 295,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/Voices/Hornet_Silksong/hornet_extras/warrior_rage_attack_03.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 3349293295722999327 },
+			"m_PreloadIndex": 26,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/Voices/Hornet_Silksong/hornet_extras/warrior_rage_attack_04.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -448729742685863402 },
+			"m_PreloadIndex": 319,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/Voices/Hornet_Silksong/hornet_extras/warrior_rage_attack_05.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -3466190216907325530 },
+			"m_PreloadIndex": 399,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/Voices/Hornet_Silksong/hornet_extras/warrior_rage_attack_06.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 4145049282903818156 },
+			"m_PreloadIndex": 193,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/Voices/Hornet_Silksong/hornet_extras/warrior_rage_attack_07.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -7314465830893100669 },
+			"m_PreloadIndex": 172,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/Voices/Hornet_Silksong/hornet_extras/warrior_rage_attack_08.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 8558108768827838595 },
+			"m_PreloadIndex": 354,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/Voices/Hornet_Silksong/hornet_extras/warrior_rage_attack_09.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 8183094468478436868 },
+			"m_PreloadIndex": 104,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/Voices/Hornet_Silksong/hornet_extras/warrior_rage_attack_10.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -906302411618757748 },
+			"m_PreloadIndex": 4,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/Voices/Hornet_Silksong/hornet_small_wake_01.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 6918984766751924569 },
+			"m_PreloadIndex": 141,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/Voices/Hornet_Silksong/hornet_small_wake_03.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -3815191492163704720 },
+			"m_PreloadIndex": 137,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/Voices/Hornet_Silksong/hornet_small_wake_04.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -1237266374388233999 },
+			"m_PreloadIndex": 119,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/Voices/Hornet_Silksong/hornet_small_wake_05.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": -4559083579211914632 },
+			"m_PreloadIndex": 17,
+			"m_PreloadSize": 1
+		},
+		"Assets/Audio/Voices/Hornet_Silksong/hornet_small_wake_06.wav": {
+			"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 7605589442179814935 },
+			"m_PreloadIndex": 191,
+			"m_PreloadSize": 1
+		}
+	},
+	"m_CorrespondingSourceObject": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 0 },
+	"m_Dependencies": [],
+	"m_ExplicitDataLayout": 1,
+	"m_HideFlags": 0,
+	"m_IsStreamedSceneAssetBundle": false,
+	"m_MainAsset": {
+		"m_Asset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 0 },
+		"m_PreloadIndex": 0,
+		"m_PreloadSize": 0
+	},
+	"m_Name": "81cdd0803a8bcfb81097fa4b8f33bb6e.bundle",
+	"m_PathFlags": 0,
+	"m_PrefabAsset": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 0 },
+	"m_PrefabInstance": { "m_Collection": "cab-b108f8762e9a167781f6f2161e5c6ff6", "m_PathID": 0 },
+	"m_PreloadTable": [],
+	"m_RuntimeCompatibility": 1,
+	"m_SceneHashes": {}
+}
