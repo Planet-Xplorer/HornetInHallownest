@@ -28,8 +28,7 @@ dotnet build MyHornetMod.csproj
 ## Controls
 
 - **F5** - Toggle between Hornet and Knight sprites
-- **G** - Cycle through Hornet's crests (weapon types)
-- **Left Shift** - Silk dash (when playing as Hornet)
+- **G** - Cycle through Hornet's crests (weapon types
 
 # Shout Outs
 Thanks to people at Lumafly for helping provide template and some resources.
